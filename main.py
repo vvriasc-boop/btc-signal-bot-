@@ -88,7 +88,7 @@ def build_channel_config() -> dict:
     imba = os.getenv("IMBA_GROUP_ID")
     if imba:
         config[imba] = {"name": "DyorAlerts", "parser": "dyor_alerts",
-                        "is_group": True, "filter_author": "dyor_alerts"}
+                        "is_group": True, "filter_author": "dyor_alerts_EtH_2_O_bot"}
 
     bfs = os.getenv("BFS_GROUP_ID")
     if bfs:
@@ -376,9 +376,9 @@ def get_closest_price_sql(target_time: datetime, tolerance_minutes: int = 2) -> 
 # ═══════════════════════════════════════════════════════════════
 
 VALIDATION_RULES = {
-    "altswing":     {"value_min": 0, "value_max": 100},
-    "scalp17":      {"value_min": 0, "value_max": 100},
-    "altspi":       {"value_min": 0, "value_max": 100},
+    "altswing":     {"value_min": -100, "value_max": 100},
+    "scalp17":      {"value_min": -200, "value_max": 200},
+    "altspi":       {"value_min": -100, "value_max": 200},
     "sells_power":  {"value_min": -300, "value_max": 300},
     "dmi_smf":      {"value_min": -300, "value_max": 300},
     "rsi_btc":      {"value_min": 0, "value_max": 100},
@@ -405,51 +405,56 @@ def validate_parsed(parser_type: str, parsed: dict) -> tuple[bool, str]:
 # ═══════════════════════════════════════════════════════════════
 
 def parse_altswing(text):
-    if 'AltSwing' not in text:
-        return None
-    m = re.search(r'Avg\.\s*([\d.]+)%', text)
+    # Format: "Avg. 60.1%" or "🟧Avg. 67.3%" or "⬜️Avg. 18.4%" — no header
+    m = re.search(r'Avg\.\s*(-?[\d.]+)%', text)
     if not m:
         return None
-    return {"value": float(m.group(1)), "color": None, "direction": None,
+    color = next((n for e, n in [('\U0001f7e9', 'green'), ('\U0001f7e7', 'orange'),
+                                  ('\U0001f7e5', 'red'), ('\U0001f7e6', 'blue'),
+                                  ('\u2b1c', 'white')] if e in text), None)
+    return {"value": float(m.group(1)), "color": color, "direction": None,
             "timeframe": None, "btc_price": None, "extra": {}}
 
 
 def parse_diamond_marks(text):
-    if 'Diamond Marks' not in text:
+    # Format: "🔥🟩🔥 Total 15m\nBTC/USDT: $114,141" — no "Diamond Marks" header
+    if 'Total' not in text or 'BTC/USDT:' not in text:
         return None
     tf = re.search(r'Total\s+(\d+[mhHМ])', text)
     price = re.search(r'BTC/USDT:\s*\$?([\d,]+\.?\d*)', text)
     g, o, r_ = text.count('\U0001f7e9'), text.count('\U0001f7e7'), text.count('\U0001f7e5')
+    y = text.count('\U0001f7e8')
     direction = "bullish" if g > r_ else ("bearish" if r_ > g else "neutral")
-    colors = {"green": g, "orange": o, "red": r_}
+    colors = {"green": g, "orange": o, "red": r_, "yellow": y}
     dominant = max(colors, key=colors.get) if any(colors.values()) else None
     return {"value": None, "color": dominant, "direction": direction,
             "timeframe": tf.group(1).lower() if tf else None,
             "btc_price": float(price.group(1).replace(',', '')) if price else None,
             "extra": {"green_count": g, "orange_count": o, "red_count": r_,
-                      "has_fire": '\U0001f525' in text}}
+                      "yellow_count": y, "has_fire": '\U0001f525' in text}}
 
 
 def parse_sells_power(text):
-    if 'Sells Power Index' not in text:
-        return None
-    m = re.search(r'(-?[\d.]+)%', text)
+    # Format: "⚪️ 55%" or "🟩 -28%" — no header, just emoji + percentage
+    m = re.search(r'(-?[\d.]+)\s*%', text)
     if not m:
         return None
-    color = "green" if '\U0001f7e9' in text else ("blue" if '\U0001f7e6' in text else None)
-    return {"value": float(m.group(1)), "color": color, "direction": None,
+    val = float(m.group(1))
+    color = next((n for e, n in [('\U0001f7e9', 'green'), ('\U0001f7e6', 'blue'),
+                                  ('\U0001f7e5', 'red'), ('\U0001f7e7', 'orange')]
+                  if e in text), None)
+    return {"value": val, "color": color, "direction": None,
             "timeframe": None, "btc_price": None, "extra": {}}
 
 
 def parse_altspi(text):
-    if 'AltSPI' not in text:
-        return None
-    avg = re.search(r'Avg\.\s*([\d.]+)%', text)
+    # Format: "🟥 21 🟧 22 ⚪️ 56 🟦 1 🟩 0\nMarket Av. 94.8%" or "...Avg. 47.3%"
+    avg = re.search(r'(?:Market\s+Av\.|Avg\.)\s*(-?[\d.]+)%', text)
     if not avg:
         return None
 
     def cnt(e):
-        m = re.search(e + r'\s*(\d+)', text)
+        m = re.search(e + r'\ufe0f?\s*(\d+)', text)
         return int(m.group(1)) if m else 0
 
     return {"value": float(avg.group(1)), "color": None, "direction": None,
@@ -460,23 +465,29 @@ def parse_altspi(text):
 
 
 def parse_scalp17(text):
-    if 'Scalp17' not in text:
+    # Format: "⚡️Avg. 70.2%" or "⚡️🟧Avg. 64.3%" — no "Scalp17" header
+    # Requires ⚡ emoji; values can be negative
+    if '\u26a1' not in text:
         return None
-    m = re.search(r'Avg\.\s*([\d.]+)%', text)
+    m = re.search(r'Avg\.\s*(-?[\d.]+)%', text)
     if not m:
         return None
     color = next((n for e, n in [('\U0001f7e9', 'green'), ('\U0001f7e7', 'orange'),
-                                  ('\U0001f7e5', 'red')] if e in text), None)
+                                  ('\U0001f7e5', 'red'), ('\U0001f7e6', 'blue'),
+                                  ('\U0001f7ea', 'purple')] if e in text), None)
     return {"value": float(m.group(1)), "color": color, "direction": None,
             "timeframe": None, "btc_price": None, "extra": {}}
 
 
 def parse_index_btc(text):
-    if 'Index' not in text or 'Bitcoin' not in text:
+    if 'INDEX' not in text or 'Bitcoin' not in text:
         return None
-    tf = re.search(r'INDEX\s+(\d+[mhH\u043c\u0438\u043dMIN]+)', text)
+    tf = re.search(r'INDEX\s+(\d+\s*(?:min|m|h))', text, re.IGNORECASE)
     price = re.search(r'Bitcoin\s+([\d.]+)', text)
-    g, r_ = text.count('\U0001f7e9'), text.count('\U0001f7e5')
+    idx_pos = text.index('INDEX')
+    prefix = text[:idx_pos]
+    g = prefix.count('\U0001f7e9')
+    r_ = prefix.count('\U0001f7e5')
     direction = "bullish" if g > r_ else ("bearish" if r_ > g else "neutral")
     return {"value": None, "color": "green" if g > r_ else ("red" if r_ > g else None),
             "direction": direction, "timeframe": tf.group(1).lower() if tf else None,
@@ -500,17 +511,34 @@ def parse_dmi_smf(text):
 def parse_dyor_alerts(text):
     if 'BTC/USDT-SPOT:' not in text:
         return None
-    if 'Дисбаланс' not in text and 'Disbalance' not in text:
-        return None
-    if 'покупателя' in text.lower():
+
+    # Determine signal type and direction
+    sig_type, direction = "unknown", None
+    level = None
+    text_lower = text.lower()
+    if 'дисбаланс покупателя' in text_lower:
         sig_type, direction = "buyer_disbalance", "bullish"
-    elif 'продавца' in text.lower():
+    elif 'дисбаланс продавца' in text_lower:
         sig_type, direction = "seller_disbalance", "bearish"
-    else:
-        sig_type, direction = "unknown", None
+    elif 'лонговый приоритет' in text_lower:
+        sig_type, direction = "long_priority", "bullish"
+        lm = re.search(r'(\d+)\s*уровень', text)
+        if lm:
+            level = int(lm.group(1))
+    elif 'шортовый' in text_lower:
+        sig_type, direction = "short_signal", "bearish"
+    elif 'сигнал лонг' in text_lower:
+        sig_type, direction = "long_signal", "bullish"
+    elif 'сигнал шорт' in text_lower:
+        sig_type, direction = "short_signal", "bearish"
+    elif 'баланс' in text_lower:
+        sig_type, direction = "balance", "neutral"
+
     pm = re.search(r'BTC/USDT-SPOT:\s*([\d.]+)', text)
     btc_price = float(pm.group(1)) if pm else None
     green_dots = text.count('\U0001f7e2')
+    green_hearts = text.count('\U0001f49a')
+    green_squares = text.count('\U0001f7e9')
 
     def parse_money(pattern, section):
         m = re.search(pattern, section)
@@ -534,9 +562,14 @@ def parse_dyor_alerts(text):
     l_l = parse_money(r'Long:\s*\$([\d.]+\s*[MmМkKк]?)', lp)
     l_s = parse_money(r'Short:\s*\$([\d.]+\s*[MmМkKк]?)', lp)
     ratio = round(b_l / b_s, 2) if b_l and b_s and b_s > 0 else None
-    return {"value": ratio, "color": "green" if green_dots > 0 else None,
+    value = ratio if ratio is not None else level
+    bullish_indicators = green_dots + green_hearts + green_squares
+    color = ("green" if bullish_indicators > 0 else
+             ("red" if '\U0001f7e5' in text else None))
+    return {"value": value, "color": color,
             "direction": direction, "timeframe": None, "btc_price": btc_price,
             "extra": {"signal_type": sig_type, "green_dots": green_dots,
+                      "green_hearts": green_hearts, "level": level,
                       "binance_long": b_l, "binance_short": b_s,
                       "liq_long": l_l, "liq_short": l_s, "long_short_ratio": ratio}}
 
@@ -1489,36 +1522,92 @@ async def handle_summary(query):
 
 
 def export_csv() -> str:
-    rows = db.execute("""
-        SELECT s.timestamp, s.channel_name, s.indicator_value, s.signal_color,
-               s.signal_direction, s.timeframe, s.btc_price_binance, s.extra_data,
-               ctx.price_at_signal, ctx.change_5m_pct, ctx.change_15m_pct,
-               ctx.change_1h_pct, ctx.change_4h_pct, ctx.change_24h_pct
-        FROM signals s LEFT JOIN signal_price_context ctx ON ctx.signal_id = s.id
-        ORDER BY s.timestamp
-    """).fetchall()
+    MAX_SIGNALS = 5
+    START_DATE = "2025-07-01T00:00:00"
 
+    # 1. Build 5-min price map: {rounded_ts: price}
+    price_rows = db.execute(
+        "SELECT timestamp, price FROM btc_price WHERE timestamp >= ? ORDER BY timestamp",
+        (START_DATE,)
+    ).fetchall()
+
+    def round5(iso_str):
+        dt = datetime.fromisoformat(iso_str).replace(tzinfo=timezone.utc)
+        m = dt.minute - dt.minute % 5
+        return dt.replace(minute=m, second=0, microsecond=0)
+
+    price_map = {}
+    for r in price_rows:
+        key = round5(r["timestamp"])
+        if key not in price_map:
+            price_map[key] = r["price"]
+
+    # 2. Build 5-min signal buckets: {rounded_ts: [list of signals]}
+    sig_rows = db.execute("""
+        SELECT timestamp, channel_name, indicator_value, signal_color, signal_direction
+        FROM signals WHERE timestamp >= ? ORDER BY timestamp
+    """, (START_DATE,)).fetchall()
+
+    from collections import defaultdict
+    signal_buckets = defaultdict(list)
+    for r in sig_rows:
+        key = round5(r["timestamp"])
+        signal_buckets[key].append(r)
+
+    # 3. Generate continuous 5-min timeline
+    all_keys = sorted(set(list(price_map.keys()) + list(signal_buckets.keys())))
+    if not all_keys:
+        return ""
+
+    start = all_keys[0]
+    end = max(all_keys[-1], datetime.now(timezone.utc).replace(
+        second=0, microsecond=0))
+    end = end.replace(minute=end.minute - end.minute % 5)
+
+    timeline = []
+    current = start
+    while current <= end:
+        timeline.append(current)
+        current += timedelta(minutes=5)
+
+    # 4. Write CSV
     filepath = f"export_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M')}.csv"
 
-    def v(x):
-        return x if x is not None else ""
+    header = ["timestamp", "btc_price", "signal_count"]
+    for i in range(1, MAX_SIGNALS + 1):
+        header.extend([f"signal_{i}_channel", f"signal_{i}_value",
+                       f"signal_{i}_color", f"signal_{i}_direction"])
 
     with open(filepath, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow([
-            "timestamp", "channel", "value", "color", "direction", "timeframe",
-            "btc_price", "change_5m", "change_15m", "change_1h", "change_4h",
-            "change_24h", "extra"
-        ])
-        for r in rows:
-            writer.writerow([
-                r["timestamp"], r["channel_name"], v(r["indicator_value"]),
-                v(r["signal_color"]), v(r["signal_direction"]),
-                v(r["timeframe"]), v(r["btc_price_binance"]),
-                v(r["change_5m_pct"]), v(r["change_15m_pct"]),
-                v(r["change_1h_pct"]), v(r["change_4h_pct"]),
-                v(r["change_24h_pct"]), v(r["extra_data"])
-            ])
+        writer.writerow(header)
+
+        for ts in timeline:
+            price = price_map.get(ts)
+            sigs = signal_buckets.get(ts, [])
+            count = min(len(sigs), MAX_SIGNALS)
+
+            row = [
+                ts.strftime("%Y-%m-%d %H:%M"),
+                f"{price:.2f}" if price is not None else "",
+                count,
+            ]
+
+            for i in range(MAX_SIGNALS):
+                if i < len(sigs):
+                    s = sigs[i]
+                    val = s["indicator_value"]
+                    row.extend([
+                        s["channel_name"],
+                        f"{val:.1f}" if val is not None else "",
+                        s["signal_color"] or "",
+                        s["signal_direction"] or "",
+                    ])
+                else:
+                    row.extend(["", "", "", ""])
+
+            writer.writerow(row)
+
     return filepath
 
 
