@@ -1,0 +1,8 @@
+.env
+*.db
+*.log
+*.session
+*.session-journal
+unrecognized/
+__pycache__/
+*.pyc

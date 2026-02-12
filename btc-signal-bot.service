@@ -1,0 +1,14 @@
+[Unit]
+Description=BTC Signal Aggregator
+After=network.target
+
+[Service]
+Type=simple
+User=s.riashchikow
+WorkingDirectory=/home/s.riashchikow/btc-signal-bot
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
