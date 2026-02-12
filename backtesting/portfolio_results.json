@@ -1,0 +1,626 @@
+{
+  "5m_size1pct": {
+    "trades": 300,
+    "wins": 185,
+    "losses": 115,
+    "win_rate_pct": 61.67,
+    "avg_return_pct": 0.3488,
+    "median_return_pct": 0.1855,
+    "total_return_pct": 104.64,
+    "cumulative_return_pct": 1.05,
+    "final_capital_usd": 10105.17,
+    "total_pnl_usd": 105.17,
+    "profit_factor": 2.428,
+    "sharpe": 99.701,
+    "sortino": 121.4255,
+    "max_drawdown_pct": -0.06,
+    "max_drawdown_duration": 15,
+    "max_drawdown_usd": 6.4,
+    "calmar": 5777.399,
+    "kelly_pct": 36.27,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 294,
+        "win_rate_pct": 62.24,
+        "avg_return_pct": 0.3529,
+        "total_pnl_usd": 104.28
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.1469,
+        "total_pnl_usd": 0.89
+      }
+    },
+    "horizon": "5m",
+    "size_pct": 1
+  },
+  "5m_size2pct": {
+    "trades": 300,
+    "wins": 185,
+    "losses": 115,
+    "win_rate_pct": 61.67,
+    "avg_return_pct": 0.3488,
+    "median_return_pct": 0.1855,
+    "total_return_pct": 104.64,
+    "cumulative_return_pct": 2.11,
+    "final_capital_usd": 10211.4,
+    "total_pnl_usd": 211.4,
+    "profit_factor": 2.427,
+    "sharpe": 99.701,
+    "sortino": 121.4255,
+    "max_drawdown_pct": -0.13,
+    "max_drawdown_duration": 15,
+    "max_drawdown_usd": 12.83,
+    "calmar": 5812.388,
+    "kelly_pct": 36.27,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 294,
+        "win_rate_pct": 62.24,
+        "avg_return_pct": 0.3529,
+        "total_pnl_usd": 209.55
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.1469,
+        "total_pnl_usd": 1.78
+      }
+    },
+    "horizon": "5m",
+    "size_pct": 2
+  },
+  "5m_size5pct": {
+    "trades": 300,
+    "wins": 185,
+    "losses": 115,
+    "win_rate_pct": 61.67,
+    "avg_return_pct": 0.3488,
+    "median_return_pct": 0.1855,
+    "total_return_pct": 104.64,
+    "cumulative_return_pct": 5.37,
+    "final_capital_usd": 10536.58,
+    "total_pnl_usd": 536.58,
+    "profit_factor": 2.426,
+    "sharpe": 99.701,
+    "sortino": 121.4255,
+    "max_drawdown_pct": -0.32,
+    "max_drawdown_duration": 15,
+    "max_drawdown_usd": 32.38,
+    "calmar": 5904.706,
+    "kelly_pct": 36.27,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 294,
+        "win_rate_pct": 62.24,
+        "avg_return_pct": 0.3529,
+        "total_pnl_usd": 532.03
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.1469,
+        "total_pnl_usd": 4.59
+      }
+    },
+    "horizon": "5m",
+    "size_pct": 5
+  },
+  "5m_size10pct": {
+    "trades": 300,
+    "wins": 185,
+    "losses": 115,
+    "win_rate_pct": 61.67,
+    "avg_return_pct": 0.3488,
+    "median_return_pct": 0.1855,
+    "total_return_pct": 104.64,
+    "cumulative_return_pct": 11.01,
+    "final_capital_usd": 11100.78,
+    "total_pnl_usd": 1100.78,
+    "profit_factor": 2.424,
+    "sharpe": 99.701,
+    "sortino": 121.4255,
+    "max_drawdown_pct": -0.64,
+    "max_drawdown_duration": 15,
+    "max_drawdown_usd": 65.77,
+    "calmar": 6064.261,
+    "kelly_pct": 36.27,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 294,
+        "win_rate_pct": 62.24,
+        "avg_return_pct": 0.3529,
+        "total_pnl_usd": 1091.28
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.1469,
+        "total_pnl_usd": 9.52
+      }
+    },
+    "horizon": "5m",
+    "size_pct": 10
+  },
+  "15m_size1pct": {
+    "trades": 306,
+    "wins": 186,
+    "losses": 120,
+    "win_rate_pct": 60.78,
+    "avg_return_pct": 0.3851,
+    "median_return_pct": 0.1603,
+    "total_return_pct": 117.83,
+    "cumulative_return_pct": 1.19,
+    "final_capital_usd": 10118.51,
+    "total_pnl_usd": 118.51,
+    "profit_factor": 2.571,
+    "sharpe": 61.2046,
+    "sortino": 79.2386,
+    "max_drawdown_pct": -0.07,
+    "max_drawdown_duration": 25,
+    "max_drawdown_usd": 6.81,
+    "calmar": 2000.523,
+    "kelly_pct": 37.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 300,
+        "win_rate_pct": 61.33,
+        "avg_return_pct": 0.3803,
+        "total_pnl_usd": 114.67
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.6255,
+        "total_pnl_usd": 3.8
+      }
+    },
+    "horizon": "15m",
+    "size_pct": 1
+  },
+  "15m_size2pct": {
+    "trades": 306,
+    "wins": 186,
+    "losses": 120,
+    "win_rate_pct": 60.78,
+    "avg_return_pct": 0.3851,
+    "median_return_pct": 0.1603,
+    "total_return_pct": 117.83,
+    "cumulative_return_pct": 2.38,
+    "final_capital_usd": 10238.37,
+    "total_pnl_usd": 238.37,
+    "profit_factor": 2.572,
+    "sharpe": 61.2046,
+    "sortino": 79.2386,
+    "max_drawdown_pct": -0.14,
+    "max_drawdown_duration": 25,
+    "max_drawdown_usd": 13.66,
+    "calmar": 2013.859,
+    "kelly_pct": 37.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 300,
+        "win_rate_pct": 61.33,
+        "avg_return_pct": 0.3803,
+        "total_pnl_usd": 230.77
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.6255,
+        "total_pnl_usd": 7.67
+      }
+    },
+    "horizon": "15m",
+    "size_pct": 2
+  },
+  "15m_size5pct": {
+    "trades": 306,
+    "wins": 186,
+    "losses": 120,
+    "win_rate_pct": 60.78,
+    "avg_return_pct": 0.3851,
+    "median_return_pct": 0.1603,
+    "total_return_pct": 117.83,
+    "cumulative_return_pct": 6.06,
+    "final_capital_usd": 10606.24,
+    "total_pnl_usd": 606.24,
+    "profit_factor": 2.569,
+    "sharpe": 61.2046,
+    "sortino": 79.2386,
+    "max_drawdown_pct": -0.34,
+    "max_drawdown_duration": 25,
+    "max_drawdown_usd": 34.53,
+    "calmar": 2049.985,
+    "kelly_pct": 37.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 300,
+        "win_rate_pct": 61.33,
+        "avg_return_pct": 0.3803,
+        "total_pnl_usd": 586.46
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.6255,
+        "total_pnl_usd": 19.76
+      }
+    },
+    "horizon": "15m",
+    "size_pct": 5
+  },
+  "15m_size10pct": {
+    "trades": 306,
+    "wins": 186,
+    "losses": 120,
+    "win_rate_pct": 60.78,
+    "avg_return_pct": 0.3851,
+    "median_return_pct": 0.1603,
+    "total_return_pct": 117.83,
+    "cumulative_return_pct": 12.48,
+    "final_capital_usd": 11247.91,
+    "total_pnl_usd": 1247.91,
+    "profit_factor": 2.566,
+    "sharpe": 61.2046,
+    "sortino": 79.2386,
+    "max_drawdown_pct": -0.68,
+    "max_drawdown_duration": 25,
+    "max_drawdown_usd": 70.35,
+    "calmar": 2111.885,
+    "kelly_pct": 37.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 300,
+        "win_rate_pct": 61.33,
+        "avg_return_pct": 0.3803,
+        "total_pnl_usd": 1206.39
+      },
+      "DMI_SMF": {
+        "trades": 6,
+        "win_rate_pct": 33.33,
+        "avg_return_pct": 0.6255,
+        "total_pnl_usd": 41.6
+      }
+    },
+    "horizon": "15m",
+    "size_pct": 10
+  },
+  "1h_size1pct": {
+    "trades": 377,
+    "wins": 247,
+    "losses": 130,
+    "win_rate_pct": 65.52,
+    "avg_return_pct": 0.4764,
+    "median_return_pct": 0.3721,
+    "total_return_pct": 179.6,
+    "cumulative_return_pct": 1.81,
+    "final_capital_usd": 10181.19,
+    "total_pnl_usd": 181.19,
+    "profit_factor": 3.068,
+    "sharpe": 36.7251,
+    "sortino": 43.4378,
+    "max_drawdown_pct": -0.06,
+    "max_drawdown_duration": 1,
+    "max_drawdown_usd": 6.03,
+    "calmar": 709.689,
+    "kelly_pct": 44.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 321,
+        "win_rate_pct": 66.36,
+        "avg_return_pct": 0.4966,
+        "total_pnl_usd": 160.66
+      },
+      "Scalp17": {
+        "trades": 29,
+        "win_rate_pct": 65.52,
+        "avg_return_pct": 0.3747,
+        "total_pnl_usd": 11.05
+      },
+      "DMI_SMF": {
+        "trades": 27,
+        "win_rate_pct": 55.56,
+        "avg_return_pct": 0.345,
+        "total_pnl_usd": 9.46
+      }
+    },
+    "horizon": "1h",
+    "size_pct": 1
+  },
+  "1h_size2pct": {
+    "trades": 377,
+    "wins": 247,
+    "losses": 130,
+    "win_rate_pct": 65.52,
+    "avg_return_pct": 0.4764,
+    "median_return_pct": 0.3721,
+    "total_return_pct": 179.6,
+    "cumulative_return_pct": 3.66,
+    "final_capital_usd": 10365.59,
+    "total_pnl_usd": 365.59,
+    "profit_factor": 3.068,
+    "sharpe": 36.7251,
+    "sortino": 43.4378,
+    "max_drawdown_pct": -0.12,
+    "max_drawdown_duration": 1,
+    "max_drawdown_usd": 12.24,
+    "calmar": 717.051,
+    "kelly_pct": 44.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 321,
+        "win_rate_pct": 66.36,
+        "avg_return_pct": 0.4966,
+        "total_pnl_usd": 324.1
+      },
+      "Scalp17": {
+        "trades": 29,
+        "win_rate_pct": 65.52,
+        "avg_return_pct": 0.3747,
+        "total_pnl_usd": 22.37
+      },
+      "DMI_SMF": {
+        "trades": 27,
+        "win_rate_pct": 55.56,
+        "avg_return_pct": 0.345,
+        "total_pnl_usd": 19.16
+      }
+    },
+    "horizon": "1h",
+    "size_pct": 2
+  },
+  "1h_size5pct": {
+    "trades": 377,
+    "wins": 247,
+    "losses": 130,
+    "win_rate_pct": 65.52,
+    "avg_return_pct": 0.4764,
+    "median_return_pct": 0.3721,
+    "total_return_pct": 179.6,
+    "cumulative_return_pct": 9.39,
+    "final_capital_usd": 10938.67,
+    "total_pnl_usd": 938.67,
+    "profit_factor": 3.07,
+    "sharpe": 36.7251,
+    "sortino": 43.4378,
+    "max_drawdown_pct": -0.3,
+    "max_drawdown_duration": 1,
+    "max_drawdown_usd": 32.15,
+    "calmar": 736.059,
+    "kelly_pct": 44.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 321,
+        "win_rate_pct": 66.36,
+        "avg_return_pct": 0.4966,
+        "total_pnl_usd": 830.16
+      },
+      "Scalp17": {
+        "trades": 29,
+        "win_rate_pct": 65.52,
+        "avg_return_pct": 0.3747,
+        "total_pnl_usd": 58.51
+      },
+      "DMI_SMF": {
+        "trades": 27,
+        "win_rate_pct": 55.56,
+        "avg_return_pct": 0.345,
+        "total_pnl_usd": 49.9
+      }
+    },
+    "horizon": "1h",
+    "size_pct": 5
+  },
+  "1h_size10pct": {
+    "trades": 377,
+    "wins": 247,
+    "losses": 130,
+    "win_rate_pct": 65.52,
+    "avg_return_pct": 0.4764,
+    "median_return_pct": 0.3721,
+    "total_return_pct": 179.6,
+    "cumulative_return_pct": 19.64,
+    "final_capital_usd": 11963.53,
+    "total_pnl_usd": 1963.53,
+    "profit_factor": 3.073,
+    "sharpe": 36.7251,
+    "sortino": 43.4378,
+    "max_drawdown_pct": -0.59,
+    "max_drawdown_duration": 1,
+    "max_drawdown_usd": 69.76,
+    "calmar": 769.786,
+    "kelly_pct": 44.15,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 321,
+        "win_rate_pct": 66.36,
+        "avg_return_pct": 0.4966,
+        "total_pnl_usd": 1730.36
+      },
+      "Scalp17": {
+        "trades": 29,
+        "win_rate_pct": 65.52,
+        "avg_return_pct": 0.3747,
+        "total_pnl_usd": 125.97
+      },
+      "DMI_SMF": {
+        "trades": 27,
+        "win_rate_pct": 55.56,
+        "avg_return_pct": 0.345,
+        "total_pnl_usd": 107.09
+      }
+    },
+    "horizon": "1h",
+    "size_pct": 10
+  },
+  "4h_size1pct": {
+    "trades": 507,
+    "wins": 369,
+    "losses": 138,
+    "win_rate_pct": 72.78,
+    "avg_return_pct": 0.7298,
+    "median_return_pct": 0.6123,
+    "total_return_pct": 370.01,
+    "cumulative_return_pct": 3.77,
+    "final_capital_usd": 10376.87,
+    "total_pnl_usd": 376.87,
+    "profit_factor": 4.105,
+    "sharpe": 23.4814,
+    "sortino": 28.2926,
+    "max_drawdown_pct": -0.06,
+    "max_drawdown_duration": 3,
+    "max_drawdown_usd": 5.67,
+    "calmar": 290.437,
+    "kelly_pct": 55.03,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 392,
+        "win_rate_pct": 72.19,
+        "avg_return_pct": 0.7395,
+        "total_pnl_usd": 295.2
+      },
+      "DMI_SMF": {
+        "trades": 59,
+        "win_rate_pct": 66.1,
+        "avg_return_pct": 0.6507,
+        "total_pnl_usd": 39.08
+      },
+      "Scalp17": {
+        "trades": 56,
+        "win_rate_pct": 83.93,
+        "avg_return_pct": 0.7451,
+        "total_pnl_usd": 42.7
+      }
+    },
+    "horizon": "4h",
+    "size_pct": 1
+  },
+  "4h_size2pct": {
+    "trades": 507,
+    "wins": 369,
+    "losses": 138,
+    "win_rate_pct": 72.78,
+    "avg_return_pct": 0.7298,
+    "median_return_pct": 0.6123,
+    "total_return_pct": 370.01,
+    "cumulative_return_pct": 7.68,
+    "final_capital_usd": 10767.79,
+    "total_pnl_usd": 767.79,
+    "profit_factor": 4.107,
+    "sharpe": 23.4814,
+    "sortino": 28.2926,
+    "max_drawdown_pct": -0.11,
+    "max_drawdown_duration": 3,
+    "max_drawdown_usd": 11.47,
+    "calmar": 295.889,
+    "kelly_pct": 55.03,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 392,
+        "win_rate_pct": 72.19,
+        "avg_return_pct": 0.7395,
+        "total_pnl_usd": 600.87
+      },
+      "DMI_SMF": {
+        "trades": 59,
+        "win_rate_pct": 66.1,
+        "avg_return_pct": 0.6507,
+        "total_pnl_usd": 79.46
+      },
+      "Scalp17": {
+        "trades": 56,
+        "win_rate_pct": 83.93,
+        "avg_return_pct": 0.7451,
+        "total_pnl_usd": 87.44
+      }
+    },
+    "horizon": "4h",
+    "size_pct": 2
+  },
+  "4h_size5pct": {
+    "trades": 507,
+    "wins": 369,
+    "losses": 138,
+    "win_rate_pct": 72.78,
+    "avg_return_pct": 0.7298,
+    "median_return_pct": 0.6123,
+    "total_return_pct": 370.01,
+    "cumulative_return_pct": 20.3,
+    "final_capital_usd": 12030.2,
+    "total_pnl_usd": 2030.2,
+    "profit_factor": 4.12,
+    "sharpe": 23.4814,
+    "sortino": 28.2926,
+    "max_drawdown_pct": -0.28,
+    "max_drawdown_duration": 3,
+    "max_drawdown_usd": 29.66,
+    "calmar": 313.202,
+    "kelly_pct": 55.03,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 392,
+        "win_rate_pct": 72.19,
+        "avg_return_pct": 0.7395,
+        "total_pnl_usd": 1586.23
+      },
+      "DMI_SMF": {
+        "trades": 59,
+        "win_rate_pct": 66.1,
+        "avg_return_pct": 0.6507,
+        "total_pnl_usd": 209.5
+      },
+      "Scalp17": {
+        "trades": 56,
+        "win_rate_pct": 83.93,
+        "avg_return_pct": 0.7451,
+        "total_pnl_usd": 234.55
+      }
+    },
+    "horizon": "4h",
+    "size_pct": 5
+  },
+  "4h_size10pct": {
+    "trades": 507,
+    "wins": 369,
+    "losses": 138,
+    "win_rate_pct": 72.78,
+    "avg_return_pct": 0.7298,
+    "median_return_pct": 0.6123,
+    "total_return_pct": 370.01,
+    "cumulative_return_pct": 44.68,
+    "final_capital_usd": 14467.73,
+    "total_pnl_usd": 4467.73,
+    "profit_factor": 4.144,
+    "sharpe": 23.4814,
+    "sortino": 28.2926,
+    "max_drawdown_pct": -0.56,
+    "max_drawdown_duration": 3,
+    "max_drawdown_usd": 64.68,
+    "calmar": 344.958,
+    "kelly_pct": 55.03,
+    "per_channel": {
+      "DyorAlerts": {
+        "trades": 392,
+        "win_rate_pct": 72.19,
+        "avg_return_pct": 0.7395,
+        "total_pnl_usd": 3480.96
+      },
+      "DMI_SMF": {
+        "trades": 59,
+        "win_rate_pct": 66.1,
+        "avg_return_pct": 0.6507,
+        "total_pnl_usd": 458.95
+      },
+      "Scalp17": {
+        "trades": 56,
+        "win_rate_pct": 83.93,
+        "avg_return_pct": 0.7451,
+        "total_pnl_usd": 527.81
+      }
+    },
+    "horizon": "4h",
+    "size_pct": 10
+  }
+}

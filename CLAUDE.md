@@ -45,7 +45,11 @@ btc-signal-bot/
 │   ├── optimal_params.py    — grid search TP/SL + walk-forward IS/OOS
 │   ├── monte_carlo.py       — 1000 перестановок направлений + timestamp shuffle
 │   ├── report_builder.py    — report.txt + results.json
-│   └── deep_analysis.py     — streak strategy, contrarian signals, DMI_SMF deep dive
+│   ├── deep_analysis.py     — streak strategy, contrarian signals, DMI_SMF deep dive
+│   ├── portfolio_sim.py     — точка входа portfolio simulation
+│   ├── sim_engine.py        — streak-фильтр + симуляция портфеля
+│   ├── sim_metrics.py       — метрики портфеля (Sharpe, Sortino, DD, Kelly)
+│   └── sim_report.py        — portfolio_report.txt + equity_curve.csv + JSON
 ├── btc-signal-bot.service   — systemd unit
 ├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
 ├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
@@ -129,20 +133,7 @@ DyorAlerts распознаёт 7 типов сигналов: `buyer_disbalance
 
 ## CSV экспорт
 
-Непрерывный 5-минутный ценовой поток BTC с наложенными сигналами. Период: с 2025-07-01 по текущий момент (~65k строк).
-
-```
-timestamp,btc_price,signal_count,signal_1_channel,signal_1_value,signal_1_color,signal_1_direction,...signal_5_*
-2025-07-01 00:00,107126.37,0,,,,,,,,,,,,,,,,,,,,
-2025-07-01 00:55,107347.64,1,SellsPowerIndex,55.0,,,,,,,,,,,,,,,,,,
-2025-07-01 02:55,107129.78,2,AltSPI,55.8,,,SellsPowerIndex,60.0,,,,,,,,,,,,,,
-```
-
-- Каждая строка = одна 5-минутная свеча
-- `signal_count` = 0 если нет сигналов в этом окне
-- До 5 сигналов на строку (`signal_1_*` ... `signal_5_*`)
-- Timestamp сигнала округляется до ближайших 5 минут
-- `btc_price` — 2 знака, `signal_value` — 1 знак
+Непрерывный 5-минутный ценовой поток BTC с наложенными сигналами. Период: с 2025-07-01 (~65k строк). Формат: `timestamp,btc_price,signal_count,signal_1_channel,signal_1_value,signal_1_color,signal_1_direction,...signal_5_*`. До 5 сигналов на строку, timestamp округляется до 5 минут.
 
 ## Запуск
 
@@ -255,10 +246,23 @@ python3 -m backtesting.deep_analysis
 
 Вердикт: `POSSIBLE_EDGE` (если найдены OOS-прибыльные + MC-значимые + не-переобученные стратегии) или `NO_EDGE_FOUND`.
 
-### Ключевые решения
-- `_build_pct_matrix()` — сборка 2D матрицы (n_signals × 1440) сразу для всех сигналов канала, переиспользуется при переборе порогов
-- `_search_tpsl()` — precompute всех `sl_first` для 15 SL значений, затем TP loop × SL lookup (30 boolean scans вместо 225)
-- MFE/MAE чанками: CHUNK_SIZE=5000 для 60m, 2000 для 1440m (~30 MB/chunk)
+### Portfolio Simulation (portfolio_sim.py)
+
+Симуляция портфеля со streak-фильтром на OOS-данных. Разбит на 4 модуля:
+
+- **portfolio_sim.py** — точка входа (~40 строк)
+- **sim_engine.py** — streak-фильтр + симуляция (~200 строк)
+- **sim_metrics.py** — Sharpe, Sortino, drawdown, Kelly, Calmar (~170 строк)
+- **sim_report.py** — portfolio_report.txt + equity_curve.csv + portfolio_results.json (~170 строк)
+
+```bash
+python3 -m backtesting.portfolio_sim
+# Выход: backtesting/portfolio_report.txt, equity_curve.csv, portfolio_results.json
+```
+
+**Стратегии** (из deep_analysis): DMI_SMF N=4/M=1, DyorAlerts N=2/M=1, Scalp17 N=5/M=1
+**Параметры**: капитал $10K, комиссия 0.2%, OOS с 2025-11-05, размеры позиции 1%/2%/5%/10%, горизонты 5m/15m/1h/4h.
+Streak-счётчики предзагреваются на IS-данных (`_preseed_streak_state`), чтобы OOS-симуляция стартовала с корректным состоянием.
 
 ## Lessons Learned
 
@@ -274,6 +278,6 @@ python3 -m backtesting.deep_analysis
 
 6. **`cursor.lastrowid` ненадёжен с INSERT OR IGNORE.** При дубликате `lastrowid` возвращает stale значение от предыдущего INSERT. Использовать `cursor.rowcount > 0` для проверки вставки.
 
-7. **Pyrogram `stop()` бросает RuntimeError при `asyncio.run()`.** Косметический баг — dispatcher пытается остановить задачи из другого event loop. Не влияет на работу, данные сохранены.
+7. **Pyrogram `stop()` бросает RuntimeError при `asyncio.run()`.** Косметический баг — dispatcher в другом event loop. Не влияет на работу.
 
-8. **Каналы могут возвращать 0 сообщений при первой попытке.** AltSwing и DiamondMarks вернули 0 при первом скачивании, но 10296 и 924 при повторном. Причина неизвестна — возможно, Telegram API rate limiting или кэширование.
+8. **Каналы могут возвращать 0 сообщений при первой попытке.** AltSwing и DiamondMarks вернули 0 при первом скачивании, но тысячи при повторном. Причина неизвестна (rate limiting / кэш).
