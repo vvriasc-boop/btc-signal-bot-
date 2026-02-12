@@ -5,19 +5,47 @@ Telegram-бот, который слушает 9 каналов с BTC-инди�
 ## Структура файлов
 
 ```
-main.py                 — весь бот в одном файле (~1820 строк)
-.env                    — API ключи, ID каналов
-requirements.txt        — pyrogram, tgcrypto, python-telegram-bot, httpx, python-dotenv
-btc-signal-bot.service  — systemd unit
-fix_peers.py            — одноразовый: прогрев peer-кэша Pyrogram
-reparse_fix.py          — одноразовый: тесты парсеров + перепарсинг 5 каналов
-reparse_2ch.py          — одноразовый: перепарсинг AltSwing + DiamondMarks
-redownload_2ch.py       — одноразовый: повторная загрузка AltSwing + DiamondMarks
-btc_signals.db          — SQLite база (WAL mode), ~130 МБ
-session.session         — файл сессии Pyrogram
-unrecognized/           — JSONL с нераспознанными сообщениями (по каналам)
-bot.log                 — лог текущего запуска
+btc-signal-bot/
+├── main.py                  — точка входа, запуск и graceful shutdown (~100 строк)
+├── config.py                — .env переменные, константы, настройки каналов, глобальное состояние
+├── .env                     — API ключи, ID каналов
+├── requirements.txt         — pyrogram, tgcrypto, python-telegram-bot, httpx, python-dotenv
+├── CLAUDE.md
+├── database/
+│   ├── __init__.py
+│   └── db.py                — создание таблиц, SQL-функции (price_index, save, resolve)
+├── services/
+│   ├── __init__.py
+│   ├── binance.py           — загрузка цен BTC (fetch_btc_price, fetch_btc_price_history)
+│   ├── parsers.py           — 9 парсеров + диспетчер + валидация + is_from_author
+│   ├── phases.py            — phase_0/1-9/10, download, parse_raw_messages, reparse
+│   ├── live.py              — on_new_signal, price_ticker, fill_delayed_prices, healthcheck
+│   └── csv_export.py        — export_csv (5-мин ценовой поток + сигналы)
+├── handlers/
+│   ├── __init__.py
+│   ├── commands.py          — /start, is_admin
+│   ├── callbacks.py         — CALLBACK_ROUTES словарь-роутер, 8 кнопок
+│   └── keyboards.py         — main_keyboard, back_keyboard
+├── utils/
+│   ├── __init__.py
+│   ├── helpers.py           — split_text, fmt_madrid, fmt_number, pct_change
+│   └── telegram.py          — send_admin_message (Pyrogram)
+├── btc-signal-bot.service   — systemd unit
+├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
+├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
+├── reparse_2ch.py           — одноразовый: перепарсинг AltSwing + DiamondMarks
+├── redownload_2ch.py        — одноразовый: повторная загрузка AltSwing + DiamondMarks
+├── btc_signals.db           — SQLite база (WAL mode), ~130 МБ
+├── session.session          — файл сессии Pyrogram
+├── unrecognized/            — JSONL с нераспознанными сообщениями (по каналам)
+└── bot.log                  — лог текущего запуска
 ```
+
+### Модульная архитектура
+
+- **config.py** — единый источник глобального состояния (`db`, `price_index`, `http_client`, `userbot`, `RESOLVED_CHANNELS`). Все модули импортируют `import config` и обращаются к `config.db`, `config.price_index` и т.д.
+- **callbacks.py** — словарь `CALLBACK_ROUTES` для exact match и список `PREFIX_ROUTES` для prefix match (вместо if/elif цепочки). Все обработчики принимают `(query, context)`.
+- **Граф зависимостей** (без циклов): `config` <- `utils/*` <- `database/db` <- `services/*` <- `handlers/*` <- `main`
 
 ## Таблицы БД
 
