@@ -5,7 +5,7 @@ Telegram-бот, который слушает 9 каналов с BTC-инди�
 ## Структура файлов
 
 ```
-main.py                 — весь бот в одном файле (~1750 строк)
+main.py                 — весь бот в одном файле (~1820 строк)
 .env                    — API ключи, ID каналов
 requirements.txt        — pyrogram, tgcrypto, python-telegram-bot, httpx, python-dotenv
 btc-signal-bot.service  — systemd unit
