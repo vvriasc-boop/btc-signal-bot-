@@ -1,0 +1,221 @@
+======================================================================
+BTC SIGNAL BACKTESTING REPORT
+Generated: 2026-02-12 21:34 UTC
+Data: 2024-09-02 to 2026-02-12
+Signals: 33,414  |  Prices: 761,892
+Fee: 0.1% per side (0.2% round-trip)
+IS/OOS: 70%/30%  |  Split: 2025-11-05
+======================================================================
+
+
+============================================================
+  1. CHANNEL PERFORMANCE (1h horizon, net of fees)
+============================================================
+
+Channel              Trades   WinR%  AvgRet%     PF  Sharpe Sortino
+-----------------------------------------------------------------
+Index                   553    41.2   -0.153   0.68 -12.424 -12.131
+DyorAlerts             1380    41.4   -0.199   0.62 -15.103 -14.040
+DiamondMarks            491    39.7   -0.278   0.49 -21.137 -18.132
+RSI_BTC                  83    28.9   -0.128   0.49 -23.445 -24.299
+DMI_SMF                1761    25.1   -0.171   0.36 -31.532 -33.412
+Scalp17                4528    26.5   -0.193   0.32 -36.017 -34.869
+AltSwing               6657    24.6   -0.200   0.31 -37.915 -36.237
+SellsPowerIndex        4341    24.9   -0.208   0.29 -38.187 -35.332
+AltSPI                 2782    24.9   -0.205   0.30 -38.752 -36.334
+
+============================================================
+  2. WALK-FORWARD VALIDATION (TP/SL optimization)
+============================================================
+
+Channel              TP%/  SL%   Thr    IS_Sh   OOS_Sh   IS_Ret  OOS_Ret  Fit
+--------------------------------------------------------------------------------
+AltSPI               3.0/  2.2  35.0   -4.987    7.584   -232.2   +188.0   OK
+AltSwing             2.4/  1.6  80.0    2.717   -1.847    +70.0     -9.5 OVER
+DMI_SMF              3.0/  2.0     -   -5.208   -2.571    -88.4    -41.0   OK
+  DiamondMarks: SKIPPED (IS signals < 100)
+DyorAlerts           3.0/  1.4     -  -16.309  -10.020    -56.2   -214.3   OK
+Index                2.6/  0.4     -   -3.078  -10.515     -5.7    -45.5   OK
+  RSI_BTC: SKIPPED (IS signals < 100)
+Scalp17              2.8/  1.2  80.0   -1.460  -22.752    -50.2   -124.5   OK
+SellsPowerIndex      3.0/  1.4  30.0   -5.785   -6.374   -414.4   -138.8   OK
+
+============================================================
+  3. RISK METRICS
+============================================================
+
+  [ISOLATED]
+    Trades:       22576
+    Cumul. Ret:   -100.00%
+    Max Drawdown: -100.00%
+    Sharpe:       -30.0939
+    Sortino:      -29.4046
+    Ulcer Index:  98.1790
+    Kelly:        -46.97%
+
+  [PORTFOLIO]
+    Trades:       16490
+    Skipped:      6086
+    Cumul. Ret:   -100.00%
+    Max Drawdown: -100.00%
+    Sharpe:       -31.3686
+    Sortino:      -30.3429
+    Ulcer Index:  97.4629
+    Kelly:        -49.17%
+    Calmar:       -1.000
+
+
+============================================================
+  4. MFE / MAE ANALYSIS (1h hold)
+============================================================
+
+  AltSPI:
+    MFE avg/med: +0.305% / +0.189%
+    MAE avg/med: -0.299% / -0.196%
+    MFE/MAE ratio: 1.02
+    Suggested TP: 0.38%  SL: 0.39%
+  AltSwing:
+    MFE avg/med: +0.309% / +0.191%
+    MAE avg/med: -0.293% / -0.195%
+    MFE/MAE ratio: 1.05
+    Suggested TP: 0.39%  SL: 0.38%
+  DMI_SMF:
+    MFE avg/med: +0.320% / +0.187%
+    MAE avg/med: -0.269% / -0.175%
+    MFE/MAE ratio: 1.19
+    Suggested TP: 0.40%  SL: 0.36%
+  DiamondMarks:
+    MFE avg/med: +0.381% / +0.215%
+    MAE avg/med: -0.384% / -0.232%
+    MFE/MAE ratio: 0.99
+    Suggested TP: 0.48%  SL: 0.44%
+  DyorAlerts:
+    MFE avg/med: +0.372% / +0.245%
+    MAE avg/med: -0.372% / -0.231%
+    MFE/MAE ratio: 1.00
+    Suggested TP: 0.49%  SL: 0.50%
+  Index:
+    MFE avg/med: +0.367% / +0.226%
+    MAE avg/med: -0.317% / -0.184%
+    MFE/MAE ratio: 1.16
+    Suggested TP: 0.49%  SL: 0.42%
+  RSI_BTC:
+    MFE avg/med: +0.378% / +0.244%
+    MAE avg/med: -0.374% / -0.199%
+    MFE/MAE ratio: 1.01
+    Suggested TP: 0.48%  SL: 0.36%
+  Scalp17:
+    MFE avg/med: +0.315% / +0.196%
+    MAE avg/med: -0.300% / -0.196%
+    MFE/MAE ratio: 1.05
+    Suggested TP: 0.40%  SL: 0.38%
+  SellsPowerIndex:
+    MFE avg/med: +0.295% / +0.189%
+    MAE avg/med: -0.299% / -0.192%
+    MFE/MAE ratio: 0.98
+    Suggested TP: 0.37%  SL: 0.38%
+
+============================================================
+  5. TIME PATTERNS
+============================================================
+
+  Best hour (UTC):    15
+  Worst hour (UTC):   17
+  Best session:       Off
+  Worst session:      Europe
+    Asia    :  7413 sig, ret=-0.1928%, WR=25.1%
+    Europe  :  5270 sig, ret=-0.2097%, WR=24.8%
+    Off     :  2900 sig, ret=-0.1785%, WR=27.0%
+    US      :  6993 sig, ret=-0.2054%, WR=30.4%
+
+============================================================
+  6. MARKET REGIMES
+============================================================
+
+  [VOLATILITY REGIMES]
+    high        :  8118 sig, ret=-0.2089%, WR=33.9%
+    low         :  7370 sig, ret=-0.1966%, WR=19.6%
+    medium      :  7088 sig, ret=-0.1896%, WR=26.5%
+
+  [TREND REGIMES]
+    mild_down   :  8508 sig, ret=-0.1960%, WR=24.9%
+    mild_up     :  8743 sig, ret=-0.1796%, WR=24.9%
+    strong_down :  2786 sig, ret=-0.2964%, WR=33.3%
+    strong_up   :  2539 sig, ret=-0.1672%, WR=33.2%
+
+
+============================================================
+  7. MULTI-CHANNEL CONFLUENCE
+============================================================
+
+  Window: 30 min
+  Groups found: 6196
+  Single avg ret: -0.1914%
+  Multi avg ret:  -0.2027%
+  Improvement:    -0.0113%
+    2 channels: 3620 groups, ret=-0.2068%, WR=21.6%
+    3 channels: 1808 groups, ret=-0.1932%, WR=19.4%
+    4+ channels: 768 groups, ret=-0.2054%, WR=19.1%
+
+============================================================
+  8. INTER-CHANNEL CORRELATIONS
+============================================================
+
+  Diversification score: 0.915
+  Most correlated:  AltSPI_SellsPowerIndex (0.610)
+  Least correlated: DyorAlerts_Scalp17 (-0.000)
+
+============================================================
+  9. SIGNAL LATENCY DECAY
+============================================================
+
+  + 0m: ret=-0.1951%, WR=25.9%, Sharpe=-35.683
+  + 1m: ret=-0.1954%, WR=26.0%, Sharpe=-35.667
+  + 3m: ret=-0.1943%, WR=25.5%, Sharpe=-35.378
+  + 5m: ret=-0.1946%, WR=25.6%, Sharpe=-35.291
+  +10m: ret=-0.1965%, WR=25.8%, Sharpe=-35.839
+  Decay rate: -0.000125 %/min
+  Half-life:  N/A
+
+============================================================
+  10. WIN/LOSS SEQUENCES
+============================================================
+
+  Max win streak:  21
+  Max loss streak: 75
+  after_3_losses: WR=20.6% (n=1817)
+  after_3_wins: WR=52.4% (n=718)
+  after_5_losses: WR=14.8% (n=1158)
+  after_5_wins: WR=57.1% (n=217)
+  Serial correlation detected: AltSPI, AltSwing, DMI_SMF, DiamondMarks, DyorAlerts, Index, Scalp17, SellsPowerIndex
+
+============================================================
+  11. MONTE CARLO SIGNIFICANCE
+============================================================
+
+  Verdict: not_significant
+
+  Channel             Sharpe   p-val z-score Sig
+  --------------------------------------------------
+  AltSPI              -0.011   0.750   -0.70    
+  AltSwing            -0.000   0.490    0.04    
+  DMI_SMF              0.057   0.014    2.01   *
+  DiamondMarks        -0.063   0.821   -0.92    
+  DyorAlerts           0.001   0.303    0.51    
+  Index                0.041   0.130    1.12    
+  RSI_BTC              0.142   0.070    1.49    
+  Scalp17              0.014   0.282    0.59    
+  SellsPowerIndex     -0.016   0.867   -1.09    
+
+============================================================
+  12. CONCLUSIONS
+============================================================
+
+  Top channel (1h Sharpe): Index (-12.4243)
+  Statistically significant: DMI_SMF
+  OVERFITTED channels: AltSwing
+  Multi-channel confluence: no improvement (-0.0113%)
+
+======================================================================
+END OF REPORT
+======================================================================

@@ -30,6 +30,21 @@ btc-signal-bot/
 │   ├── __init__.py
 │   ├── helpers.py           — split_text, fmt_madrid, fmt_number, pct_change
 │   └── telegram.py          — send_admin_message (Pyrogram)
+├── backtesting/
+│   ├── __init__.py
+│   ├── analyze.py           — точка входа: загрузка данных, оркестровка 11 модулей
+│   ├── channel_stats.py     — поканальная статистика (5m/15m/1h/4h/24h), Sharpe/Sortino/PF
+│   ├── mfe_mae.py           — MFE/MAE анализ (numpy vectorized, чанками)
+│   ├── risk_metrics.py      — drawdown, Kelly, Ulcer Index, portfolio simulation
+│   ├── sequences.py         — серии побед/поражений, runs test, serial correlation
+│   ├── time_patterns.py     — по часам/сессиям/дням недели
+│   ├── market_regimes.py    — волатильность (terciles) и тренд (4h change)
+│   ├── correlations.py      — межканальные корреляции, diversification score
+│   ├── confluence.py        — совпадение сигналов в 30-мин окне
+│   ├── latency_decay.py     — деградация при задержке входа (0/1/3/5/10 мин)
+│   ├── optimal_params.py    — grid search TP/SL + walk-forward IS/OOS
+│   ├── monte_carlo.py       — 1000 перестановок направлений + timestamp shuffle
+│   └── report_builder.py    — report.txt + results.json
 ├── btc-signal-bot.service   — systemd unit
 ├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
 ├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
@@ -189,6 +204,41 @@ IMBA_GROUP_ID=    # DyorAlerts (группа, filter_author=dyor_alerts_EtH_2_O_
 BFS_GROUP_ID=     # RSI_BTC (группа/канал @username)
 BFS_BTC_TOPIC_ID= # ID темы для RSI_BTC (0 = фильтр по BTCUSDT в тексте)
 ```
+
+## Backtesting
+
+Количественный бэктестинг 9 каналов. Только pandas/numpy/scipy, без ML.
+
+```bash
+python3 -m backtesting.analyze
+# Выход: backtesting/report.txt + backtesting/results.json
+# Время: ~14 сек
+```
+
+### Параметры
+- **FEE_RATE**: 0.001 (0.1% per side, 0.2% round-trip) — применяется ко всем метрикам
+- **IS/OOS**: 70%/30% по времени (split_timestamp), OVERFITTED если OOS_Sharpe < IS_Sharpe × 0.5
+- **Direction derivation**: для каналов без `signal_direction` (AltSwing, Scalp17, SellsPowerIndex, AltSPI) направление выводится из `indicator_value` через пороги
+
+### 11 модулей
+Все модули имеют сигнатуру `run(df_signals, df_prices, df_context, fee_rate=0.001) -> dict`.
+
+1. **channel_stats** — win rate, avg return, PF, Sharpe, Sortino по 5 горизонтам (gross и net)
+2. **confluence** — группировка сигналов разных каналов в 30-мин окне, сравнение single vs multi
+3. **optimal_params** — grid search TP∈[0.2,3.0]×SL∈[0.2,3.0]×threshold∈[30,80], walk-forward валидация. Numpy vectorized: 2D pct-matrix + precomputed SL first-hits
+4. **time_patterns** — по часам UTC, сессиям (Asia/Europe/US/Off), дням недели
+5. **risk_metrics** — isolated + portfolio (max 1 позиция на канал), equity curve, max drawdown, Calmar, Kelly
+6. **sequences** — макс. серии, Wald-Wolfowitz runs test, условная WR после серий
+7. **mfe_mae** — vectorized через `np.searchsorted` + 2D indexing, чанки 5000/2000 сигналов
+8. **market_regimes** — rolling 24h vol terciles + 4h trend buckets, `pd.merge_asof`
+9. **correlations** — temporal + return корреляция, diversification score
+10. **latency_decay** — задержки [0,1,3,5,10] мин, линейная регрессия decay rate, half-life
+11. **monte_carlo** — 1000 direction shuffles + timestamp shuffles, p-value, z-score
+
+### Ключевые решения
+- `_build_pct_matrix()` — сборка 2D матрицы (n_signals × 1440) сразу для всех сигналов канала, переиспользуется при переборе порогов
+- `_search_tpsl()` — precompute всех `sl_first` для 15 SL значений, затем TP loop × SL lookup (30 boolean scans вместо 225)
+- MFE/MAE чанками: CHUNK_SIZE=5000 для 60m, 2000 для 1440m (~30 MB/chunk)
 
 ## Lessons Learned
 
