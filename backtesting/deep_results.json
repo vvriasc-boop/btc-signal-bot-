@@ -1,0 +1,1903 @@
+{
+  "streak_strategy": {
+    "AltSPI": {
+      "best_is_params": {
+        "n_wins": 2,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 148,
+        "win_rate": 38.5,
+        "avg_return": -0.1289,
+        "profit_factor": 0.521,
+        "sharpe": -22.9021,
+        "total_return": -19.07
+      },
+      "oos_stats": {
+        "trades": 66,
+        "win_rate": 31.8,
+        "avg_return": -0.1196,
+        "profit_factor": 0.619,
+        "sharpe": -17.3277,
+        "total_return": -7.89
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 462,
+          "win_rate": 32.0,
+          "avg_return": -0.17,
+          "profit_factor": 0.392,
+          "sharpe": -31.2371,
+          "total_return": -78.56
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 776,
+          "win_rate": 27.7,
+          "avg_return": -0.2055,
+          "profit_factor": 0.314,
+          "sharpe": -37.7041,
+          "total_return": -159.43
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 1022,
+          "win_rate": 26.7,
+          "avg_return": -0.2032,
+          "profit_factor": 0.305,
+          "sharpe": -39.2458,
+          "total_return": -207.67
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 148,
+          "win_rate": 38.5,
+          "avg_return": -0.1289,
+          "profit_factor": 0.521,
+          "sharpe": -22.9021,
+          "total_return": -19.07
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 293,
+          "win_rate": 32.8,
+          "avg_return": -0.1883,
+          "profit_factor": 0.406,
+          "sharpe": -29.4667,
+          "total_return": -55.17
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 427,
+          "win_rate": 29.0,
+          "avg_return": -0.1961,
+          "profit_factor": 0.357,
+          "sharpe": -33.7749,
+          "total_return": -83.74
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 57,
+          "win_rate": 36.8,
+          "avg_return": -0.1881,
+          "profit_factor": 0.451,
+          "sharpe": -27.9035,
+          "total_return": -10.72
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 138,
+          "win_rate": 33.3,
+          "avg_return": -0.2407,
+          "profit_factor": 0.362,
+          "sharpe": -34.267,
+          "total_return": -33.21
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 191,
+          "win_rate": 28.8,
+          "avg_return": -0.2495,
+          "profit_factor": 0.31,
+          "sharpe": -38.657,
+          "total_return": -47.65
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 21,
+          "win_rate": 38.1,
+          "avg_return": -0.209,
+          "profit_factor": 0.415,
+          "sharpe": -32.9874,
+          "total_return": -4.39
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 54,
+          "win_rate": 35.2,
+          "avg_return": -0.239,
+          "profit_factor": 0.353,
+          "sharpe": -36.4025,
+          "total_return": -12.91
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 76,
+          "win_rate": 31.6,
+          "avg_return": -0.2434,
+          "profit_factor": 0.297,
+          "sharpe": -40.4921,
+          "total_return": -18.5
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 18,
+          "win_rate": 22.2,
+          "avg_return": -0.218,
+          "profit_factor": 0.307,
+          "sharpe": -44.6647,
+          "total_return": -3.92
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 27,
+          "win_rate": 18.5,
+          "avg_return": -0.2692,
+          "profit_factor": 0.214,
+          "sharpe": -51.9335,
+          "total_return": -7.27
+        }
+      ]
+    },
+    "AltSwing": {
+      "best_is_params": {
+        "n_wins": 4,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 24,
+        "win_rate": 41.7,
+        "avg_return": -0.1498,
+        "profit_factor": 0.557,
+        "sharpe": -18.7644,
+        "total_return": -3.6
+      },
+      "oos_stats": {
+        "trades": 10,
+        "win_rate": 40.0,
+        "avg_return": -0.1762,
+        "profit_factor": 0.683,
+        "sharpe": -14.3931,
+        "total_return": -1.76
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 1275,
+          "win_rate": 26.7,
+          "avg_return": -0.2143,
+          "profit_factor": 0.343,
+          "sharpe": -35.0213,
+          "total_return": -273.24
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 2208,
+          "win_rate": 26.6,
+          "avg_return": -0.2112,
+          "profit_factor": 0.325,
+          "sharpe": -37.2281,
+          "total_return": -466.27
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 2894,
+          "win_rate": 25.9,
+          "avg_return": -0.2096,
+          "profit_factor": 0.314,
+          "sharpe": -38.2287,
+          "total_return": -606.52
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 341,
+          "win_rate": 27.0,
+          "avg_return": -0.2463,
+          "profit_factor": 0.333,
+          "sharpe": -37.1452,
+          "total_return": -83.99
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 744,
+          "win_rate": 29.6,
+          "avg_return": -0.2145,
+          "profit_factor": 0.359,
+          "sharpe": -35.3093,
+          "total_return": -159.61
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 1130,
+          "win_rate": 28.8,
+          "avg_return": -0.2123,
+          "profit_factor": 0.353,
+          "sharpe": -35.2723,
+          "total_return": -239.88
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 92,
+          "win_rate": 26.1,
+          "avg_return": -0.3017,
+          "profit_factor": 0.283,
+          "sharpe": -41.4921,
+          "total_return": -27.75
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 231,
+          "win_rate": 29.9,
+          "avg_return": -0.2547,
+          "profit_factor": 0.323,
+          "sharpe": -38.2068,
+          "total_return": -58.83
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 369,
+          "win_rate": 29.5,
+          "avg_return": -0.2536,
+          "profit_factor": 0.316,
+          "sharpe": -38.4232,
+          "total_return": -93.56
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 24,
+          "win_rate": 41.7,
+          "avg_return": -0.1498,
+          "profit_factor": 0.557,
+          "sharpe": -18.7644,
+          "total_return": -3.6
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 52,
+          "win_rate": 34.6,
+          "avg_return": -0.2956,
+          "profit_factor": 0.284,
+          "sharpe": -41.305,
+          "total_return": -15.37
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 82,
+          "win_rate": 29.3,
+          "avg_return": -0.3479,
+          "profit_factor": 0.208,
+          "sharpe": -48.0569,
+          "total_return": -28.53
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 1,
+          "trades": 10,
+          "win_rate": 40.0,
+          "avg_return": -0.2313,
+          "profit_factor": 0.256,
+          "sharpe": -56.2084,
+          "total_return": -2.31
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 21,
+          "win_rate": 33.3,
+          "avg_return": -0.3941,
+          "profit_factor": 0.143,
+          "sharpe": -63.4561,
+          "total_return": -8.28
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 40,
+          "win_rate": 30.0,
+          "avg_return": -0.4438,
+          "profit_factor": 0.131,
+          "sharpe": -59.1845,
+          "total_return": -17.75
+        }
+      ]
+    },
+    "DMI_SMF": {
+      "best_is_params": {
+        "n_wins": 4,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 15,
+        "win_rate": 40.0,
+        "avg_return": -0.0492,
+        "profit_factor": 0.771,
+        "sharpe": -8.5994,
+        "total_return": -0.74
+      },
+      "oos_stats": {
+        "trades": 27,
+        "win_rate": 55.6,
+        "avg_return": 0.345,
+        "profit_factor": 2.622,
+        "sharpe": 38.7993,
+        "total_return": 9.32
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 224,
+          "win_rate": 40.6,
+          "avg_return": -0.0569,
+          "profit_factor": 0.731,
+          "sharpe": -9.0415,
+          "total_return": -12.75
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 357,
+          "win_rate": 32.2,
+          "avg_return": -0.1057,
+          "profit_factor": 0.533,
+          "sharpe": -19.2152,
+          "total_return": -37.72
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 466,
+          "win_rate": 29.0,
+          "avg_return": -0.1288,
+          "profit_factor": 0.457,
+          "sharpe": -24.5738,
+          "total_return": -60.0
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 90,
+          "win_rate": 43.3,
+          "avg_return": -0.0668,
+          "profit_factor": 0.69,
+          "sharpe": -12.7116,
+          "total_return": -6.02
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 153,
+          "win_rate": 33.3,
+          "avg_return": -0.106,
+          "profit_factor": 0.539,
+          "sharpe": -21.3379,
+          "total_return": -16.21
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 228,
+          "win_rate": 31.1,
+          "avg_return": -0.1196,
+          "profit_factor": 0.509,
+          "sharpe": -23.1712,
+          "total_return": -27.27
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 38,
+          "win_rate": 39.5,
+          "avg_return": -0.1288,
+          "profit_factor": 0.529,
+          "sharpe": -21.6846,
+          "total_return": -4.9
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 77,
+          "win_rate": 33.8,
+          "avg_return": -0.113,
+          "profit_factor": 0.515,
+          "sharpe": -22.9875,
+          "total_return": -8.7
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 123,
+          "win_rate": 30.9,
+          "avg_return": -0.112,
+          "profit_factor": 0.522,
+          "sharpe": -22.1092,
+          "total_return": -13.78
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 15,
+          "win_rate": 40.0,
+          "avg_return": -0.0492,
+          "profit_factor": 0.771,
+          "sharpe": -8.5994,
+          "total_return": -0.74
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 29,
+          "win_rate": 31.0,
+          "avg_return": -0.1154,
+          "profit_factor": 0.54,
+          "sharpe": -22.4469,
+          "total_return": -3.35
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 62,
+          "win_rate": 32.3,
+          "avg_return": -0.0757,
+          "profit_factor": 0.671,
+          "sharpe": -13.5696,
+          "total_return": -4.69
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 11,
+          "win_rate": 36.4,
+          "avg_return": -0.2925,
+          "profit_factor": 0.171,
+          "sharpe": -68.6251,
+          "total_return": -3.22
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 19,
+          "win_rate": 36.8,
+          "avg_return": -0.2817,
+          "profit_factor": 0.202,
+          "sharpe": -65.7689,
+          "total_return": -5.35
+        }
+      ]
+    },
+    "DiamondMarks": {
+      "best_is_params": {
+        "n_wins": 2,
+        "m_losses": 2
+      },
+      "is_stats": {
+        "trades": 10,
+        "win_rate": 60.0,
+        "avg_return": 0.163,
+        "profit_factor": 2.156,
+        "sharpe": 26.8117,
+        "total_return": 1.63
+      },
+      "oos_stats": {
+        "trades": 168,
+        "win_rate": 47.6,
+        "avg_return": -0.03,
+        "profit_factor": 0.927,
+        "sharpe": -2.6856,
+        "total_return": -5.04
+      },
+      "overfitted": true,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 12,
+          "win_rate": 50.0,
+          "avg_return": -0.1739,
+          "profit_factor": 0.599,
+          "sharpe": -16.0672,
+          "total_return": -2.09
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 18,
+          "win_rate": 50.0,
+          "avg_return": -0.1917,
+          "profit_factor": 0.495,
+          "sharpe": -20.8297,
+          "total_return": -3.45
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 21,
+          "win_rate": 47.6,
+          "avg_return": -0.1841,
+          "profit_factor": 0.473,
+          "sharpe": -21.5361,
+          "total_return": -3.87
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 10,
+          "win_rate": 60.0,
+          "avg_return": 0.163,
+          "profit_factor": 2.156,
+          "sharpe": 26.8117,
+          "total_return": 1.63
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 11,
+          "win_rate": 54.5,
+          "avg_return": 0.1339,
+          "profit_factor": 1.941,
+          "sharpe": 22.7882,
+          "total_return": 1.47
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 10,
+          "win_rate": 50.0,
+          "avg_return": 0.0678,
+          "profit_factor": 1.433,
+          "sharpe": 11.8868,
+          "total_return": 0.68
+        }
+      ]
+    },
+    "DyorAlerts": {
+      "best_is_params": {
+        "n_wins": 2,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 46,
+        "win_rate": 63.0,
+        "avg_return": 0.3025,
+        "profit_factor": 2.467,
+        "sharpe": 33.58,
+        "total_return": 13.91
+      },
+      "oos_stats": {
+        "trades": 319,
+        "win_rate": 66.5,
+        "avg_return": 0.4935,
+        "profit_factor": 3.035,
+        "sharpe": 36.7064,
+        "total_return": 157.44
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 74,
+          "win_rate": 62.2,
+          "avg_return": 0.2094,
+          "profit_factor": 1.97,
+          "sharpe": 24.2612,
+          "total_return": 15.5
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 102,
+          "win_rate": 53.9,
+          "avg_return": 0.0101,
+          "profit_factor": 1.033,
+          "sharpe": 1.057,
+          "total_return": 1.03
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 121,
+          "win_rate": 50.4,
+          "avg_return": -0.0804,
+          "profit_factor": 0.785,
+          "sharpe": -7.896,
+          "total_return": -9.73
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 46,
+          "win_rate": 63.0,
+          "avg_return": 0.3025,
+          "profit_factor": 2.467,
+          "sharpe": 33.58,
+          "total_return": 13.91
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 71,
+          "win_rate": 54.9,
+          "avg_return": 0.0459,
+          "profit_factor": 1.137,
+          "sharpe": 4.2893,
+          "total_return": 3.26
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 88,
+          "win_rate": 48.9,
+          "avg_return": -0.0975,
+          "profit_factor": 0.77,
+          "sharpe": -8.6516,
+          "total_return": -8.58
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 29,
+          "win_rate": 55.2,
+          "avg_return": 0.1555,
+          "profit_factor": 1.557,
+          "sharpe": 17.0804,
+          "total_return": 4.51
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 53,
+          "win_rate": 49.1,
+          "avg_return": -0.0732,
+          "profit_factor": 0.827,
+          "sharpe": -6.3852,
+          "total_return": -3.88
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 71,
+          "win_rate": 42.3,
+          "avg_return": -0.2283,
+          "profit_factor": 0.555,
+          "sharpe": -19.5237,
+          "total_return": -16.21
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 16,
+          "win_rate": 56.2,
+          "avg_return": 0.1535,
+          "profit_factor": 1.549,
+          "sharpe": 16.1577,
+          "total_return": 2.46
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 32,
+          "win_rate": 46.9,
+          "avg_return": -0.1998,
+          "profit_factor": 0.572,
+          "sharpe": -17.4325,
+          "total_return": -6.39
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 42,
+          "win_rate": 38.1,
+          "avg_return": -0.3876,
+          "profit_factor": 0.347,
+          "sharpe": -32.1246,
+          "total_return": -16.28
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 20,
+          "win_rate": 50.0,
+          "avg_return": -0.1462,
+          "profit_factor": 0.643,
+          "sharpe": -14.927,
+          "total_return": -2.92
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 24,
+          "win_rate": 41.7,
+          "avg_return": -0.3229,
+          "profit_factor": 0.405,
+          "sharpe": -30.9584,
+          "total_return": -7.75
+        }
+      ]
+    },
+    "Index": {
+      "best_is_params": {
+        "n_wins": 3,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 12,
+        "win_rate": 41.7,
+        "avg_return": 0.0031,
+        "profit_factor": 1.005,
+        "sharpe": 0.1666,
+        "total_return": 0.04
+      },
+      "oos_stats": {
+        "trades": 40,
+        "win_rate": 47.5,
+        "avg_return": -0.0392,
+        "profit_factor": 0.922,
+        "sharpe": -3.06,
+        "total_return": -1.57
+      },
+      "overfitted": true,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 60,
+          "win_rate": 46.7,
+          "avg_return": -0.0336,
+          "profit_factor": 0.904,
+          "sharpe": -3.1207,
+          "total_return": -2.02
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 92,
+          "win_rate": 45.7,
+          "avg_return": -0.0904,
+          "profit_factor": 0.76,
+          "sharpe": -8.7017,
+          "total_return": -8.32
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 110,
+          "win_rate": 41.8,
+          "avg_return": -0.1189,
+          "profit_factor": 0.698,
+          "sharpe": -11.718,
+          "total_return": -13.08
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 28,
+          "win_rate": 42.9,
+          "avg_return": -0.0426,
+          "profit_factor": 0.9,
+          "sharpe": -3.1985,
+          "total_return": -1.19
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 63,
+          "win_rate": 46.0,
+          "avg_return": -0.0184,
+          "profit_factor": 0.947,
+          "sharpe": -1.754,
+          "total_return": -1.16
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 78,
+          "win_rate": 41.0,
+          "avg_return": -0.1022,
+          "profit_factor": 0.736,
+          "sharpe": -10.166,
+          "total_return": -7.97
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 12,
+          "win_rate": 41.7,
+          "avg_return": 0.0031,
+          "profit_factor": 1.005,
+          "sharpe": 0.1666,
+          "total_return": 0.04
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 40,
+          "win_rate": 42.5,
+          "avg_return": -0.0466,
+          "profit_factor": 0.881,
+          "sharpe": -3.9409,
+          "total_return": -1.86
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 52,
+          "win_rate": 40.4,
+          "avg_return": -0.091,
+          "profit_factor": 0.769,
+          "sharpe": -8.3081,
+          "total_return": -4.73
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 21,
+          "win_rate": 38.1,
+          "avg_return": -0.0134,
+          "profit_factor": 0.97,
+          "sharpe": -0.9101,
+          "total_return": -0.28
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 31,
+          "win_rate": 41.9,
+          "avg_return": -0.0206,
+          "profit_factor": 0.947,
+          "sharpe": -1.607,
+          "total_return": -0.64
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 12,
+          "win_rate": 50.0,
+          "avg_return": -0.0665,
+          "profit_factor": 0.821,
+          "sharpe": -5.4676,
+          "total_return": -0.8
+        }
+      ]
+    },
+    "Scalp17": {
+      "best_is_params": {
+        "n_wins": 5,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 103,
+        "win_rate": 56.3,
+        "avg_return": 0.144,
+        "profit_factor": 2.221,
+        "sharpe": 27.9834,
+        "total_return": 14.83
+      },
+      "oos_stats": {
+        "trades": 29,
+        "win_rate": 65.5,
+        "avg_return": 0.3747,
+        "profit_factor": 4.417,
+        "sharpe": 37.6952,
+        "total_return": 10.87
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 1023,
+          "win_rate": 56.5,
+          "avg_return": 0.1119,
+          "profit_factor": 1.898,
+          "sharpe": 19.4557,
+          "total_return": 114.49
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 1468,
+          "win_rate": 45.0,
+          "avg_return": -0.0047,
+          "profit_factor": 0.974,
+          "sharpe": -0.8437,
+          "total_return": -6.93
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 1831,
+          "win_rate": 38.6,
+          "avg_return": -0.0758,
+          "profit_factor": 0.658,
+          "sharpe": -13.4484,
+          "total_return": -138.85
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 577,
+          "win_rate": 58.2,
+          "avg_return": 0.1427,
+          "profit_factor": 2.121,
+          "sharpe": 23.3641,
+          "total_return": 82.32
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 878,
+          "win_rate": 46.1,
+          "avg_return": 0.0098,
+          "profit_factor": 1.051,
+          "sharpe": 1.5968,
+          "total_return": 8.57
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 1156,
+          "win_rate": 39.0,
+          "avg_return": -0.0726,
+          "profit_factor": 0.69,
+          "sharpe": -12.0577,
+          "total_return": -83.96
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 335,
+          "win_rate": 56.7,
+          "avg_return": 0.1244,
+          "profit_factor": 1.927,
+          "sharpe": 21.5364,
+          "total_return": 41.68
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 531,
+          "win_rate": 44.4,
+          "avg_return": -0.0041,
+          "profit_factor": 0.98,
+          "sharpe": -0.6357,
+          "total_return": -2.19
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 727,
+          "win_rate": 37.1,
+          "avg_return": -0.0919,
+          "profit_factor": 0.636,
+          "sharpe": -14.543,
+          "total_return": -66.8
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 190,
+          "win_rate": 54.2,
+          "avg_return": 0.108,
+          "profit_factor": 1.758,
+          "sharpe": 18.811,
+          "total_return": 20.53
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 318,
+          "win_rate": 43.1,
+          "avg_return": -0.0382,
+          "profit_factor": 0.826,
+          "sharpe": -6.6519,
+          "total_return": -12.16
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 431,
+          "win_rate": 35.7,
+          "avg_return": -0.1158,
+          "profit_factor": 0.564,
+          "sharpe": -19.4331,
+          "total_return": -49.91
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 1,
+          "trades": 103,
+          "win_rate": 56.3,
+          "avg_return": 0.144,
+          "profit_factor": 2.221,
+          "sharpe": 27.9834,
+          "total_return": 14.83
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 173,
+          "win_rate": 43.9,
+          "avg_return": -0.0233,
+          "profit_factor": 0.885,
+          "sharpe": -4.4347,
+          "total_return": -4.04
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 235,
+          "win_rate": 36.6,
+          "avg_return": -0.1061,
+          "profit_factor": 0.57,
+          "sharpe": -19.9212,
+          "total_return": -24.92
+        }
+      ]
+    },
+    "SellsPowerIndex": {
+      "best_is_params": {
+        "n_wins": 4,
+        "m_losses": 1
+      },
+      "is_stats": {
+        "trades": 27,
+        "win_rate": 33.3,
+        "avg_return": -0.0834,
+        "profit_factor": 0.737,
+        "sharpe": -9.9599,
+        "total_return": -2.25
+      },
+      "oos_stats": {
+        "trades": 8,
+        "win_rate": 25.0,
+        "avg_return": -0.583,
+        "profit_factor": 0.358,
+        "sharpe": -36.5518,
+        "total_return": -4.66
+      },
+      "overfitted": false,
+      "all_combos_is": [
+        {
+          "n_wins": 1,
+          "m_losses": 1,
+          "trades": 857,
+          "win_rate": 26.5,
+          "avg_return": -0.2235,
+          "profit_factor": 0.296,
+          "sharpe": -37.9294,
+          "total_return": -191.51
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 2,
+          "trades": 1487,
+          "win_rate": 27.6,
+          "avg_return": -0.2038,
+          "profit_factor": 0.326,
+          "sharpe": -35.249,
+          "total_return": -303.11
+        },
+        {
+          "n_wins": 1,
+          "m_losses": 3,
+          "trades": 1933,
+          "win_rate": 26.5,
+          "avg_return": -0.2076,
+          "profit_factor": 0.32,
+          "sharpe": -35.631,
+          "total_return": -401.2
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 1,
+          "trades": 227,
+          "win_rate": 33.9,
+          "avg_return": -0.1216,
+          "profit_factor": 0.566,
+          "sharpe": -18.2775,
+          "total_return": -27.6
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 2,
+          "trades": 493,
+          "win_rate": 32.3,
+          "avg_return": -0.161,
+          "profit_factor": 0.45,
+          "sharpe": -25.9603,
+          "total_return": -79.4
+        },
+        {
+          "n_wins": 2,
+          "m_losses": 3,
+          "trades": 786,
+          "win_rate": 31.8,
+          "avg_return": -0.1477,
+          "profit_factor": 0.484,
+          "sharpe": -23.9492,
+          "total_return": -116.08
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 1,
+          "trades": 77,
+          "win_rate": 35.1,
+          "avg_return": -0.1155,
+          "profit_factor": 0.596,
+          "sharpe": -17.6775,
+          "total_return": -8.89
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 2,
+          "trades": 161,
+          "win_rate": 29.2,
+          "avg_return": -0.1978,
+          "profit_factor": 0.373,
+          "sharpe": -33.0916,
+          "total_return": -31.84
+        },
+        {
+          "n_wins": 3,
+          "m_losses": 3,
+          "trades": 255,
+          "win_rate": 29.0,
+          "avg_return": -0.1971,
+          "profit_factor": 0.394,
+          "sharpe": -30.0557,
+          "total_return": -50.26
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 1,
+          "trades": 27,
+          "win_rate": 33.3,
+          "avg_return": -0.0834,
+          "profit_factor": 0.737,
+          "sharpe": -9.9599,
+          "total_return": -2.25
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 2,
+          "trades": 60,
+          "win_rate": 30.0,
+          "avg_return": -0.168,
+          "profit_factor": 0.457,
+          "sharpe": -24.3437,
+          "total_return": -10.08
+        },
+        {
+          "n_wins": 4,
+          "m_losses": 3,
+          "trades": 92,
+          "win_rate": 26.1,
+          "avg_return": -0.2174,
+          "profit_factor": 0.384,
+          "sharpe": -29.7379,
+          "total_return": -20.0
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 2,
+          "trades": 14,
+          "win_rate": 28.6,
+          "avg_return": -0.2341,
+          "profit_factor": 0.387,
+          "sharpe": -36.5633,
+          "total_return": -3.28
+        },
+        {
+          "n_wins": 5,
+          "m_losses": 3,
+          "trades": 26,
+          "win_rate": 26.9,
+          "avg_return": -0.3206,
+          "profit_factor": 0.308,
+          "sharpe": -38.8107,
+          "total_return": -8.34
+        }
+      ]
+    }
+  },
+  "contrarian": {
+    "AltSwing": {
+      "original_is": {
+        "trades": 5232,
+        "win_rate": 24.4,
+        "avg_return": -0.2008,
+        "profit_factor": 0.297,
+        "sharpe": -39.0289,
+        "total_return": -1050.75
+      },
+      "contrarian_is": {
+        "trades": 5232,
+        "win_rate": 26.8,
+        "avg_return": -0.1992,
+        "profit_factor": 0.286,
+        "sharpe": -38.7059,
+        "total_return": -1042.05
+      },
+      "contrarian_oos": {
+        "trades": 1424,
+        "win_rate": 28.3,
+        "avg_return": -0.2032,
+        "profit_factor": 0.326,
+        "sharpe": -35.4449,
+        "total_return": -289.35
+      },
+      "mc_p_value": 0.45,
+      "mc_significant_5pct": false,
+      "mfe_mae": {
+        "avg_mfe_pct": 0.1569,
+        "avg_mae_pct": -0.1561,
+        "mfe_mae_ratio": 1.005
+      },
+      "overfitted": false
+    },
+    "SellsPowerIndex": {
+      "original_is": {
+        "trades": 3466,
+        "win_rate": 24.7,
+        "avg_return": -0.203,
+        "profit_factor": 0.292,
+        "sharpe": -38.4255,
+        "total_return": -703.47
+      },
+      "contrarian_is": {
+        "trades": 3466,
+        "win_rate": 25.7,
+        "avg_return": -0.197,
+        "profit_factor": 0.301,
+        "sharpe": -37.3039,
+        "total_return": -682.93
+      },
+      "contrarian_oos": {
+        "trades": 875,
+        "win_rate": 28.3,
+        "avg_return": -0.1714,
+        "profit_factor": 0.413,
+        "sharpe": -28.2625,
+        "total_return": -150.01
+      },
+      "mc_p_value": 0.35,
+      "mc_significant_5pct": false,
+      "mfe_mae": {
+        "avg_mfe_pct": 0.1597,
+        "avg_mae_pct": -0.1567,
+        "mfe_mae_ratio": 1.019
+      },
+      "overfitted": false
+    },
+    "AltSPI": {
+      "original_is": {
+        "trades": 1916,
+        "win_rate": 24.1,
+        "avg_return": -0.2059,
+        "profit_factor": 0.27,
+        "sharpe": -42.6425,
+        "total_return": -394.56
+      },
+      "contrarian_is": {
+        "trades": 1916,
+        "win_rate": 25.6,
+        "avg_return": -0.1941,
+        "profit_factor": 0.287,
+        "sharpe": -40.1872,
+        "total_return": -371.84
+      },
+      "contrarian_oos": {
+        "trades": 866,
+        "win_rate": 26.4,
+        "avg_return": -0.1954,
+        "profit_factor": 0.369,
+        "sharpe": -31.399,
+        "total_return": -169.25
+      },
+      "mc_p_value": 0.33,
+      "mc_significant_5pct": false,
+      "mfe_mae": {
+        "avg_mfe_pct": 0.1527,
+        "avg_mae_pct": -0.1468,
+        "mfe_mae_ratio": 1.04
+      },
+      "overfitted": false
+    },
+    "Scalp17": {
+      "original_is": {
+        "trades": 3879,
+        "win_rate": 26.4,
+        "avg_return": -0.1896,
+        "profit_factor": 0.32,
+        "sharpe": -36.8872,
+        "total_return": -735.31
+      },
+      "contrarian_is": {
+        "trades": 3879,
+        "win_rate": 25.8,
+        "avg_return": -0.2104,
+        "profit_factor": 0.271,
+        "sharpe": -40.9494,
+        "total_return": -816.29
+      },
+      "contrarian_oos": {
+        "trades": 649,
+        "win_rate": 30.4,
+        "avg_return": -0.1862,
+        "profit_factor": 0.395,
+        "sharpe": -28.5457,
+        "total_return": -120.82
+      },
+      "mc_p_value": 0.8,
+      "mc_significant_5pct": false,
+      "mfe_mae": {
+        "avg_mfe_pct": 0.1525,
+        "avg_mae_pct": -0.1629,
+        "mfe_mae_ratio": 0.936
+      },
+      "overfitted": false
+    },
+    "DMI_SMF": {
+      "original_is": {
+        "trades": 998,
+        "win_rate": 22.5,
+        "avg_return": -0.1777,
+        "profit_factor": 0.281,
+        "sharpe": -40.8495,
+        "total_return": -177.33
+      },
+      "contrarian_is": {
+        "trades": 998,
+        "win_rate": 20.9,
+        "avg_return": -0.2223,
+        "profit_factor": 0.177,
+        "sharpe": -51.1082,
+        "total_return": -221.87
+      },
+      "contrarian_oos": {
+        "trades": 763,
+        "win_rate": 28.2,
+        "avg_return": -0.2378,
+        "profit_factor": 0.281,
+        "sharpe": -36.2126,
+        "total_return": -181.41
+      },
+      "mc_p_value": 0.88,
+      "mc_significant_5pct": false,
+      "mfe_mae": {
+        "avg_mfe_pct": 0.1184,
+        "avg_mae_pct": -0.1407,
+        "mfe_mae_ratio": 0.841
+      },
+      "overfitted": false
+    }
+  },
+  "dmi_smf_dive": {
+    "total_signals": 1761,
+    "by_direction": {
+      "bearish": {
+        "trades": 1157,
+        "win_rate": 25.7,
+        "avg_return": -0.1632,
+        "profit_factor": 0.384,
+        "sharpe": -29.856,
+        "total_return": -188.88
+      },
+      "bullish": {
+        "trades": 604,
+        "win_rate": 24.0,
+        "avg_return": -0.1858,
+        "profit_factor": 0.313,
+        "sharpe": -34.8523,
+        "total_return": -112.25
+      }
+    },
+    "by_value_quantile": {
+      "Q1_low": {
+        "trades": 441,
+        "win_rate": 27.7,
+        "avg_return": -0.1399,
+        "profit_factor": 0.484,
+        "sharpe": -21.8265,
+        "total_return": -61.7
+      },
+      "Q2": {
+        "trades": 440,
+        "win_rate": 26.1,
+        "avg_return": -0.1839,
+        "profit_factor": 0.315,
+        "sharpe": -39.7664,
+        "total_return": -80.91
+      },
+      "Q3": {
+        "trades": 440,
+        "win_rate": 21.1,
+        "avg_return": -0.1889,
+        "profit_factor": 0.309,
+        "sharpe": -36.0538,
+        "total_return": -83.11
+      },
+      "Q4_high": {
+        "trades": 440,
+        "win_rate": 25.5,
+        "avg_return": -0.1714,
+        "profit_factor": 0.327,
+        "sharpe": -32.6677,
+        "total_return": -75.4
+      }
+    },
+    "by_hour": {
+      "0": {
+        "trades": 53,
+        "win_rate": 22.6,
+        "avg_return": -0.2339,
+        "profit_factor": 0.27,
+        "sharpe": -45.9723,
+        "total_return": -12.39
+      },
+      "1": {
+        "trades": 72,
+        "win_rate": 19.4,
+        "avg_return": -0.1643,
+        "profit_factor": 0.353,
+        "sharpe": -37.7498,
+        "total_return": -11.83
+      },
+      "2": {
+        "trades": 85,
+        "win_rate": 18.8,
+        "avg_return": -0.2366,
+        "profit_factor": 0.204,
+        "sharpe": -54.7427,
+        "total_return": -20.11
+      },
+      "3": {
+        "trades": 90,
+        "win_rate": 17.8,
+        "avg_return": -0.2091,
+        "profit_factor": 0.156,
+        "sharpe": -63.3369,
+        "total_return": -18.82
+      },
+      "4": {
+        "trades": 71,
+        "win_rate": 16.9,
+        "avg_return": -0.1989,
+        "profit_factor": 0.239,
+        "sharpe": -49.8262,
+        "total_return": -14.12
+      },
+      "5": {
+        "trades": 63,
+        "win_rate": 28.6,
+        "avg_return": -0.1407,
+        "profit_factor": 0.258,
+        "sharpe": -49.2545,
+        "total_return": -8.86
+      },
+      "6": {
+        "trades": 92,
+        "win_rate": 20.7,
+        "avg_return": -0.2904,
+        "profit_factor": 0.137,
+        "sharpe": -45.8596,
+        "total_return": -26.72
+      },
+      "7": {
+        "trades": 59,
+        "win_rate": 32.2,
+        "avg_return": -0.1693,
+        "profit_factor": 0.299,
+        "sharpe": -44.5607,
+        "total_return": -9.99
+      },
+      "8": {
+        "trades": 63,
+        "win_rate": 22.2,
+        "avg_return": -0.2081,
+        "profit_factor": 0.108,
+        "sharpe": -77.7959,
+        "total_return": -13.11
+      },
+      "9": {
+        "trades": 99,
+        "win_rate": 29.3,
+        "avg_return": -0.1517,
+        "profit_factor": 0.371,
+        "sharpe": -35.0095,
+        "total_return": -15.01
+      },
+      "10": {
+        "trades": 80,
+        "win_rate": 21.2,
+        "avg_return": -0.2241,
+        "profit_factor": 0.157,
+        "sharpe": -65.0292,
+        "total_return": -17.93
+      },
+      "11": {
+        "trades": 71,
+        "win_rate": 18.3,
+        "avg_return": -0.217,
+        "profit_factor": 0.151,
+        "sharpe": -68.1999,
+        "total_return": -15.41
+      },
+      "12": {
+        "trades": 68,
+        "win_rate": 20.6,
+        "avg_return": -0.1637,
+        "profit_factor": 0.35,
+        "sharpe": -35.7352,
+        "total_return": -11.13
+      },
+      "13": {
+        "trades": 65,
+        "win_rate": 27.7,
+        "avg_return": -0.1995,
+        "profit_factor": 0.38,
+        "sharpe": -33.5763,
+        "total_return": -12.97
+      },
+      "14": {
+        "trades": 51,
+        "win_rate": 33.3,
+        "avg_return": 0.0352,
+        "profit_factor": 1.114,
+        "sharpe": 3.2913,
+        "total_return": 1.8
+      },
+      "15": {
+        "trades": 77,
+        "win_rate": 37.7,
+        "avg_return": -0.0769,
+        "profit_factor": 0.739,
+        "sharpe": -9.2746,
+        "total_return": -5.93
+      },
+      "16": {
+        "trades": 97,
+        "win_rate": 33.0,
+        "avg_return": -0.0979,
+        "profit_factor": 0.654,
+        "sharpe": -14.2169,
+        "total_return": -9.5
+      },
+      "17": {
+        "trades": 91,
+        "win_rate": 25.3,
+        "avg_return": -0.2015,
+        "profit_factor": 0.198,
+        "sharpe": -60.5539,
+        "total_return": -18.34
+      },
+      "18": {
+        "trades": 64,
+        "win_rate": 31.2,
+        "avg_return": -0.1551,
+        "profit_factor": 0.368,
+        "sharpe": -34.1941,
+        "total_return": -9.93
+      },
+      "19": {
+        "trades": 58,
+        "win_rate": 27.6,
+        "avg_return": -0.199,
+        "profit_factor": 0.288,
+        "sharpe": -39.5991,
+        "total_return": -11.54
+      },
+      "20": {
+        "trades": 77,
+        "win_rate": 36.4,
+        "avg_return": -0.0163,
+        "profit_factor": 0.919,
+        "sharpe": -2.1012,
+        "total_return": -1.25
+      },
+      "21": {
+        "trades": 67,
+        "win_rate": 17.9,
+        "avg_return": -0.2371,
+        "profit_factor": 0.224,
+        "sharpe": -54.8197,
+        "total_return": -15.89
+      },
+      "22": {
+        "trades": 75,
+        "win_rate": 17.3,
+        "avg_return": -0.2663,
+        "profit_factor": 0.064,
+        "sharpe": -90.4265,
+        "total_return": -19.97
+      },
+      "23": {
+        "trades": 73,
+        "win_rate": 28.8,
+        "avg_return": -0.0296,
+        "profit_factor": 0.875,
+        "sharpe": -3.4634,
+        "total_return": -2.16
+      }
+    },
+    "by_day": {
+      "Mon": {
+        "trades": 228,
+        "win_rate": 28.1,
+        "avg_return": -0.1986,
+        "profit_factor": 0.318,
+        "sharpe": -39.2672,
+        "total_return": -45.27
+      },
+      "Tue": {
+        "trades": 274,
+        "win_rate": 31.8,
+        "avg_return": -0.165,
+        "profit_factor": 0.406,
+        "sharpe": -29.0098,
+        "total_return": -45.22
+      },
+      "Wed": {
+        "trades": 241,
+        "win_rate": 28.2,
+        "avg_return": -0.1457,
+        "profit_factor": 0.432,
+        "sharpe": -26.4825,
+        "total_return": -35.12
+      },
+      "Thu": {
+        "trades": 285,
+        "win_rate": 28.4,
+        "avg_return": -0.1183,
+        "profit_factor": 0.539,
+        "sharpe": -18.2585,
+        "total_return": -33.73
+      },
+      "Fri": {
+        "trades": 283,
+        "win_rate": 27.9,
+        "avg_return": -0.1504,
+        "profit_factor": 0.408,
+        "sharpe": -27.7385,
+        "total_return": -42.56
+      },
+      "Sat": {
+        "trades": 228,
+        "win_rate": 12.3,
+        "avg_return": -0.2316,
+        "profit_factor": 0.124,
+        "sharpe": -51.1963,
+        "total_return": -52.8
+      },
+      "Sun": {
+        "trades": 222,
+        "win_rate": 15.8,
+        "avg_return": -0.2091,
+        "profit_factor": 0.228,
+        "sharpe": -46.1443,
+        "total_return": -46.41
+      }
+    },
+    "by_regime": {
+      "by_vol": {
+        "low_vol": {
+          "trades": 653,
+          "win_rate": 18.4,
+          "avg_return": -0.2055,
+          "profit_factor": 0.157,
+          "sharpe": -63.9041,
+          "total_return": -134.16
+        },
+        "med_vol": {
+          "trades": 562,
+          "win_rate": 25.3,
+          "avg_return": -0.1553,
+          "profit_factor": 0.381,
+          "sharpe": -29.6502,
+          "total_return": -87.29
+        },
+        "high_vol": {
+          "trades": 546,
+          "win_rate": 33.0,
+          "avg_return": -0.1459,
+          "profit_factor": 0.53,
+          "sharpe": -19.8604,
+          "total_return": -79.67
+        }
+      },
+      "by_trend": {
+        "downtrend": {
+          "trades": 804,
+          "win_rate": 29.4,
+          "avg_return": -0.1323,
+          "profit_factor": 0.481,
+          "sharpe": -22.3818,
+          "total_return": -106.33
+        },
+        "sideways": {
+          "trades": 415,
+          "win_rate": 16.6,
+          "avg_return": -0.2301,
+          "profit_factor": 0.166,
+          "sharpe": -51.8845,
+          "total_return": -95.51
+        },
+        "uptrend": {
+          "trades": 542,
+          "win_rate": 25.3,
+          "avg_return": -0.1832,
+          "profit_factor": 0.34,
+          "sharpe": -34.5486,
+          "total_return": -99.28
+        }
+      },
+      "by_combined": {
+        "low_vol_downtrend": {
+          "trades": 240,
+          "win_rate": 21.2,
+          "avg_return": -0.1948,
+          "profit_factor": 0.202,
+          "sharpe": -56.9241,
+          "total_return": -46.76
+        },
+        "low_vol_sideways": {
+          "trades": 201,
+          "win_rate": 15.4,
+          "avg_return": -0.1928,
+          "profit_factor": 0.134,
+          "sharpe": -69.9476,
+          "total_return": -38.75
+        },
+        "low_vol_uptrend": {
+          "trades": 212,
+          "win_rate": 17.9,
+          "avg_return": -0.2295,
+          "profit_factor": 0.129,
+          "sharpe": -68.3405,
+          "total_return": -48.65
+        },
+        "med_vol_downtrend": {
+          "trades": 278,
+          "win_rate": 27.3,
+          "avg_return": -0.1463,
+          "profit_factor": 0.401,
+          "sharpe": -27.6485,
+          "total_return": -40.68
+        },
+        "med_vol_sideways": {
+          "trades": 121,
+          "win_rate": 14.9,
+          "avg_return": -0.2047,
+          "profit_factor": 0.218,
+          "sharpe": -50.219,
+          "total_return": -24.77
+        },
+        "med_vol_uptrend": {
+          "trades": 163,
+          "win_rate": 29.4,
+          "avg_return": -0.134,
+          "profit_factor": 0.474,
+          "sharpe": -22.9031,
+          "total_return": -21.85
+        },
+        "high_vol_downtrend": {
+          "trades": 286,
+          "win_rate": 38.1,
+          "avg_return": -0.0661,
+          "profit_factor": 0.759,
+          "sharpe": -8.5141,
+          "total_return": -18.89
+        },
+        "high_vol_sideways": {
+          "trades": 93,
+          "win_rate": 21.5,
+          "avg_return": -0.3439,
+          "profit_factor": 0.159,
+          "sharpe": -49.7265,
+          "total_return": -31.99
+        },
+        "high_vol_uptrend": {
+          "trades": 167,
+          "win_rate": 30.5,
+          "avg_return": -0.1724,
+          "profit_factor": 0.458,
+          "sharpe": -26.3168,
+          "total_return": -28.79
+        }
+      }
+    },
+    "sweet_spot": {
+      "found": true,
+      "best_filter": "vol_regime=med_vol",
+      "is_stats": {
+        "trades": 322,
+        "win_rate": 26.4,
+        "avg_return": -0.126,
+        "profit_factor": 0.467,
+        "sharpe": -22.4934,
+        "total_return": -40.56
+      },
+      "is_trades": 322,
+      "oos_stats": {
+        "trades": 240,
+        "win_rate": 23.8,
+        "avg_return": -0.1947,
+        "profit_factor": 0.281,
+        "sharpe": -41.6302,
+        "total_return": -46.73
+      },
+      "oos_trades": 240,
+      "mc_p_value": 1.0,
+      "mc_significant": false,
+      "all_candidates": [
+        {
+          "filter": "vol_regime=med_vol",
+          "sharpe": -22.4934,
+          "trades": 322
+        },
+        {
+          "filter": "value_quantile=Q1",
+          "sharpe": -35.6234,
+          "trades": 250
+        },
+        {
+          "filter": "vol_regime=high_vol",
+          "sharpe": -35.9054,
+          "trades": 142
+        },
+        {
+          "filter": "direction=bearish",
+          "sharpe": -37.9566,
+          "trades": 656
+        },
+        {
+          "filter": "value_quantile=Q4",
+          "sharpe": -40.577,
+          "trades": 250
+        }
+      ]
+    }
+  },
+  "verdict": "POSSIBLE_EDGE: streak(DMI_SMF: N=4,M=1); streak(DyorAlerts: N=2,M=1); streak(Scalp17: N=5,M=1)"
+}

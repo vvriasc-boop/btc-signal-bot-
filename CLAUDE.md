@@ -44,7 +44,8 @@ btc-signal-bot/
 │   ├── latency_decay.py     — деградация при задержке входа (0/1/3/5/10 мин)
 │   ├── optimal_params.py    — grid search TP/SL + walk-forward IS/OOS
 │   ├── monte_carlo.py       — 1000 перестановок направлений + timestamp shuffle
-│   └── report_builder.py    — report.txt + results.json
+│   ├── report_builder.py    — report.txt + results.json
+│   └── deep_analysis.py     — streak strategy, contrarian signals, DMI_SMF deep dive
 ├── btc-signal-bot.service   — systemd unit
 ├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
 ├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
@@ -212,7 +213,7 @@ BFS_BTC_TOPIC_ID= # ID темы для RSI_BTC (0 = фильтр по BTCUSDT в
 ```bash
 python3 -m backtesting.analyze
 # Выход: backtesting/report.txt + backtesting/results.json
-# Время: ~14 сек
+# Время: ~14 сек (включая deep_analysis)
 ```
 
 ### Параметры
@@ -234,6 +235,25 @@ python3 -m backtesting.analyze
 9. **correlations** — temporal + return корреляция, diversification score
 10. **latency_decay** — задержки [0,1,3,5,10] мин, линейная регрессия decay rate, half-life
 11. **monte_carlo** — 1000 direction shuffles + timestamp shuffles, p-value, z-score
+
+### Deep Analysis (deep_analysis.py)
+
+Второй уровень анализа поверх основного бэктестинга. Вызывается автоматически из `analyze.py` или отдельно:
+
+```bash
+python3 -m backtesting.deep_analysis
+# Выход: backtesting/deep_report.txt + backtesting/deep_results.json
+# Время: ~2.5 сек
+```
+
+Сигнатура `run()`: принимает IS/OOS split (как `optimal_params`).
+
+3 анализа:
+1. **Streak strategy** — для каждого канала: вход после N побед подряд (N=1..5), стоп после M поражений (M=1..3). 15 комбо × IS grid search → лучшая по Sharpe → OOS валидация
+2. **Contrarian signals** — инверсия направления для каналов с WR<30% (AltSwing, SellsPowerIndex, AltSPI, Scalp17, DMI_SMF). Walk-forward + Monte Carlo (100 shuffles)
+3. **DMI_SMF deep dive** — разбивка по direction, value quantile, hour, day, vol/trend regime (`pd.merge_asof`). Sweet spot search: single-factor фильтры на IS → OOS + MC валидация
+
+Вердикт: `POSSIBLE_EDGE` (если найдены OOS-прибыльные + MC-значимые + не-переобученные стратегии) или `NO_EDGE_FOUND`.
 
 ### Ключевые решения
 - `_build_pct_matrix()` — сборка 2D матрицы (n_signals × 1440) сразу для всех сигналов канала, переиспользуется при переборе порогов

@@ -16,6 +16,7 @@ from backtesting import channel_stats, confluence, optimal_params
 from backtesting import time_patterns, risk_metrics, sequences
 from backtesting import mfe_mae, market_regimes, correlations
 from backtesting import latency_decay, monte_carlo, report_builder
+from backtesting import deep_analysis
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("backtesting")
@@ -153,6 +154,17 @@ def main():
         logger.info(f"  {name} done in {time.time() - t1:.1f}s")
 
     report_builder.run(results, OUTPUT_DIR)
+
+    logger.info("Running deep_analysis...")
+    t1 = time.time()
+    try:
+        deep_analysis.run(df_signals, df_prices, df_context,
+                          df_sig_is, df_sig_oos, df_ctx_is, df_ctx_oos,
+                          fee_rate=FEE_RATE)
+    except Exception as e:
+        logger.error(f"deep_analysis failed: {e}", exc_info=True)
+    logger.info(f"  deep_analysis done in {time.time() - t1:.1f}s")
+
     logger.info(f"Total time: {time.time() - t0:.1f}s")
 
 
