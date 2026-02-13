@@ -1,0 +1,2348 @@
+{
+  "DMI_SMF": {
+    "total_signals": 1761,
+    "baseline": {
+      "5m": {
+        "trades": 1761,
+        "win_rate": 7.0,
+        "avg_return": -0.1933,
+        "profit_factor": 0.057,
+        "sharpe": -111.6003,
+        "total_return": -340.45
+      },
+      "15m": {
+        "trades": 1761,
+        "win_rate": 13.8,
+        "avg_return": -0.187,
+        "profit_factor": 0.13,
+        "sharpe": -69.9256,
+        "total_return": -329.37
+      },
+      "1h": {
+        "trades": 1761,
+        "win_rate": 25.1,
+        "avg_return": -0.171,
+        "profit_factor": 0.359,
+        "sharpe": -31.5322,
+        "total_return": -301.12
+      },
+      "4h": {
+        "trades": 1761,
+        "win_rate": 35.0,
+        "avg_return": -0.1854,
+        "profit_factor": 0.561,
+        "sharpe": -18.3797,
+        "total_return": -326.43
+      }
+    },
+    "baseline_bullish": {
+      "5m": {
+        "trades": 604,
+        "win_rate": 7.6,
+        "avg_return": -0.1947,
+        "profit_factor": 0.045,
+        "sharpe": -126.8654,
+        "total_return": -117.61
+      },
+      "15m": {
+        "trades": 604,
+        "win_rate": 13.7,
+        "avg_return": -0.1873,
+        "profit_factor": 0.117,
+        "sharpe": -79.9985,
+        "total_return": -113.15
+      },
+      "1h": {
+        "trades": 604,
+        "win_rate": 24.0,
+        "avg_return": -0.1858,
+        "profit_factor": 0.313,
+        "sharpe": -34.8523,
+        "total_return": -112.25
+      },
+      "4h": {
+        "trades": 604,
+        "win_rate": 31.6,
+        "avg_return": -0.2555,
+        "profit_factor": 0.438,
+        "sharpe": -25.9763,
+        "total_return": -154.31
+      }
+    },
+    "baseline_bearish": {
+      "5m": {
+        "trades": 1157,
+        "win_rate": 6.7,
+        "avg_return": -0.1926,
+        "profit_factor": 0.063,
+        "sharpe": -105.4251,
+        "total_return": -222.84
+      },
+      "15m": {
+        "trades": 1157,
+        "win_rate": 13.8,
+        "avg_return": -0.1869,
+        "profit_factor": 0.137,
+        "sharpe": -65.9627,
+        "total_return": -216.23
+      },
+      "1h": {
+        "trades": 1157,
+        "win_rate": 25.7,
+        "avg_return": -0.1632,
+        "profit_factor": 0.384,
+        "sharpe": -29.856,
+        "total_return": -188.88
+      },
+      "4h": {
+        "trades": 1157,
+        "win_rate": 36.8,
+        "avg_return": -0.1488,
+        "profit_factor": 0.633,
+        "sharpe": -14.5966,
+        "total_return": -172.12
+      }
+    },
+    "filters": {
+      "count>=2_range<=0.3": {
+        "n_signals": 15,
+        "insufficient": true,
+        "message": "N=15 < 20"
+      },
+      "count>=2_range<=0.5": {
+        "n_signals": 88,
+        "horizons_all": {
+          "5m": {
+            "trades": 88,
+            "win_rate": 0.0,
+            "avg_return": -0.203,
+            "profit_factor": 0.0,
+            "sharpe": -382.9097,
+            "total_return": -17.87
+          },
+          "15m": {
+            "trades": 88,
+            "win_rate": 1.1,
+            "avg_return": -0.2073,
+            "profit_factor": 0.001,
+            "sharpe": -194.6821,
+            "total_return": -18.24
+          },
+          "1h": {
+            "trades": 88,
+            "win_rate": 5.7,
+            "avg_return": -0.2334,
+            "profit_factor": 0.027,
+            "sharpe": -120.7839,
+            "total_return": -20.54
+          },
+          "4h": {
+            "trades": 88,
+            "win_rate": 22.7,
+            "avg_return": -0.2847,
+            "profit_factor": 0.171,
+            "sharpe": -50.4219,
+            "total_return": -25.05
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 30,
+            "win_rate": 0.0,
+            "avg_return": -0.2008,
+            "profit_factor": 0.0,
+            "sharpe": -379.2546,
+            "total_return": -6.03
+          },
+          "15m": {
+            "trades": 30,
+            "win_rate": 3.3,
+            "avg_return": -0.1906,
+            "profit_factor": 0.002,
+            "sharpe": -186.2742,
+            "total_return": -5.72
+          },
+          "1h": {
+            "trades": 30,
+            "win_rate": 6.7,
+            "avg_return": -0.2345,
+            "profit_factor": 0.015,
+            "sharpe": -113.8894,
+            "total_return": -7.04
+          },
+          "4h": {
+            "trades": 30,
+            "win_rate": 10.0,
+            "avg_return": -0.4993,
+            "profit_factor": 0.025,
+            "sharpe": -69.6368,
+            "total_return": -14.98
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 58,
+            "win_rate": 0.0,
+            "avg_return": -0.2042,
+            "profit_factor": 0.0,
+            "sharpe": -385.0955,
+            "total_return": -11.84
+          },
+          "15m": {
+            "trades": 58,
+            "win_rate": 0.0,
+            "avg_return": -0.2159,
+            "profit_factor": 0.0,
+            "sharpe": -201.0169,
+            "total_return": -12.52
+          },
+          "1h": {
+            "trades": 58,
+            "win_rate": 5.2,
+            "avg_return": -0.2328,
+            "profit_factor": 0.033,
+            "sharpe": -124.9467,
+            "total_return": -13.5
+          },
+          "4h": {
+            "trades": 58,
+            "win_rate": 29.3,
+            "avg_return": -0.1737,
+            "profit_factor": 0.321,
+            "sharpe": -41.3409,
+            "total_return": -10.07
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 39,
+              "win_rate": 0.0,
+              "avg_return": -0.2076,
+              "profit_factor": 0.0,
+              "sharpe": -409.8653,
+              "total_return": -8.1
+            },
+            "15m": {
+              "trades": 39,
+              "win_rate": 0.0,
+              "avg_return": -0.208,
+              "profit_factor": 0.0,
+              "sharpe": -271.9287,
+              "total_return": -8.11
+            },
+            "1h": {
+              "trades": 39,
+              "win_rate": 2.6,
+              "avg_return": -0.2314,
+              "profit_factor": 0.005,
+              "sharpe": -153.0973,
+              "total_return": -9.02
+            },
+            "4h": {
+              "trades": 39,
+              "win_rate": 20.5,
+              "avg_return": -0.2388,
+              "profit_factor": 0.125,
+              "sharpe": -69.0693,
+              "total_return": -9.32
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 49,
+              "win_rate": 0.0,
+              "avg_return": -0.1994,
+              "profit_factor": 0.0,
+              "sharpe": -365.6733,
+              "total_return": -9.77
+            },
+            "15m": {
+              "trades": 49,
+              "win_rate": 2.0,
+              "avg_return": -0.2067,
+              "profit_factor": 0.001,
+              "sharpe": -164.9504,
+              "total_return": -10.13
+            },
+            "1h": {
+              "trades": 49,
+              "win_rate": 8.2,
+              "avg_return": -0.235,
+              "profit_factor": 0.043,
+              "sharpe": -106.3016,
+              "total_return": -11.52
+            },
+            "4h": {
+              "trades": 49,
+              "win_rate": 24.5,
+              "avg_return": -0.3212,
+              "profit_factor": 0.196,
+              "sharpe": -46.6558,
+              "total_return": -15.74
+            }
+          }
+        }
+      },
+      "count>=3_range<=0.3": {
+        "n_signals": 2,
+        "insufficient": true,
+        "message": "N=2 < 20"
+      },
+      "count>=3_range<=0.5": {
+        "n_signals": 24,
+        "horizons_all": {
+          "5m": {
+            "trades": 24,
+            "win_rate": 0.0,
+            "avg_return": -0.1912,
+            "profit_factor": 0.0,
+            "sharpe": -361.0948,
+            "total_return": -4.59
+          },
+          "15m": {
+            "trades": 24,
+            "win_rate": 0.0,
+            "avg_return": -0.2277,
+            "profit_factor": 0.0,
+            "sharpe": -195.1787,
+            "total_return": -5.46
+          },
+          "1h": {
+            "trades": 24,
+            "win_rate": 4.2,
+            "avg_return": -0.257,
+            "profit_factor": 0.037,
+            "sharpe": -126.4626,
+            "total_return": -6.17
+          },
+          "4h": {
+            "trades": 24,
+            "win_rate": 25.0,
+            "avg_return": -0.1878,
+            "profit_factor": 0.335,
+            "sharpe": -39.3552,
+            "total_return": -4.51
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.2175,
+            "profit_factor": 0.0,
+            "sharpe": -890.0977,
+            "total_return": -1.3
+          },
+          "15m": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.218,
+            "profit_factor": 0.0,
+            "sharpe": -478.8649,
+            "total_return": -1.31
+          },
+          "1h": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.2925,
+            "profit_factor": 0.0,
+            "sharpe": -143.0242,
+            "total_return": -1.75
+          },
+          "4h": {
+            "trades": 6,
+            "win_rate": 16.7,
+            "avg_return": -0.3099,
+            "profit_factor": 0.047,
+            "sharpe": -109.4581,
+            "total_return": -1.86
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 18,
+            "win_rate": 0.0,
+            "avg_return": -0.1824,
+            "profit_factor": 0.0,
+            "sharpe": -323.0879,
+            "total_return": -3.28
+          },
+          "15m": {
+            "trades": 18,
+            "win_rate": 0.0,
+            "avg_return": -0.2309,
+            "profit_factor": 0.0,
+            "sharpe": -175.0389,
+            "total_return": -4.16
+          },
+          "1h": {
+            "trades": 18,
+            "win_rate": 5.6,
+            "avg_return": -0.2452,
+            "profit_factor": 0.051,
+            "sharpe": -121.8472,
+            "total_return": -4.41
+          },
+          "4h": {
+            "trades": 18,
+            "win_rate": 27.8,
+            "avg_return": -0.147,
+            "profit_factor": 0.451,
+            "sharpe": -28.3388,
+            "total_return": -2.65
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 11,
+              "win_rate": 0.0,
+              "avg_return": -0.1921,
+              "profit_factor": 0.0,
+              "sharpe": -374.5642,
+              "total_return": -2.11
+            },
+            "15m": {
+              "trades": 11,
+              "win_rate": 0.0,
+              "avg_return": -0.2159,
+              "profit_factor": 0.0,
+              "sharpe": -314.0388,
+              "total_return": -2.37
+            },
+            "1h": {
+              "trades": 11,
+              "win_rate": 0.0,
+              "avg_return": -0.2809,
+              "profit_factor": 0.0,
+              "sharpe": -174.8735,
+              "total_return": -3.09
+            },
+            "4h": {
+              "trades": 11,
+              "win_rate": 18.2,
+              "avg_return": -0.2975,
+              "profit_factor": 0.061,
+              "sharpe": -98.4387,
+              "total_return": -3.27
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 13,
+              "win_rate": 0.0,
+              "avg_return": -0.1904,
+              "profit_factor": 0.0,
+              "sharpe": -350.6843,
+              "total_return": -2.48
+            },
+            "15m": {
+              "trades": 13,
+              "win_rate": 0.0,
+              "avg_return": -0.2377,
+              "profit_factor": 0.0,
+              "sharpe": -164.5085,
+              "total_return": -3.09
+            },
+            "1h": {
+              "trades": 13,
+              "win_rate": 7.7,
+              "avg_return": -0.2368,
+              "profit_factor": 0.072,
+              "sharpe": -102.4672,
+              "total_return": -3.08
+            },
+            "4h": {
+              "trades": 13,
+              "win_rate": 30.8,
+              "avg_return": -0.0949,
+              "profit_factor": 0.625,
+              "sharpe": -16.739,
+              "total_return": -1.23
+            }
+          }
+        }
+      },
+      "count>=4_range<=0.3": {
+        "n_signals": 0,
+        "insufficient": true,
+        "message": "N=0 < 20"
+      },
+      "count>=4_range<=0.5": {
+        "n_signals": 3,
+        "insufficient": true,
+        "message": "N=3 < 20"
+      }
+    },
+    "walk_forward": {
+      "best_filter": "count>=2_range<=0.5",
+      "is_stats": {
+        "trades": 53,
+        "win_rate": 5.7,
+        "avg_return": -0.2461,
+        "profit_factor": 0.034,
+        "sharpe": -116.5281,
+        "total_return": -13.04
+      },
+      "oos_stats": {
+        "5m": {
+          "trades": 35,
+          "win_rate": 0.0,
+          "avg_return": -0.2017,
+          "profit_factor": 0.0,
+          "sharpe": -400.6345,
+          "total_return": -7.06
+        },
+        "15m": {
+          "trades": 35,
+          "win_rate": 2.9,
+          "avg_return": -0.2009,
+          "profit_factor": 0.002,
+          "sharpe": -180.6126,
+          "total_return": -7.03
+        },
+        "1h": {
+          "trades": 35,
+          "win_rate": 5.7,
+          "avg_return": -0.2141,
+          "profit_factor": 0.014,
+          "sharpe": -133.7592,
+          "total_return": -7.5
+        },
+        "4h": {
+          "trades": 35,
+          "win_rate": 22.9,
+          "avg_return": -0.3017,
+          "profit_factor": 0.173,
+          "sharpe": -40.5315,
+          "total_return": -10.56
+        }
+      },
+      "overfitted": false
+    }
+  },
+  "DyorAlerts": {
+    "total_signals": 1380,
+    "baseline": {
+      "5m": {
+        "trades": 1380,
+        "win_rate": 39.2,
+        "avg_return": -0.2192,
+        "profit_factor": 0.56,
+        "sharpe": -18.3059,
+        "total_return": -302.49
+      },
+      "15m": {
+        "trades": 1380,
+        "win_rate": 39.7,
+        "avg_return": -0.2018,
+        "profit_factor": 0.591,
+        "sharpe": -16.7248,
+        "total_return": -278.52
+      },
+      "1h": {
+        "trades": 1380,
+        "win_rate": 41.4,
+        "avg_return": -0.1989,
+        "profit_factor": 0.622,
+        "sharpe": -15.1027,
+        "total_return": -274.5
+      },
+      "4h": {
+        "trades": 1375,
+        "win_rate": 45.4,
+        "avg_return": -0.1514,
+        "profit_factor": 0.76,
+        "sharpe": -8.8441,
+        "total_return": -208.16
+      }
+    },
+    "baseline_bullish": {
+      "5m": {
+        "trades": 864,
+        "win_rate": 39.0,
+        "avg_return": -0.2665,
+        "profit_factor": 0.526,
+        "sharpe": -20.6238,
+        "total_return": -230.22
+      },
+      "15m": {
+        "trades": 864,
+        "win_rate": 40.5,
+        "avg_return": -0.2452,
+        "profit_factor": 0.558,
+        "sharpe": -18.8675,
+        "total_return": -211.84
+      },
+      "1h": {
+        "trades": 864,
+        "win_rate": 42.5,
+        "avg_return": -0.2512,
+        "profit_factor": 0.565,
+        "sharpe": -18.4037,
+        "total_return": -217.06
+      },
+      "4h": {
+        "trades": 859,
+        "win_rate": 44.9,
+        "avg_return": -0.2317,
+        "profit_factor": 0.675,
+        "sharpe": -12.6966,
+        "total_return": -199.03
+      }
+    },
+    "baseline_bearish": {
+      "5m": {
+        "trades": 516,
+        "win_rate": 39.5,
+        "avg_return": -0.1401,
+        "profit_factor": 0.643,
+        "sharpe": -13.813,
+        "total_return": -72.27
+      },
+      "15m": {
+        "trades": 516,
+        "win_rate": 38.4,
+        "avg_return": -0.1292,
+        "profit_factor": 0.669,
+        "sharpe": -12.5671,
+        "total_return": -66.68
+      },
+      "1h": {
+        "trades": 516,
+        "win_rate": 39.5,
+        "avg_return": -0.1113,
+        "profit_factor": 0.747,
+        "sharpe": -9.0734,
+        "total_return": -57.43
+      },
+      "4h": {
+        "trades": 516,
+        "win_rate": 46.1,
+        "avg_return": -0.0177,
+        "profit_factor": 0.964,
+        "sharpe": -1.1838,
+        "total_return": -9.12
+      }
+    },
+    "filters": {
+      "count>=2_range<=0.3": {
+        "n_signals": 24,
+        "horizons_all": {
+          "5m": {
+            "trades": 24,
+            "win_rate": 0.0,
+            "avg_return": -0.2071,
+            "profit_factor": 0.0,
+            "sharpe": -210.2454,
+            "total_return": -4.97
+          },
+          "15m": {
+            "trades": 24,
+            "win_rate": 8.3,
+            "avg_return": -0.1995,
+            "profit_factor": 0.029,
+            "sharpe": -168.3532,
+            "total_return": -4.79
+          },
+          "1h": {
+            "trades": 24,
+            "win_rate": 8.3,
+            "avg_return": -0.1813,
+            "profit_factor": 0.026,
+            "sharpe": -128.3657,
+            "total_return": -4.35
+          },
+          "4h": {
+            "trades": 24,
+            "win_rate": 33.3,
+            "avg_return": -0.1554,
+            "profit_factor": 0.265,
+            "sharpe": -44.6467,
+            "total_return": -3.73
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 18,
+            "win_rate": 0.0,
+            "avg_return": -0.2055,
+            "profit_factor": 0.0,
+            "sharpe": -203.8514,
+            "total_return": -3.7
+          },
+          "15m": {
+            "trades": 18,
+            "win_rate": 11.1,
+            "avg_return": -0.1928,
+            "profit_factor": 0.039,
+            "sharpe": -157.0072,
+            "total_return": -3.47
+          },
+          "1h": {
+            "trades": 18,
+            "win_rate": 11.1,
+            "avg_return": -0.1777,
+            "profit_factor": 0.035,
+            "sharpe": -120.253,
+            "total_return": -3.2
+          },
+          "4h": {
+            "trades": 18,
+            "win_rate": 38.9,
+            "avg_return": -0.1406,
+            "profit_factor": 0.203,
+            "sharpe": -46.938,
+            "total_return": -2.53
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.212,
+            "profit_factor": 0.0,
+            "sharpe": -232.7292,
+            "total_return": -1.27
+          },
+          "15m": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.2194,
+            "profit_factor": 0.0,
+            "sharpe": -216.1967,
+            "total_return": -1.32
+          },
+          "1h": {
+            "trades": 6,
+            "win_rate": 0.0,
+            "avg_return": -0.192,
+            "profit_factor": 0.0,
+            "sharpe": -161.7882,
+            "total_return": -1.15
+          },
+          "4h": {
+            "trades": 6,
+            "win_rate": 16.7,
+            "avg_return": -0.1999,
+            "profit_factor": 0.367,
+            "sharpe": -43.3612,
+            "total_return": -1.2
+          }
+        },
+        "first_vs_last": {
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 24,
+              "win_rate": 0.0,
+              "avg_return": -0.2071,
+              "profit_factor": 0.0,
+              "sharpe": -210.2454,
+              "total_return": -4.97
+            },
+            "15m": {
+              "trades": 24,
+              "win_rate": 8.3,
+              "avg_return": -0.1995,
+              "profit_factor": 0.029,
+              "sharpe": -168.3532,
+              "total_return": -4.79
+            },
+            "1h": {
+              "trades": 24,
+              "win_rate": 8.3,
+              "avg_return": -0.1813,
+              "profit_factor": 0.026,
+              "sharpe": -128.3657,
+              "total_return": -4.35
+            },
+            "4h": {
+              "trades": 24,
+              "win_rate": 33.3,
+              "avg_return": -0.1554,
+              "profit_factor": 0.265,
+              "sharpe": -44.6467,
+              "total_return": -3.73
+            }
+          }
+        }
+      },
+      "count>=2_range<=0.5": {
+        "n_signals": 74,
+        "horizons_all": {
+          "5m": {
+            "trades": 74,
+            "win_rate": 13.5,
+            "avg_return": -0.1655,
+            "profit_factor": 0.055,
+            "sharpe": -109.6289,
+            "total_return": -12.25
+          },
+          "15m": {
+            "trades": 74,
+            "win_rate": 18.9,
+            "avg_return": -0.1565,
+            "profit_factor": 0.087,
+            "sharpe": -93.9976,
+            "total_return": -11.58
+          },
+          "1h": {
+            "trades": 74,
+            "win_rate": 20.3,
+            "avg_return": -0.1859,
+            "profit_factor": 0.122,
+            "sharpe": -54.8558,
+            "total_return": -13.75
+          },
+          "4h": {
+            "trades": 74,
+            "win_rate": 40.5,
+            "avg_return": -0.2077,
+            "profit_factor": 0.322,
+            "sharpe": -29.7582,
+            "total_return": -15.37
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 41,
+            "win_rate": 12.2,
+            "avg_return": -0.1462,
+            "profit_factor": 0.047,
+            "sharpe": -108.1151,
+            "total_return": -5.99
+          },
+          "15m": {
+            "trades": 41,
+            "win_rate": 22.0,
+            "avg_return": -0.155,
+            "profit_factor": 0.055,
+            "sharpe": -101.8573,
+            "total_return": -6.35
+          },
+          "1h": {
+            "trades": 41,
+            "win_rate": 17.1,
+            "avg_return": -0.161,
+            "profit_factor": 0.071,
+            "sharpe": -66.3601,
+            "total_return": -6.6
+          },
+          "4h": {
+            "trades": 41,
+            "win_rate": 43.9,
+            "avg_return": -0.0852,
+            "profit_factor": 0.386,
+            "sharpe": -31.3092,
+            "total_return": -3.49
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 33,
+            "win_rate": 15.2,
+            "avg_return": -0.1896,
+            "profit_factor": 0.062,
+            "sharpe": -114.9122,
+            "total_return": -6.26
+          },
+          "15m": {
+            "trades": 33,
+            "win_rate": 15.2,
+            "avg_return": -0.1585,
+            "profit_factor": 0.124,
+            "sharpe": -86.6919,
+            "total_return": -5.23
+          },
+          "1h": {
+            "trades": 33,
+            "win_rate": 24.2,
+            "avg_return": -0.2167,
+            "profit_factor": 0.163,
+            "sharpe": -50.757,
+            "total_return": -7.15
+          },
+          "4h": {
+            "trades": 33,
+            "win_rate": 36.4,
+            "avg_return": -0.36,
+            "profit_factor": 0.3,
+            "sharpe": -36.8722,
+            "total_return": -11.88
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 8,
+              "win_rate": 12.5,
+              "avg_return": -0.1671,
+              "profit_factor": 0.128,
+              "sharpe": -83.6771,
+              "total_return": -1.34
+            },
+            "15m": {
+              "trades": 8,
+              "win_rate": 12.5,
+              "avg_return": -0.1524,
+              "profit_factor": 0.095,
+              "sharpe": -77.5035,
+              "total_return": -1.22
+            },
+            "1h": {
+              "trades": 8,
+              "win_rate": 50.0,
+              "avg_return": -0.1252,
+              "profit_factor": 0.279,
+              "sharpe": -42.7618,
+              "total_return": -1.0
+            },
+            "4h": {
+              "trades": 8,
+              "win_rate": 62.5,
+              "avg_return": 0.0245,
+              "profit_factor": 1.063,
+              "sharpe": 1.8107,
+              "total_return": 0.2
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 66,
+              "win_rate": 13.6,
+              "avg_return": -0.1653,
+              "profit_factor": 0.045,
+              "sharpe": -114.8423,
+              "total_return": -10.91
+            },
+            "15m": {
+              "trades": 66,
+              "win_rate": 19.7,
+              "avg_return": -0.157,
+              "profit_factor": 0.087,
+              "sharpe": -96.6398,
+              "total_return": -10.37
+            },
+            "1h": {
+              "trades": 66,
+              "win_rate": 16.7,
+              "avg_return": -0.1932,
+              "profit_factor": 0.106,
+              "sharpe": -56.3063,
+              "total_return": -12.75
+            },
+            "4h": {
+              "trades": 66,
+              "win_rate": 37.9,
+              "avg_return": -0.2359,
+              "profit_factor": 0.203,
+              "sharpe": -41.9859,
+              "total_return": -15.57
+            }
+          }
+        }
+      },
+      "count>=3_range<=0.3": {
+        "n_signals": 13,
+        "insufficient": true,
+        "message": "N=13 < 20"
+      },
+      "count>=3_range<=0.5": {
+        "n_signals": 44,
+        "horizons_all": {
+          "5m": {
+            "trades": 44,
+            "win_rate": 9.1,
+            "avg_return": -0.1583,
+            "profit_factor": 0.048,
+            "sharpe": -109.6361,
+            "total_return": -6.96
+          },
+          "15m": {
+            "trades": 44,
+            "win_rate": 18.2,
+            "avg_return": -0.1454,
+            "profit_factor": 0.063,
+            "sharpe": -94.696,
+            "total_return": -6.4
+          },
+          "1h": {
+            "trades": 44,
+            "win_rate": 25.0,
+            "avg_return": -0.1694,
+            "profit_factor": 0.132,
+            "sharpe": -45.8186,
+            "total_return": -7.46
+          },
+          "4h": {
+            "trades": 44,
+            "win_rate": 43.2,
+            "avg_return": -0.2994,
+            "profit_factor": 0.156,
+            "sharpe": -43.5073,
+            "total_return": -13.17
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 25,
+            "win_rate": 12.0,
+            "avg_return": -0.1242,
+            "profit_factor": 0.047,
+            "sharpe": -98.4526,
+            "total_return": -3.11
+          },
+          "15m": {
+            "trades": 25,
+            "win_rate": 28.0,
+            "avg_return": -0.1193,
+            "profit_factor": 0.091,
+            "sharpe": -80.0273,
+            "total_return": -2.98
+          },
+          "1h": {
+            "trades": 25,
+            "win_rate": 24.0,
+            "avg_return": -0.088,
+            "profit_factor": 0.139,
+            "sharpe": -64.0483,
+            "total_return": -2.2
+          },
+          "4h": {
+            "trades": 25,
+            "win_rate": 56.0,
+            "avg_return": 0.0019,
+            "profit_factor": 1.032,
+            "sharpe": 1.3035,
+            "total_return": 0.05
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 19,
+            "win_rate": 5.3,
+            "avg_return": -0.2031,
+            "profit_factor": 0.048,
+            "sharpe": -133.0941,
+            "total_return": -3.86
+          },
+          "15m": {
+            "trades": 19,
+            "win_rate": 5.3,
+            "avg_return": -0.1797,
+            "profit_factor": 0.036,
+            "sharpe": -118.5506,
+            "total_return": -3.41
+          },
+          "1h": {
+            "trades": 19,
+            "win_rate": 26.3,
+            "avg_return": -0.2767,
+            "profit_factor": 0.129,
+            "sharpe": -53.3612,
+            "total_return": -5.26
+          },
+          "4h": {
+            "trades": 19,
+            "win_rate": 26.3,
+            "avg_return": -0.6959,
+            "profit_factor": 0.063,
+            "sharpe": -80.1995,
+            "total_return": -13.22
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 5,
+              "win_rate": 20.0,
+              "avg_return": -0.1242,
+              "profit_factor": 0.24,
+              "sharpe": -57.136,
+              "total_return": -0.62
+            },
+            "15m": {
+              "trades": 5,
+              "win_rate": 20.0,
+              "avg_return": -0.107,
+              "profit_factor": 0.193,
+              "sharpe": -50.3991,
+              "total_return": -0.53
+            },
+            "1h": {
+              "trades": 5,
+              "win_rate": 60.0,
+              "avg_return": -0.0812,
+              "profit_factor": 0.365,
+              "sharpe": -28.1514,
+              "total_return": -0.41
+            },
+            "4h": {
+              "trades": 5,
+              "win_rate": 60.0,
+              "avg_return": -0.4948,
+              "profit_factor": 0.12,
+              "sharpe": -56.4048,
+              "total_return": -2.47
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 39,
+              "win_rate": 7.7,
+              "avg_return": -0.1627,
+              "profit_factor": 0.024,
+              "sharpe": -123.7895,
+              "total_return": -6.34
+            },
+            "15m": {
+              "trades": 39,
+              "win_rate": 17.9,
+              "avg_return": -0.1503,
+              "profit_factor": 0.049,
+              "sharpe": -104.7942,
+              "total_return": -5.86
+            },
+            "1h": {
+              "trades": 39,
+              "win_rate": 20.5,
+              "avg_return": -0.1808,
+              "profit_factor": 0.113,
+              "sharpe": -47.9099,
+              "total_return": -7.05
+            },
+            "4h": {
+              "trades": 39,
+              "win_rate": 41.0,
+              "avg_return": -0.2743,
+              "profit_factor": 0.164,
+              "sharpe": -41.8711,
+              "total_return": -10.7
+            }
+          }
+        }
+      },
+      "count>=4_range<=0.3": {
+        "n_signals": 6,
+        "insufficient": true,
+        "message": "N=6 < 20"
+      },
+      "count>=4_range<=0.5": {
+        "n_signals": 26,
+        "horizons_all": {
+          "5m": {
+            "trades": 26,
+            "win_rate": 11.5,
+            "avg_return": -0.1589,
+            "profit_factor": 0.036,
+            "sharpe": -112.7068,
+            "total_return": -4.13
+          },
+          "15m": {
+            "trades": 26,
+            "win_rate": 15.4,
+            "avg_return": -0.1439,
+            "profit_factor": 0.035,
+            "sharpe": -97.276,
+            "total_return": -3.74
+          },
+          "1h": {
+            "trades": 26,
+            "win_rate": 23.1,
+            "avg_return": -0.2067,
+            "profit_factor": 0.11,
+            "sharpe": -47.0166,
+            "total_return": -5.37
+          },
+          "4h": {
+            "trades": 26,
+            "win_rate": 42.3,
+            "avg_return": -0.346,
+            "profit_factor": 0.093,
+            "sharpe": -53.4467,
+            "total_return": -9.0
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 13,
+            "win_rate": 23.1,
+            "avg_return": -0.1045,
+            "profit_factor": 0.102,
+            "sharpe": -75.704,
+            "total_return": -1.36
+          },
+          "15m": {
+            "trades": 13,
+            "win_rate": 30.8,
+            "avg_return": -0.1065,
+            "profit_factor": 0.089,
+            "sharpe": -75.2203,
+            "total_return": -1.39
+          },
+          "1h": {
+            "trades": 13,
+            "win_rate": 23.1,
+            "avg_return": -0.0785,
+            "profit_factor": 0.185,
+            "sharpe": -55.0419,
+            "total_return": -1.02
+          },
+          "4h": {
+            "trades": 13,
+            "win_rate": 61.5,
+            "avg_return": 0.0167,
+            "profit_factor": 1.38,
+            "sharpe": 13.9867,
+            "total_return": 0.22
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 13,
+            "win_rate": 0.0,
+            "avg_return": -0.2132,
+            "profit_factor": 0.0,
+            "sharpe": -180.6379,
+            "total_return": -2.77
+          },
+          "15m": {
+            "trades": 13,
+            "win_rate": 0.0,
+            "avg_return": -0.1812,
+            "profit_factor": 0.0,
+            "sharpe": -126.5382,
+            "total_return": -2.36
+          },
+          "1h": {
+            "trades": 13,
+            "win_rate": 23.1,
+            "avg_return": -0.3349,
+            "profit_factor": 0.09,
+            "sharpe": -58.4146,
+            "total_return": -4.35
+          },
+          "4h": {
+            "trades": 13,
+            "win_rate": 23.1,
+            "avg_return": -0.7088,
+            "profit_factor": 0.014,
+            "sharpe": -97.9235,
+            "total_return": -9.21
+          }
+        },
+        "first_vs_last": {
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 23,
+              "win_rate": 13.0,
+              "avg_return": -0.1518,
+              "profit_factor": 0.042,
+              "sharpe": -112.7513,
+              "total_return": -3.49
+            },
+            "15m": {
+              "trades": 23,
+              "win_rate": 17.4,
+              "avg_return": -0.1433,
+              "profit_factor": 0.04,
+              "sharpe": -105.2301,
+              "total_return": -3.29
+            },
+            "1h": {
+              "trades": 23,
+              "win_rate": 17.4,
+              "avg_return": -0.2137,
+              "profit_factor": 0.093,
+              "sharpe": -47.5416,
+              "total_return": -4.92
+            },
+            "4h": {
+              "trades": 23,
+              "win_rate": 39.1,
+              "avg_return": -0.3567,
+              "profit_factor": 0.093,
+              "sharpe": -53.43,
+              "total_return": -8.2
+            }
+          }
+        }
+      }
+    },
+    "walk_forward": {
+      "skipped": true,
+      "reason": "no valid IS filter"
+    }
+  },
+  "Scalp17": {
+    "total_signals": 4528,
+    "baseline": {
+      "5m": {
+        "trades": 4528,
+        "win_rate": 6.2,
+        "avg_return": -0.2017,
+        "profit_factor": 0.039,
+        "sharpe": -121.0015,
+        "total_return": -913.31
+      },
+      "15m": {
+        "trades": 4528,
+        "win_rate": 14.4,
+        "avg_return": -0.1999,
+        "profit_factor": 0.117,
+        "sharpe": -74.0671,
+        "total_return": -905.11
+      },
+      "1h": {
+        "trades": 4528,
+        "win_rate": 26.5,
+        "avg_return": -0.193,
+        "profit_factor": 0.324,
+        "sharpe": -36.0167,
+        "total_return": -874.1
+      },
+      "4h": {
+        "trades": 4527,
+        "win_rate": 35.4,
+        "avg_return": -0.2238,
+        "profit_factor": 0.522,
+        "sharpe": -20.5069,
+        "total_return": -1013.19
+      }
+    },
+    "baseline_bullish": {
+      "5m": {
+        "trades": 3112,
+        "win_rate": 4.7,
+        "avg_return": -0.2012,
+        "profit_factor": 0.028,
+        "sharpe": -134.1625,
+        "total_return": -626.08
+      },
+      "15m": {
+        "trades": 3112,
+        "win_rate": 12.7,
+        "avg_return": -0.2001,
+        "profit_factor": 0.1,
+        "sharpe": -80.4781,
+        "total_return": -622.79
+      },
+      "1h": {
+        "trades": 3112,
+        "win_rate": 26.4,
+        "avg_return": -0.1897,
+        "profit_factor": 0.301,
+        "sharpe": -39.0395,
+        "total_return": -590.46
+      },
+      "4h": {
+        "trades": 3112,
+        "win_rate": 36.0,
+        "avg_return": -0.2134,
+        "profit_factor": 0.515,
+        "sharpe": -21.3603,
+        "total_return": -664.13
+      }
+    },
+    "baseline_bearish": {
+      "5m": {
+        "trades": 1416,
+        "win_rate": 9.5,
+        "avg_return": -0.2028,
+        "profit_factor": 0.062,
+        "sharpe": -102.1472,
+        "total_return": -287.23
+      },
+      "15m": {
+        "trades": 1416,
+        "win_rate": 18.1,
+        "avg_return": -0.1994,
+        "profit_factor": 0.152,
+        "sharpe": -64.0146,
+        "total_return": -282.31
+      },
+      "1h": {
+        "trades": 1416,
+        "win_rate": 26.7,
+        "avg_return": -0.2003,
+        "profit_factor": 0.368,
+        "sharpe": -31.6942,
+        "total_return": -283.63
+      },
+      "4h": {
+        "trades": 1415,
+        "win_rate": 34.2,
+        "avg_return": -0.2467,
+        "profit_factor": 0.534,
+        "sharpe": -19.4137,
+        "total_return": -349.06
+      }
+    },
+    "filters": {
+      "count>=2_range<=0.3": {
+        "n_signals": 35,
+        "horizons_all": {
+          "5m": {
+            "trades": 35,
+            "win_rate": 0.0,
+            "avg_return": -0.2199,
+            "profit_factor": 0.0,
+            "sharpe": -420.5755,
+            "total_return": -7.7
+          },
+          "15m": {
+            "trades": 35,
+            "win_rate": 0.0,
+            "avg_return": -0.2207,
+            "profit_factor": 0.0,
+            "sharpe": -292.0132,
+            "total_return": -7.73
+          },
+          "1h": {
+            "trades": 35,
+            "win_rate": 2.9,
+            "avg_return": -0.2254,
+            "profit_factor": 0.005,
+            "sharpe": -182.9325,
+            "total_return": -7.89
+          },
+          "4h": {
+            "trades": 35,
+            "win_rate": 25.7,
+            "avg_return": -0.2687,
+            "profit_factor": 0.253,
+            "sharpe": -46.4159,
+            "total_return": -9.4
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 32,
+            "win_rate": 0.0,
+            "avg_return": -0.2139,
+            "profit_factor": 0.0,
+            "sharpe": -530.488,
+            "total_return": -6.85
+          },
+          "15m": {
+            "trades": 32,
+            "win_rate": 0.0,
+            "avg_return": -0.2121,
+            "profit_factor": 0.0,
+            "sharpe": -332.2845,
+            "total_return": -6.79
+          },
+          "1h": {
+            "trades": 32,
+            "win_rate": 3.1,
+            "avg_return": -0.2234,
+            "profit_factor": 0.005,
+            "sharpe": -176.1921,
+            "total_return": -7.15
+          },
+          "4h": {
+            "trades": 32,
+            "win_rate": 28.1,
+            "avg_return": -0.1665,
+            "profit_factor": 0.374,
+            "sharpe": -35.8233,
+            "total_return": -5.33
+          }
+        },
+        "horizons_bearish": {},
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 7,
+              "win_rate": 0.0,
+              "avg_return": -0.252,
+              "profit_factor": 0.0,
+              "sharpe": -455.6822,
+              "total_return": -1.76
+            },
+            "15m": {
+              "trades": 7,
+              "win_rate": 0.0,
+              "avg_return": -0.2615,
+              "profit_factor": 0.0,
+              "sharpe": -965.2622,
+              "total_return": -1.83
+            },
+            "1h": {
+              "trades": 7,
+              "win_rate": 0.0,
+              "avg_return": -0.2272,
+              "profit_factor": 0.0,
+              "sharpe": -233.1286,
+              "total_return": -1.59
+            },
+            "4h": {
+              "trades": 7,
+              "win_rate": 14.3,
+              "avg_return": -0.3414,
+              "profit_factor": 0.086,
+              "sharpe": -79.159,
+              "total_return": -2.39
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 28,
+              "win_rate": 0.0,
+              "avg_return": -0.2119,
+              "profit_factor": 0.0,
+              "sharpe": -443.2613,
+              "total_return": -5.93
+            },
+            "15m": {
+              "trades": 28,
+              "win_rate": 0.0,
+              "avg_return": -0.2105,
+              "profit_factor": 0.0,
+              "sharpe": -263.8861,
+              "total_return": -5.89
+            },
+            "1h": {
+              "trades": 28,
+              "win_rate": 3.6,
+              "avg_return": -0.2249,
+              "profit_factor": 0.006,
+              "sharpe": -174.5796,
+              "total_return": -6.3
+            },
+            "4h": {
+              "trades": 28,
+              "win_rate": 28.6,
+              "avg_return": -0.2505,
+              "profit_factor": 0.297,
+              "sharpe": -41.158,
+              "total_return": -7.02
+            }
+          }
+        }
+      },
+      "count>=2_range<=0.5": {
+        "n_signals": 257,
+        "horizons_all": {
+          "5m": {
+            "trades": 257,
+            "win_rate": 0.8,
+            "avg_return": -0.2067,
+            "profit_factor": 0.005,
+            "sharpe": -282.2307,
+            "total_return": -53.12
+          },
+          "15m": {
+            "trades": 257,
+            "win_rate": 3.9,
+            "avg_return": -0.2043,
+            "profit_factor": 0.029,
+            "sharpe": -156.4616,
+            "total_return": -52.5
+          },
+          "1h": {
+            "trades": 257,
+            "win_rate": 14.8,
+            "avg_return": -0.1808,
+            "profit_factor": 0.15,
+            "sharpe": -68.2565,
+            "total_return": -46.48
+          },
+          "4h": {
+            "trades": 257,
+            "win_rate": 30.0,
+            "avg_return": -0.1553,
+            "profit_factor": 0.508,
+            "sharpe": -22.6724,
+            "total_return": -39.91
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 212,
+            "win_rate": 0.9,
+            "avg_return": -0.2052,
+            "profit_factor": 0.006,
+            "sharpe": -275.3724,
+            "total_return": -43.49
+          },
+          "15m": {
+            "trades": 212,
+            "win_rate": 3.8,
+            "avg_return": -0.2052,
+            "profit_factor": 0.02,
+            "sharpe": -168.0293,
+            "total_return": -43.51
+          },
+          "1h": {
+            "trades": 212,
+            "win_rate": 14.6,
+            "avg_return": -0.1965,
+            "profit_factor": 0.095,
+            "sharpe": -87.5577,
+            "total_return": -41.65
+          },
+          "4h": {
+            "trades": 212,
+            "win_rate": 27.8,
+            "avg_return": -0.1494,
+            "profit_factor": 0.508,
+            "sharpe": -23.4429,
+            "total_return": -31.68
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 45,
+            "win_rate": 0.0,
+            "avg_return": -0.214,
+            "profit_factor": 0.0,
+            "sharpe": -322.1716,
+            "total_return": -9.63
+          },
+          "15m": {
+            "trades": 45,
+            "win_rate": 4.4,
+            "avg_return": -0.1998,
+            "profit_factor": 0.068,
+            "sharpe": -121.4962,
+            "total_return": -8.99
+          },
+          "1h": {
+            "trades": 45,
+            "win_rate": 15.6,
+            "avg_return": -0.1073,
+            "profit_factor": 0.442,
+            "sharpe": -27.1359,
+            "total_return": -4.83
+          },
+          "4h": {
+            "trades": 45,
+            "win_rate": 40.0,
+            "avg_return": -0.1828,
+            "profit_factor": 0.509,
+            "sharpe": -20.9214,
+            "total_return": -8.23
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 62,
+              "win_rate": 0.0,
+              "avg_return": -0.217,
+              "profit_factor": 0.0,
+              "sharpe": -317.3498,
+              "total_return": -13.46
+            },
+            "15m": {
+              "trades": 62,
+              "win_rate": 1.6,
+              "avg_return": -0.2249,
+              "profit_factor": 0.021,
+              "sharpe": -191.7924,
+              "total_return": -13.94
+            },
+            "1h": {
+              "trades": 62,
+              "win_rate": 6.5,
+              "avg_return": -0.2112,
+              "profit_factor": 0.021,
+              "sharpe": -133.9281,
+              "total_return": -13.09
+            },
+            "4h": {
+              "trades": 62,
+              "win_rate": 27.4,
+              "avg_return": -0.2093,
+              "profit_factor": 0.309,
+              "sharpe": -42.5434,
+              "total_return": -12.97
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 195,
+              "win_rate": 1.0,
+              "avg_return": -0.2034,
+              "profit_factor": 0.006,
+              "sharpe": -273.5108,
+              "total_return": -39.67
+            },
+            "15m": {
+              "trades": 195,
+              "win_rate": 4.6,
+              "avg_return": -0.1977,
+              "profit_factor": 0.031,
+              "sharpe": -147.8224,
+              "total_return": -38.56
+            },
+            "1h": {
+              "trades": 195,
+              "win_rate": 17.4,
+              "avg_return": -0.1712,
+              "profit_factor": 0.192,
+              "sharpe": -59.0117,
+              "total_return": -33.39
+            },
+            "4h": {
+              "trades": 195,
+              "win_rate": 30.8,
+              "avg_return": -0.1381,
+              "profit_factor": 0.569,
+              "sharpe": -18.7977,
+              "total_return": -26.93
+            }
+          }
+        }
+      },
+      "count>=3_range<=0.3": {
+        "n_signals": 29,
+        "horizons_all": {
+          "5m": {
+            "trades": 29,
+            "win_rate": 0.0,
+            "avg_return": -0.2191,
+            "profit_factor": 0.0,
+            "sharpe": -413.2992,
+            "total_return": -6.35
+          },
+          "15m": {
+            "trades": 29,
+            "win_rate": 0.0,
+            "avg_return": -0.2242,
+            "profit_factor": 0.0,
+            "sharpe": -284.1218,
+            "total_return": -6.5
+          },
+          "1h": {
+            "trades": 29,
+            "win_rate": 3.4,
+            "avg_return": -0.2313,
+            "profit_factor": 0.006,
+            "sharpe": -187.2121,
+            "total_return": -6.71
+          },
+          "4h": {
+            "trades": 29,
+            "win_rate": 24.1,
+            "avg_return": -0.2593,
+            "profit_factor": 0.279,
+            "sharpe": -43.0921,
+            "total_return": -7.52
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 27,
+            "win_rate": 0.0,
+            "avg_return": -0.2114,
+            "profit_factor": 0.0,
+            "sharpe": -569.6102,
+            "total_return": -5.71
+          },
+          "15m": {
+            "trades": 27,
+            "win_rate": 0.0,
+            "avg_return": -0.2138,
+            "profit_factor": 0.0,
+            "sharpe": -330.7483,
+            "total_return": -5.77
+          },
+          "1h": {
+            "trades": 27,
+            "win_rate": 3.7,
+            "avg_return": -0.2291,
+            "profit_factor": 0.006,
+            "sharpe": -182.1622,
+            "total_return": -6.18
+          },
+          "4h": {
+            "trades": 27,
+            "win_rate": 25.9,
+            "avg_return": -0.1678,
+            "profit_factor": 0.391,
+            "sharpe": -34.1473,
+            "total_return": -4.53
+          }
+        },
+        "horizons_bearish": {},
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 5,
+              "win_rate": 0.0,
+              "avg_return": -0.2497,
+              "profit_factor": 0.0,
+              "sharpe": -494.4558,
+              "total_return": -1.25
+            },
+            "15m": {
+              "trades": 5,
+              "win_rate": 0.0,
+              "avg_return": -0.2621,
+              "profit_factor": 0.0,
+              "sharpe": -819.1845,
+              "total_return": -1.31
+            },
+            "1h": {
+              "trades": 5,
+              "win_rate": 0.0,
+              "avg_return": -0.214,
+              "profit_factor": 0.0,
+              "sharpe": -311.6942,
+              "total_return": -1.07
+            },
+            "4h": {
+              "trades": 5,
+              "win_rate": 20.0,
+              "avg_return": -0.3047,
+              "profit_factor": 0.129,
+              "sharpe": -60.4991,
+              "total_return": -1.52
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 24,
+              "win_rate": 0.0,
+              "avg_return": -0.2127,
+              "profit_factor": 0.0,
+              "sharpe": -417.598,
+              "total_return": -5.1
+            },
+            "15m": {
+              "trades": 24,
+              "win_rate": 0.0,
+              "avg_return": -0.2163,
+              "profit_factor": 0.0,
+              "sharpe": -260.4428,
+              "total_return": -5.19
+            },
+            "1h": {
+              "trades": 24,
+              "win_rate": 4.2,
+              "avg_return": -0.2349,
+              "profit_factor": 0.007,
+              "sharpe": -178.1922,
+              "total_return": -5.64
+            },
+            "4h": {
+              "trades": 24,
+              "win_rate": 25.0,
+              "avg_return": -0.2499,
+              "profit_factor": 0.309,
+              "sharpe": -40.3141,
+              "total_return": -6.0
+            }
+          }
+        }
+      },
+      "count>=3_range<=0.5": {
+        "n_signals": 212,
+        "horizons_all": {
+          "5m": {
+            "trades": 212,
+            "win_rate": 0.9,
+            "avg_return": -0.2065,
+            "profit_factor": 0.006,
+            "sharpe": -278.088,
+            "total_return": -43.78
+          },
+          "15m": {
+            "trades": 212,
+            "win_rate": 4.7,
+            "avg_return": -0.2036,
+            "profit_factor": 0.034,
+            "sharpe": -147.496,
+            "total_return": -43.16
+          },
+          "1h": {
+            "trades": 212,
+            "win_rate": 16.5,
+            "avg_return": -0.1694,
+            "profit_factor": 0.184,
+            "sharpe": -60.5207,
+            "total_return": -35.92
+          },
+          "4h": {
+            "trades": 212,
+            "win_rate": 31.6,
+            "avg_return": -0.1242,
+            "profit_factor": 0.598,
+            "sharpe": -17.1703,
+            "total_return": -26.34
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 175,
+            "win_rate": 1.1,
+            "avg_return": -0.2051,
+            "profit_factor": 0.007,
+            "sharpe": -270.0281,
+            "total_return": -35.89
+          },
+          "15m": {
+            "trades": 175,
+            "win_rate": 4.6,
+            "avg_return": -0.2045,
+            "profit_factor": 0.024,
+            "sharpe": -160.357,
+            "total_return": -35.79
+          },
+          "1h": {
+            "trades": 175,
+            "win_rate": 16.6,
+            "avg_return": -0.1881,
+            "profit_factor": 0.115,
+            "sharpe": -80.4167,
+            "total_return": -32.92
+          },
+          "4h": {
+            "trades": 175,
+            "win_rate": 29.1,
+            "avg_return": -0.121,
+            "profit_factor": 0.594,
+            "sharpe": -17.8977,
+            "total_return": -21.17
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 37,
+            "win_rate": 0.0,
+            "avg_return": -0.2133,
+            "profit_factor": 0.0,
+            "sharpe": -327.0362,
+            "total_return": -7.89
+          },
+          "15m": {
+            "trades": 37,
+            "win_rate": 5.4,
+            "avg_return": -0.1993,
+            "profit_factor": 0.082,
+            "sharpe": -111.0241,
+            "total_return": -7.37
+          },
+          "1h": {
+            "trades": 37,
+            "win_rate": 16.2,
+            "avg_return": -0.081,
+            "profit_factor": 0.56,
+            "sharpe": -19.1338,
+            "total_return": -3.0
+          },
+          "4h": {
+            "trades": 37,
+            "win_rate": 43.2,
+            "avg_return": -0.1397,
+            "profit_factor": 0.616,
+            "sharpe": -15.2543,
+            "total_return": -5.17
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 44,
+              "win_rate": 0.0,
+              "avg_return": -0.2147,
+              "profit_factor": 0.0,
+              "sharpe": -333.6982,
+              "total_return": -9.45
+            },
+            "15m": {
+              "trades": 44,
+              "win_rate": 2.3,
+              "avg_return": -0.2222,
+              "profit_factor": 0.03,
+              "sharpe": -174.749,
+              "total_return": -9.78
+            },
+            "1h": {
+              "trades": 44,
+              "win_rate": 6.8,
+              "avg_return": -0.2011,
+              "profit_factor": 0.029,
+              "sharpe": -128.2449,
+              "total_return": -8.85
+            },
+            "4h": {
+              "trades": 44,
+              "win_rate": 29.5,
+              "avg_return": -0.1559,
+              "profit_factor": 0.438,
+              "sharpe": -29.4697,
+              "total_return": -6.86
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 168,
+              "win_rate": 1.2,
+              "avg_return": -0.2044,
+              "profit_factor": 0.008,
+              "sharpe": -267.2075,
+              "total_return": -34.33
+            },
+            "15m": {
+              "trades": 168,
+              "win_rate": 5.4,
+              "avg_return": -0.1987,
+              "profit_factor": 0.036,
+              "sharpe": -141.6609,
+              "total_return": -33.39
+            },
+            "1h": {
+              "trades": 168,
+              "win_rate": 19.0,
+              "avg_return": -0.1611,
+              "profit_factor": 0.225,
+              "sharpe": -53.098,
+              "total_return": -27.07
+            },
+            "4h": {
+              "trades": 168,
+              "win_rate": 32.1,
+              "avg_return": -0.1159,
+              "profit_factor": 0.635,
+              "sharpe": -15.1332,
+              "total_return": -19.48
+            }
+          }
+        }
+      },
+      "count>=4_range<=0.3": {
+        "n_signals": 23,
+        "horizons_all": {
+          "5m": {
+            "trades": 23,
+            "win_rate": 0.0,
+            "avg_return": -0.2208,
+            "profit_factor": 0.0,
+            "sharpe": -399.5167,
+            "total_return": -5.08
+          },
+          "15m": {
+            "trades": 23,
+            "win_rate": 0.0,
+            "avg_return": -0.2309,
+            "profit_factor": 0.0,
+            "sharpe": -311.4563,
+            "total_return": -5.31
+          },
+          "1h": {
+            "trades": 23,
+            "win_rate": 4.3,
+            "avg_return": -0.2471,
+            "profit_factor": 0.007,
+            "sharpe": -207.518,
+            "total_return": -5.68
+          },
+          "4h": {
+            "trades": 23,
+            "win_rate": 21.7,
+            "avg_return": -0.2643,
+            "profit_factor": 0.287,
+            "sharpe": -42.5065,
+            "total_return": -6.08
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 22,
+            "win_rate": 0.0,
+            "avg_return": -0.2121,
+            "profit_factor": 0.0,
+            "sharpe": -606.4979,
+            "total_return": -4.67
+          },
+          "15m": {
+            "trades": 22,
+            "win_rate": 0.0,
+            "avg_return": -0.2206,
+            "profit_factor": 0.0,
+            "sharpe": -404.1831,
+            "total_return": -4.85
+          },
+          "1h": {
+            "trades": 22,
+            "win_rate": 4.5,
+            "avg_return": -0.243,
+            "profit_factor": 0.007,
+            "sharpe": -202.6504,
+            "total_return": -5.35
+          },
+          "4h": {
+            "trades": 22,
+            "win_rate": 22.7,
+            "avg_return": -0.1936,
+            "profit_factor": 0.365,
+            "sharpe": -37.0525,
+            "total_return": -4.26
+          }
+        },
+        "horizons_bearish": {},
+        "first_vs_last": {
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 20,
+              "win_rate": 0.0,
+              "avg_return": -0.2176,
+              "profit_factor": 0.0,
+              "sharpe": -404.8313,
+              "total_return": -4.35
+            },
+            "15m": {
+              "trades": 20,
+              "win_rate": 0.0,
+              "avg_return": -0.2289,
+              "profit_factor": 0.0,
+              "sharpe": -290.7658,
+              "total_return": -4.58
+            },
+            "1h": {
+              "trades": 20,
+              "win_rate": 5.0,
+              "avg_return": -0.2553,
+              "profit_factor": 0.008,
+              "sharpe": -207.2301,
+              "total_return": -5.11
+            },
+            "4h": {
+              "trades": 20,
+              "win_rate": 20.0,
+              "avg_return": -0.2884,
+              "profit_factor": 0.278,
+              "sharpe": -43.9994,
+              "total_return": -5.77
+            }
+          }
+        }
+      },
+      "count>=4_range<=0.5": {
+        "n_signals": 171,
+        "horizons_all": {
+          "5m": {
+            "trades": 171,
+            "win_rate": 0.6,
+            "avg_return": -0.2062,
+            "profit_factor": 0.003,
+            "sharpe": -277.7066,
+            "total_return": -35.27
+          },
+          "15m": {
+            "trades": 171,
+            "win_rate": 5.3,
+            "avg_return": -0.2015,
+            "profit_factor": 0.04,
+            "sharpe": -138.102,
+            "total_return": -34.46
+          },
+          "1h": {
+            "trades": 171,
+            "win_rate": 18.7,
+            "avg_return": -0.1534,
+            "profit_factor": 0.229,
+            "sharpe": -52.1534,
+            "total_return": -26.24
+          },
+          "4h": {
+            "trades": 171,
+            "win_rate": 33.9,
+            "avg_return": -0.0965,
+            "profit_factor": 0.679,
+            "sharpe": -13.2235,
+            "total_return": -16.5
+          }
+        },
+        "horizons_bullish": {
+          "5m": {
+            "trades": 138,
+            "win_rate": 0.7,
+            "avg_return": -0.2044,
+            "profit_factor": 0.004,
+            "sharpe": -270.9917,
+            "total_return": -28.2
+          },
+          "15m": {
+            "trades": 138,
+            "win_rate": 5.1,
+            "avg_return": -0.2025,
+            "profit_factor": 0.027,
+            "sharpe": -150.5088,
+            "total_return": -27.95
+          },
+          "1h": {
+            "trades": 138,
+            "win_rate": 18.8,
+            "avg_return": -0.1746,
+            "profit_factor": 0.142,
+            "sharpe": -72.7049,
+            "total_return": -24.09
+          },
+          "4h": {
+            "trades": 138,
+            "win_rate": 31.9,
+            "avg_return": -0.1061,
+            "profit_factor": 0.646,
+            "sharpe": -15.2621,
+            "total_return": -14.65
+          }
+        },
+        "horizons_bearish": {
+          "5m": {
+            "trades": 33,
+            "win_rate": 0.0,
+            "avg_return": -0.2141,
+            "profit_factor": 0.0,
+            "sharpe": -311.9457,
+            "total_return": -7.06
+          },
+          "15m": {
+            "trades": 33,
+            "win_rate": 6.1,
+            "avg_return": -0.1973,
+            "profit_factor": 0.091,
+            "sharpe": -106.0976,
+            "total_return": -6.51
+          },
+          "1h": {
+            "trades": 33,
+            "win_rate": 18.2,
+            "avg_return": -0.065,
+            "profit_factor": 0.64,
+            "sharpe": -14.6793,
+            "total_return": -2.15
+          },
+          "4h": {
+            "trades": 33,
+            "win_rate": 42.4,
+            "avg_return": -0.0562,
+            "profit_factor": 0.815,
+            "sharpe": -6.5581,
+            "total_return": -1.86
+          }
+        },
+        "first_vs_last": {
+          "last_in_cluster": {
+            "5m": {
+              "trades": 34,
+              "win_rate": 0.0,
+              "avg_return": -0.2148,
+              "profit_factor": 0.0,
+              "sharpe": -305.1354,
+              "total_return": -7.3
+            },
+            "15m": {
+              "trades": 34,
+              "win_rate": 2.9,
+              "avg_return": -0.2188,
+              "profit_factor": 0.039,
+              "sharpe": -155.4951,
+              "total_return": -7.44
+            },
+            "1h": {
+              "trades": 34,
+              "win_rate": 8.8,
+              "avg_return": -0.1823,
+              "profit_factor": 0.04,
+              "sharpe": -107.6629,
+              "total_return": -6.2
+            },
+            "4h": {
+              "trades": 34,
+              "win_rate": 35.3,
+              "avg_return": -0.1358,
+              "profit_factor": 0.524,
+              "sharpe": -24.051,
+              "total_return": -4.62
+            }
+          },
+          "middle_of_cluster": {
+            "5m": {
+              "trades": 137,
+              "win_rate": 0.7,
+              "avg_return": -0.2041,
+              "profit_factor": 0.004,
+              "sharpe": -272.0686,
+              "total_return": -27.97
+            },
+            "15m": {
+              "trades": 137,
+              "win_rate": 5.8,
+              "avg_return": -0.1972,
+              "profit_factor": 0.04,
+              "sharpe": -134.3302,
+              "total_return": -27.02
+            },
+            "1h": {
+              "trades": 137,
+              "win_rate": 21.2,
+              "avg_return": -0.1463,
+              "profit_factor": 0.273,
+              "sharpe": -46.1128,
+              "total_return": -20.04
+            },
+            "4h": {
+              "trades": 137,
+              "win_rate": 33.6,
+              "avg_return": -0.0867,
+              "profit_factor": 0.715,
+              "sharpe": -11.3403,
+              "total_return": -11.88
+            }
+          }
+        }
+      }
+    },
+    "walk_forward": {
+      "best_filter": "count>=4_range<=0.5",
+      "is_stats": {
+        "trades": 160,
+        "win_rate": 20.0,
+        "avg_return": -0.1451,
+        "profit_factor": 0.252,
+        "sharpe": -48.164,
+        "total_return": -23.21
+      },
+      "oos_stats": {
+        "5m": {
+          "trades": 11,
+          "win_rate": 0.0,
+          "avg_return": -0.2317,
+          "profit_factor": 0.0,
+          "sharpe": -343.3673,
+          "total_return": -2.55
+        },
+        "15m": {
+          "trades": 11,
+          "win_rate": 0.0,
+          "avg_return": -0.2518,
+          "profit_factor": 0.0,
+          "sharpe": -312.0584,
+          "total_return": -2.77
+        },
+        "1h": {
+          "trades": 11,
+          "win_rate": 0.0,
+          "avg_return": -0.2753,
+          "profit_factor": 0.0,
+          "sharpe": -307.2465,
+          "total_return": -3.03
+        },
+        "4h": {
+          "trades": 11,
+          "win_rate": 9.1,
+          "avg_return": -0.7225,
+          "profit_factor": 0.027,
+          "sharpe": -107.3763,
+          "total_return": -7.95
+        }
+      },
+      "overfitted": false
+    }
+  }
+}

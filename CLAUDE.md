@@ -51,7 +51,18 @@ btc-signal-bot/
 │   ├── sim_metrics.py       — метрики портфеля (Sharpe, Sortino, DD, Kelly)
 │   ├── sim_report.py        — portfolio_report.txt + equity_curve.csv + JSON
 │   ├── dmi_range_test.py    — тест гипотезы: кластеры сигналов + узкий диапазон цены
-│   └── zone_test.py         — тест гипотезы: провалившиеся сигналы как S/R зоны
+│   ├── zone_test.py         — тест гипотезы: провалившиеся сигналы как S/R зоны
+│   └── import_csv_signals.py — импорт CSV (Total alert + BTC low) + бэктестинг
+├── tools/
+│   ├── __init__.py
+│   ├── orderbook_analysis.py   — точка входа: download + parse + H1/H2 анализ
+│   ├── orderbook_config.py     — 7 bid/ask пар, 4 спецканала, константы
+│   ├── orderbook_download.py   — скачивание 18 каналов через Pyrogram
+│   ├── orderbook_parsers.py    — парсеры: стандартный + 4 спецканала
+│   ├── orderbook_db.py         — insert signals, fill price_context
+│   ├── orderbook_h1_imbalance.py — H1: bid/ask дисбаланс в 5-мин окнах
+│   ├── orderbook_h2_levels.py  — H2: лимитки как S/R уровни
+│   └── orderbook_report.py     — orderbook_report.txt + orderbook_results.json
 ├── btc-signal-bot.service   — systemd unit
 ├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
 ├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
@@ -100,38 +111,14 @@ btc-signal-bot/
 \*\* DyorAlerts: 99.9% от сообщений бота; остальные — сообщения участников группы (filter_author).
 \*\*\* RSI_BTC: канал публикует VOLUME SPIKE для разных пар, RSI_OVERSOLD/OVERBOUGHT для BTC — редкость.
 
-DyorAlerts распознаёт 7 типов сигналов: `buyer_disbalance`, `seller_disbalance`, `long_priority` (с уровнем 1-4), `short_signal`, `long_signal`, `balance`, `unknown`.
+DyorAlerts распознаёт 7 типов: `buyer_disbalance`, `seller_disbalance`, `long_priority` (1-4), `short_signal`, `long_signal`, `balance`, `unknown`.
 
 ## Фазы работы
 
-### Phase 0: Хребет цен
-Загрузка 1-минутных свечей BTC/USDT с Binance API. При первом запуске — 90 дней. При повторных — догрузка с последней точки. Строит `price_index` — dict `{minute_key: price}` в RAM для O(1) поиска.
-
-### Phases 1-9: Поканальный парсинг
-Для каждого канала последовательно:
-1. Скачать все сообщения через Pyrogram -> `raw_messages` (не в RAM, сразу в БД)
-2. Парсить из `raw_messages` через соответствующий парсер -> `signals`
-3. Догрузить цены если сигналы старше имеющихся цен (`phase_0_extend`)
-4. Отчёт админу через Pyrogram
-
-Пропуск канала если в `sync_log` есть запись с `phase='complete'`.
-
-Для групповых каналов (DyorAlerts, RSI_BTC):
-- `filter_author` — фильтрация по username отправителя
-- `topic_id` — фильтрация по теме (для RSI_BTC: `topic_id=0` значит фильтр по "BTCUSDT" в тексте)
-
-### Phase 10: Ценовой контекст
-Для каждого сигнала заполняет `signal_price_context`: цены за 5m/15m/1h до и 5m/15m/1h/4h/24h после сигнала. Использует `price_index` для O(1) поиска.
-
-### Phase 11: Live Mode
-- Pyrogram handler на новые сообщения из всех каналов
-- Парсинг в реальном времени -> `signals`
-- Фоновые задачи:
-  - `price_ticker_loop`: текущая цена BTC каждые 60 сек
-  - `fill_delayed_prices_loop`: дозаполнение `signal_price_context` (5m, 15m, 1h, 4h, 24h после сигнала) каждые 5 мин
-  - `healthcheck_loop`: проверка каналов каждый час
-- Telegram-бот с 8 инлайн-кнопками (каналы, сигналы, цена, экспорт CSV и т.д.)
-- Graceful shutdown через SIGINT/SIGTERM
+**Phase 0**: Загрузка 1-мин свечей BTC/USDT с Binance → `price_index` dict `{minute_key: price}` для O(1) поиска.
+**Phases 1-9**: Скачать → парсить → `signals`. Пропуск если `sync_log` phase='complete'. Для групп: `filter_author` + `topic_id`.
+**Phase 10**: Заполнение `signal_price_context` (5m/15m/1h до, 5m/15m/1h/4h/24h после).
+**Phase 11**: Live mode — Pyrogram handler + price_ticker (60s) + fill_delayed_prices (5m) + healthcheck (1h) + Telegram-бот (8 кнопок). Graceful shutdown.
 
 ## CSV экспорт
 
@@ -140,64 +127,18 @@ DyorAlerts распознаёт 7 типов сигналов: `buyer_disbalance
 ## Запуск
 
 ```bash
-# Установка зависимостей
 pip install -r requirements.txt
-
-# Первый запуск: прогрев peer-кэша (нужно один раз после свежей сессии)
-python3 fix_peers.py
-
-# Запуск бота
-python3 main.py
-
-# Запуск в фоне
-nohup python3 main.py > /dev/null 2>&1 &
-
-# Через systemd
-sudo cp btc-signal-bot.service /etc/systemd/system/
-sudo systemctl enable btc-signal-bot
-sudo systemctl start btc-signal-bot
+python3 fix_peers.py          # прогрев peer-кэша (один раз)
+python3 main.py               # запуск бота
+# или: nohup python3 main.py > /dev/null 2>&1 &
+# или: sudo systemctl start btc-signal-bot
 ```
 
-### Перезапуск
+Перепарсинг: кнопка "Перепарсить канал" в Telegram-боте, или удалить `sync_log` + `signals` и перезапустить.
 
-```bash
-# Найти PID
-ps aux | grep 'python3 main.py' | grep -v grep
+## .env
 
-# Остановить
-kill <PID>
-
-# Подождать 2 сек, запустить заново
-sleep 2 && cd /home/s.riashchikow/btc-signal-bot && nohup python3 main.py > /dev/null 2>&1 &
-```
-
-### Перепарсинг (без перескачивания)
-
-Через Telegram-бота: кнопка "Перепарсить канал" — перепарсит сообщения с `is_parsed=0` или `NULL`.
-
-Для полного перепарсинга: удалить записи из `sync_log` для канала, удалить `signals` и перезапустить бот.
-
-## API ключи (.env)
-
-```
-API_ID=           # Telegram API ID (my.telegram.org)
-API_HASH=         # Telegram API Hash
-PHONE=            # Номер телефона для userbot (+XXXXXXXXXXX)
-BOT_TOKEN=        # Токен Telegram-бота (@BotFather)
-ADMIN_USER_ID=    # Telegram user ID администратора
-
-CHANNEL_1=        # AltSwing (числовой ID)
-CHANNEL_2=        # DiamondMarks
-CHANNEL_3=        # SellsPowerIndex
-CHANNEL_4=        # AltSPI
-CHANNEL_5=        # Scalp17
-CHANNEL_6=        # Index
-CHANNEL_7=        # DMI_SMF
-
-IMBA_GROUP_ID=    # DyorAlerts (группа, filter_author=dyor_alerts_EtH_2_O_bot)
-BFS_GROUP_ID=     # RSI_BTC (группа/канал @username)
-BFS_BTC_TOPIC_ID= # ID темы для RSI_BTC (0 = фильтр по BTCUSDT в тексте)
-```
+`API_ID`, `API_HASH`, `PHONE`, `BOT_TOKEN`, `ADMIN_USER_ID`, `CHANNEL_1`..`7`, `IMBA_GROUP_ID`, `BFS_GROUP_ID`, `BFS_BTC_TOPIC_ID`.
 
 ## Backtesting
 
@@ -231,54 +172,60 @@ python3 -m backtesting.analyze
 
 ### Deep Analysis (deep_analysis.py)
 
-Второй уровень анализа поверх основного бэктестинга. Вызывается автоматически из `analyze.py` или отдельно:
+Вызывается автоматически из `analyze.py`. 3 анализа: streak strategy (N побед → вход, M поражений → стоп), contrarian signals (инверсия WR<30% каналов), DMI_SMF deep dive (разбивка по фильтрам). Walk-forward + Monte Carlo.
 
 ```bash
-python3 -m backtesting.deep_analysis
-# Выход: backtesting/deep_report.txt + backtesting/deep_results.json
-# Время: ~2.5 сек
+python3 -m backtesting.deep_analysis  # → deep_report.txt + deep_results.json
 ```
-
-Сигнатура `run()`: принимает IS/OOS split (как `optimal_params`).
-
-3 анализа:
-1. **Streak strategy** — для каждого канала: вход после N побед подряд (N=1..5), стоп после M поражений (M=1..3). 15 комбо × IS grid search → лучшая по Sharpe → OOS валидация
-2. **Contrarian signals** — инверсия направления для каналов с WR<30% (AltSwing, SellsPowerIndex, AltSPI, Scalp17, DMI_SMF). Walk-forward + Monte Carlo (100 shuffles)
-3. **DMI_SMF deep dive** — разбивка по direction, value quantile, hour, day, vol/trend regime (`pd.merge_asof`). Sweet spot search: single-factor фильтры на IS → OOS + MC валидация
-
-Вердикт: `POSSIBLE_EDGE` (если найдены OOS-прибыльные + MC-значимые + не-переобученные стратегии) или `NO_EDGE_FOUND`.
 
 ### Portfolio Simulation (portfolio_sim.py)
 
-Симуляция портфеля со streak-фильтром на OOS-данных. Разбит на 4 модуля:
-
-- **portfolio_sim.py** — точка входа (~40 строк)
-- **sim_engine.py** — streak-фильтр + симуляция (~200 строк)
-- **sim_metrics.py** — Sharpe, Sortino, drawdown, Kelly, Calmar (~170 строк)
-- **sim_report.py** — portfolio_report.txt + equity_curve.csv + portfolio_results.json (~170 строк)
+Streak-фильтр + симуляция портфеля на OOS. 4 модуля: portfolio_sim (entry), sim_engine, sim_metrics, sim_report. Стратегии: DMI_SMF N=4/M=1, DyorAlerts N=2/M=1, Scalp17 N=5/M=1. Капитал $10K, позиции 1%/2%/5%/10%, горизонты 5m/15m/1h/4h.
 
 ```bash
-python3 -m backtesting.portfolio_sim
-# Выход: backtesting/portfolio_report.txt, equity_curve.csv, portfolio_results.json
+python3 -m backtesting.portfolio_sim  # → portfolio_report.txt + equity_curve.csv + JSON
 ```
 
-**Стратегии** (из deep_analysis): DMI_SMF N=4/M=1, DyorAlerts N=2/M=1, Scalp17 N=5/M=1
-**Параметры**: капитал $10K, комиссия 0.2%, OOS с 2025-11-05, размеры позиции 1%/2%/5%/10%, горизонты 5m/15m/1h/4h.
-Streak-счётчики предзагреваются на IS-данных (`_preseed_streak_state`), чтобы OOS-симуляция стартовала с корректным состоянием.
+### Hypothesis Tests (standalone)
 
-### Hypothesis Tests (standalone, данные из `analyze.py`)
+**dmi_range_test.py** — кластеры сигналов + узкий диапазон цены. **Результат: отвергнута.**
+**zone_test.py** — провалившиеся сигналы как S/R зоны. **Результат: DyorAlerts слабый (N=31), Scalp17 no edge.**
 
-**dmi_range_test.py** — кластеры сигналов + узкий диапазон цены:
 ```bash
 python3 -m backtesting.dmi_range_test  # → dmi_range_report.txt + .json
+python3 -m backtesting.zone_test       # → zone_report.txt + .json
 ```
-Несколько сигналов за 4h + range ≤0.3–0.5%. DMI_SMF, DyorAlerts, Scalp17. Walk-forward. **Результат: отвергнута**, фильтры ухудшают Sharpe.
 
-**zone_test.py** — провалившиеся сигналы как S/R зоны:
+### CSV Signal Import (import_csv_signals.py)
+
+Standalone скрипт для импорта orderbook CSV-файлов и сравнения с 9 основными каналами:
+
 ```bash
-python3 -m backtesting.zone_test  # → zone_report.txt + .json
+python3 -m backtesting.import_csv_signals
+# Выход: backtesting/csv_signals_report.txt + csv_signals_results.json
 ```
-Bearish провал → поддержка (лонг), bullish провал → сопротивление (шорт). Grid 192 комбо (порог × ширина × lifetime × min_str). Walk-forward top-3. **Результат: DyorAlerts слабый сигнал (N=31), WF не подтверждает. Scalp17: no edge.**
+
+Импортирует `data/Total alert.csv` (6515 сигналов, bid/ask imbalance) и `data/BTC low.csv` (4283 сигнала, low/high liquidity). Sentinel channel_ids: TotalAlert=-100, BTCLow=-200.
+
+### Orderbook Channel Analysis (tools/)
+
+Анализ 18 каналов с orderbook-сигналами (7 bid/ask пар + 4 спецканала). 9 модулей, ≤500 строк каждый.
+
+```bash
+python3 -m tools.orderbook_analysis --download  # скачать + анализ
+python3 -m tools.orderbook_analysis             # только анализ
+# Выход: backtesting/orderbook_report.txt + orderbook_results.json
+```
+
+**18 каналов**: UltraLight Spot (B UL S / A UL S), Light Spot/Futures, Medium Spot/Futures (BID/ASK), Mega Spot/Futures (BID/ASK MEGA), Dyor signal, Long Bid F, Short Ask F, SHORT ONLY.
+
+**Гипотеза 1 — Bid/Ask Imbalance**: подсчёт bid vs ask в 5-мин окнах, тест direct (дисбаланс→движение) vs inverse (спуфинг). Пороги [1,2,3,5], горизонты [5m,15m,1h,4h]. **Результат: NO EDGE** — все Sharpe глубоко отрицательные на OOS.
+
+**Гипотеза 2 — Лимитки как S/R**: bid→support, ask→resistance. Zone widths [0.1,0.2,0.3]%, touch detection + breakout-return. Medium + Mega каналы. **Результат: NO EDGE** — OOS Sharpe отрицательные. Mega каналы пропущены (0% parsed — формат отличается от стандартного).
+
+**Парсинг**: 14 стандартных каналов (`A/B BTC/USDT-S/F at X%, q: Y$, d: Z min`) — ~100% parsed. 4 спецканала (Short Ask F, SHORT ONLY, Long Bid F, MEGA) — 0% parsed (нестандартный формат). Dyor signal — 99.7%.
+
+**Download**: ~30 мин на 18 каналов (~180K сообщений), FloodWait ~10-12s на батч. Бот должен быть остановлен (session lock).
 
 ## Lessons Learned
 
@@ -289,3 +236,5 @@ Bearish провал → поддержка (лонг), bullish провал →
 5. **Pyrogram peer cache.** Свежая сессия не резолвит channel_id. Прогрев: `fix_peers.py`.
 6. **`cursor.lastrowid` + INSERT OR IGNORE.** При дубликате = stale. Проверять `cursor.rowcount > 0`.
 7. **Каналы: 0 сообщений при первой попытке.** AltSwing/DiamondMarks: 0, потом тысячи. Повторять скачивание.
+8. **FloodWait при массовом скачивании.** Pyrogram `get_chat_history` вызывает FloodWait ~10-12s на каждый батч 100 сообщений. 18 каналов × ~180K сообщений = ~30 мин. Бот должен быть остановлен (session file lock).
+9. **Channels table: parser_type NOT NULL.** При INSERT в channels всегда указывать parser_type (`"orderbook"`, `"csv_import"` и т.д.), иначе IntegrityError.

@@ -1,0 +1,502 @@
+======================================================================
+DMI RANGE COMPRESSION TEST
+Generated: 2026-02-13 12:46 UTC
+Fee: 0.1% per side (0.2% round-trip)
+
+Hypothesis: multiple signals in 4h + narrow price range => stronger move
+======================================================================
+
+============================================================
+  DMI_SMF
+============================================================
+
+  Total directional signals: 1761
+
+  [BASELINE - no filter]
+    5m   1761 tr  WR=  7.0%  avg= -0.1933%  PF= 0.057  Sh=-111.600
+    15m  1761 tr  WR= 13.8%  avg= -0.1870%  PF= 0.130  Sh=-69.926
+    1h   1761 tr  WR= 25.1%  avg= -0.1710%  PF= 0.359  Sh=-31.532
+    4h   1761 tr  WR= 35.0%  avg= -0.1854%  PF= 0.561  Sh=-18.380
+
+  [BASELINE - bullish only]
+    5m    604 tr  WR=  7.6%  avg= -0.1947%  PF= 0.045  Sh=-126.865
+    15m   604 tr  WR= 13.7%  avg= -0.1873%  PF= 0.117  Sh=-79.999
+    1h    604 tr  WR= 24.0%  avg= -0.1858%  PF= 0.313  Sh=-34.852
+    4h    604 tr  WR= 31.6%  avg= -0.2555%  PF= 0.438  Sh=-25.976
+
+  [BASELINE - bearish only]
+    5m   1157 tr  WR=  6.7%  avg= -0.1926%  PF= 0.063  Sh=-105.425
+    15m  1157 tr  WR= 13.8%  avg= -0.1869%  PF= 0.137  Sh=-65.963
+    1h   1157 tr  WR= 25.7%  avg= -0.1632%  PF= 0.384  Sh=-29.856
+    4h   1157 tr  WR= 36.8%  avg= -0.1488%  PF= 0.633  Sh=-14.597
+
+  [FILTERED RESULTS]
+  --- count>=2_range<=0.3 ---
+    N=15 — insufficient data
+
+  --- count>=2_range<=0.5 ---
+    N=88 signals passed filter
+    All directions:
+      5m     88 tr  WR=  0.0%  avg= -0.2030%  PF= 0.000  Sh=-382.910
+      15m    88 tr  WR=  1.1%  avg= -0.2073%  PF= 0.001  Sh=-194.682
+      1h     88 tr  WR=  5.7%  avg= -0.2334%  PF= 0.027  Sh=-120.784
+      4h     88 tr  WR= 22.7%  avg= -0.2847%  PF= 0.171  Sh=-50.422
+
+    Bullish only:
+      5m     30 tr  WR=  0.0%  avg= -0.2008%  PF= 0.000  Sh=-379.255
+      15m    30 tr  WR=  3.3%  avg= -0.1906%  PF= 0.002  Sh=-186.274
+      1h     30 tr  WR=  6.7%  avg= -0.2345%  PF= 0.015  Sh=-113.889
+      4h     30 tr  WR= 10.0%  avg= -0.4993%  PF= 0.025  Sh=-69.637
+
+    Bearish only:
+      5m     58 tr  WR=  0.0%  avg= -0.2042%  PF= 0.000  Sh=-385.096
+      15m    58 tr  WR=  0.0%  avg= -0.2159%  PF= 0.000  Sh=-201.017
+      1h     58 tr  WR=  5.2%  avg= -0.2328%  PF= 0.033  Sh=-124.947
+      4h     58 tr  WR= 29.3%  avg= -0.1737%  PF= 0.321  Sh=-41.341
+
+    Position in cluster:
+      last_in_cluster:
+        5m     39 tr  WR=  0.0%  avg= -0.2076%  PF= 0.000  Sh=-409.865
+        15m    39 tr  WR=  0.0%  avg= -0.2080%  PF= 0.000  Sh=-271.929
+        1h     39 tr  WR=  2.6%  avg= -0.2314%  PF= 0.005  Sh=-153.097
+        4h     39 tr  WR= 20.5%  avg= -0.2388%  PF= 0.125  Sh=-69.069
+
+      middle_of_cluster:
+        5m     49 tr  WR=  0.0%  avg= -0.1994%  PF= 0.000  Sh=-365.673
+        15m    49 tr  WR=  2.0%  avg= -0.2067%  PF= 0.001  Sh=-164.950
+        1h     49 tr  WR=  8.2%  avg= -0.2350%  PF= 0.043  Sh=-106.302
+        4h     49 tr  WR= 24.5%  avg= -0.3212%  PF= 0.196  Sh=-46.656
+
+  --- count>=3_range<=0.3 ---
+    N=2 — insufficient data
+
+  --- count>=3_range<=0.5 ---
+    N=24 signals passed filter
+    All directions:
+      5m     24 tr  WR=  0.0%  avg= -0.1912%  PF= 0.000  Sh=-361.095
+      15m    24 tr  WR=  0.0%  avg= -0.2277%  PF= 0.000  Sh=-195.179
+      1h     24 tr  WR=  4.2%  avg= -0.2570%  PF= 0.037  Sh=-126.463
+      4h     24 tr  WR= 25.0%  avg= -0.1878%  PF= 0.335  Sh=-39.355
+
+    Bullish only:
+      5m      6 tr  WR=  0.0%  avg= -0.2175%  PF= 0.000  Sh=-890.098
+      15m     6 tr  WR=  0.0%  avg= -0.2180%  PF= 0.000  Sh=-478.865
+      1h      6 tr  WR=  0.0%  avg= -0.2925%  PF= 0.000  Sh=-143.024
+      4h      6 tr  WR= 16.7%  avg= -0.3099%  PF= 0.047  Sh=-109.458
+
+    Bearish only:
+      5m     18 tr  WR=  0.0%  avg= -0.1824%  PF= 0.000  Sh=-323.088
+      15m    18 tr  WR=  0.0%  avg= -0.2309%  PF= 0.000  Sh=-175.039
+      1h     18 tr  WR=  5.6%  avg= -0.2452%  PF= 0.051  Sh=-121.847
+      4h     18 tr  WR= 27.8%  avg= -0.1470%  PF= 0.451  Sh=-28.339
+
+    Position in cluster:
+      last_in_cluster:
+        5m     11 tr  WR=  0.0%  avg= -0.1921%  PF= 0.000  Sh=-374.564
+        15m    11 tr  WR=  0.0%  avg= -0.2159%  PF= 0.000  Sh=-314.039
+        1h     11 tr  WR=  0.0%  avg= -0.2809%  PF= 0.000  Sh=-174.874
+        4h     11 tr  WR= 18.2%  avg= -0.2975%  PF= 0.061  Sh=-98.439
+
+      middle_of_cluster:
+        5m     13 tr  WR=  0.0%  avg= -0.1904%  PF= 0.000  Sh=-350.684
+        15m    13 tr  WR=  0.0%  avg= -0.2377%  PF= 0.000  Sh=-164.508
+        1h     13 tr  WR=  7.7%  avg= -0.2368%  PF= 0.072  Sh=-102.467
+        4h     13 tr  WR= 30.8%  avg= -0.0949%  PF= 0.625  Sh=-16.739
+
+  --- count>=4_range<=0.3 ---
+    N=0 — insufficient data
+
+  --- count>=4_range<=0.5 ---
+    N=3 — insufficient data
+
+
+  [WALK-FORWARD VALIDATION (70/30)]
+    Best IS filter: count>=2_range<=0.5
+    IS:  53 tr, WR=5.7%, avg=-0.2461%, Sh=-116.528
+    OOS 1h: 35 tr, WR=5.7%, avg=-0.2141%, Sh=-133.759
+    Overfitted: NO
+
+
+============================================================
+  DyorAlerts
+============================================================
+
+  Total directional signals: 1380
+
+  [BASELINE - no filter]
+    5m   1380 tr  WR= 39.2%  avg= -0.2192%  PF= 0.560  Sh=-18.306
+    15m  1380 tr  WR= 39.7%  avg= -0.2018%  PF= 0.591  Sh=-16.725
+    1h   1380 tr  WR= 41.4%  avg= -0.1989%  PF= 0.622  Sh=-15.103
+    4h   1375 tr  WR= 45.4%  avg= -0.1514%  PF= 0.760  Sh= -8.844
+
+  [BASELINE - bullish only]
+    5m    864 tr  WR= 39.0%  avg= -0.2665%  PF= 0.526  Sh=-20.624
+    15m   864 tr  WR= 40.5%  avg= -0.2452%  PF= 0.558  Sh=-18.867
+    1h    864 tr  WR= 42.5%  avg= -0.2512%  PF= 0.565  Sh=-18.404
+    4h    859 tr  WR= 44.9%  avg= -0.2317%  PF= 0.675  Sh=-12.697
+
+  [BASELINE - bearish only]
+    5m    516 tr  WR= 39.5%  avg= -0.1401%  PF= 0.643  Sh=-13.813
+    15m   516 tr  WR= 38.4%  avg= -0.1292%  PF= 0.669  Sh=-12.567
+    1h    516 tr  WR= 39.5%  avg= -0.1113%  PF= 0.747  Sh= -9.073
+    4h    516 tr  WR= 46.1%  avg= -0.0177%  PF= 0.964  Sh= -1.184
+
+  [FILTERED RESULTS]
+  --- count>=2_range<=0.3 ---
+    N=24 signals passed filter
+    All directions:
+      5m     24 tr  WR=  0.0%  avg= -0.2071%  PF= 0.000  Sh=-210.245
+      15m    24 tr  WR=  8.3%  avg= -0.1995%  PF= 0.029  Sh=-168.353
+      1h     24 tr  WR=  8.3%  avg= -0.1813%  PF= 0.026  Sh=-128.366
+      4h     24 tr  WR= 33.3%  avg= -0.1554%  PF= 0.265  Sh=-44.647
+
+    Bullish only:
+      5m     18 tr  WR=  0.0%  avg= -0.2055%  PF= 0.000  Sh=-203.851
+      15m    18 tr  WR= 11.1%  avg= -0.1928%  PF= 0.039  Sh=-157.007
+      1h     18 tr  WR= 11.1%  avg= -0.1777%  PF= 0.035  Sh=-120.253
+      4h     18 tr  WR= 38.9%  avg= -0.1406%  PF= 0.203  Sh=-46.938
+
+    Bearish only:
+      5m      6 tr  WR=  0.0%  avg= -0.2120%  PF= 0.000  Sh=-232.729
+      15m     6 tr  WR=  0.0%  avg= -0.2194%  PF= 0.000  Sh=-216.197
+      1h      6 tr  WR=  0.0%  avg= -0.1920%  PF= 0.000  Sh=-161.788
+      4h      6 tr  WR= 16.7%  avg= -0.1999%  PF= 0.367  Sh=-43.361
+
+    Position in cluster:
+      middle_of_cluster:
+        5m     24 tr  WR=  0.0%  avg= -0.2071%  PF= 0.000  Sh=-210.245
+        15m    24 tr  WR=  8.3%  avg= -0.1995%  PF= 0.029  Sh=-168.353
+        1h     24 tr  WR=  8.3%  avg= -0.1813%  PF= 0.026  Sh=-128.366
+        4h     24 tr  WR= 33.3%  avg= -0.1554%  PF= 0.265  Sh=-44.647
+
+  --- count>=2_range<=0.5 ---
+    N=74 signals passed filter
+    All directions:
+      5m     74 tr  WR= 13.5%  avg= -0.1655%  PF= 0.055  Sh=-109.629
+      15m    74 tr  WR= 18.9%  avg= -0.1565%  PF= 0.087  Sh=-93.998
+      1h     74 tr  WR= 20.3%  avg= -0.1859%  PF= 0.122  Sh=-54.856
+      4h     74 tr  WR= 40.5%  avg= -0.2077%  PF= 0.322  Sh=-29.758
+
+    Bullish only:
+      5m     41 tr  WR= 12.2%  avg= -0.1462%  PF= 0.047  Sh=-108.115
+      15m    41 tr  WR= 22.0%  avg= -0.1550%  PF= 0.055  Sh=-101.857
+      1h     41 tr  WR= 17.1%  avg= -0.1610%  PF= 0.071  Sh=-66.360
+      4h     41 tr  WR= 43.9%  avg= -0.0852%  PF= 0.386  Sh=-31.309
+
+    Bearish only:
+      5m     33 tr  WR= 15.2%  avg= -0.1896%  PF= 0.062  Sh=-114.912
+      15m    33 tr  WR= 15.2%  avg= -0.1585%  PF= 0.124  Sh=-86.692
+      1h     33 tr  WR= 24.2%  avg= -0.2167%  PF= 0.163  Sh=-50.757
+      4h     33 tr  WR= 36.4%  avg= -0.3600%  PF= 0.300  Sh=-36.872
+
+    Position in cluster:
+      last_in_cluster:
+        5m      8 tr  WR= 12.5%  avg= -0.1671%  PF= 0.128  Sh=-83.677
+        15m     8 tr  WR= 12.5%  avg= -0.1524%  PF= 0.095  Sh=-77.504
+        1h      8 tr  WR= 50.0%  avg= -0.1252%  PF= 0.279  Sh=-42.762
+        4h      8 tr  WR= 62.5%  avg= +0.0245%  PF= 1.063  Sh=  1.811
+
+      middle_of_cluster:
+        5m     66 tr  WR= 13.6%  avg= -0.1653%  PF= 0.045  Sh=-114.842
+        15m    66 tr  WR= 19.7%  avg= -0.1570%  PF= 0.087  Sh=-96.640
+        1h     66 tr  WR= 16.7%  avg= -0.1932%  PF= 0.106  Sh=-56.306
+        4h     66 tr  WR= 37.9%  avg= -0.2359%  PF= 0.203  Sh=-41.986
+
+  --- count>=3_range<=0.3 ---
+    N=13 — insufficient data
+
+  --- count>=3_range<=0.5 ---
+    N=44 signals passed filter
+    All directions:
+      5m     44 tr  WR=  9.1%  avg= -0.1583%  PF= 0.048  Sh=-109.636
+      15m    44 tr  WR= 18.2%  avg= -0.1454%  PF= 0.063  Sh=-94.696
+      1h     44 tr  WR= 25.0%  avg= -0.1694%  PF= 0.132  Sh=-45.819
+      4h     44 tr  WR= 43.2%  avg= -0.2994%  PF= 0.156  Sh=-43.507
+
+    Bullish only:
+      5m     25 tr  WR= 12.0%  avg= -0.1242%  PF= 0.047  Sh=-98.453
+      15m    25 tr  WR= 28.0%  avg= -0.1193%  PF= 0.091  Sh=-80.027
+      1h     25 tr  WR= 24.0%  avg= -0.0880%  PF= 0.139  Sh=-64.048
+      4h     25 tr  WR= 56.0%  avg= +0.0019%  PF= 1.032  Sh=  1.304
+
+    Bearish only:
+      5m     19 tr  WR=  5.3%  avg= -0.2031%  PF= 0.048  Sh=-133.094
+      15m    19 tr  WR=  5.3%  avg= -0.1797%  PF= 0.036  Sh=-118.551
+      1h     19 tr  WR= 26.3%  avg= -0.2767%  PF= 0.129  Sh=-53.361
+      4h     19 tr  WR= 26.3%  avg= -0.6959%  PF= 0.063  Sh=-80.200
+
+    Position in cluster:
+      last_in_cluster:
+        5m      5 tr  WR= 20.0%  avg= -0.1242%  PF= 0.240  Sh=-57.136
+        15m     5 tr  WR= 20.0%  avg= -0.1070%  PF= 0.193  Sh=-50.399
+        1h      5 tr  WR= 60.0%  avg= -0.0812%  PF= 0.365  Sh=-28.151
+        4h      5 tr  WR= 60.0%  avg= -0.4948%  PF= 0.120  Sh=-56.405
+
+      middle_of_cluster:
+        5m     39 tr  WR=  7.7%  avg= -0.1627%  PF= 0.024  Sh=-123.790
+        15m    39 tr  WR= 17.9%  avg= -0.1503%  PF= 0.049  Sh=-104.794
+        1h     39 tr  WR= 20.5%  avg= -0.1808%  PF= 0.113  Sh=-47.910
+        4h     39 tr  WR= 41.0%  avg= -0.2743%  PF= 0.164  Sh=-41.871
+
+  --- count>=4_range<=0.3 ---
+    N=6 — insufficient data
+
+  --- count>=4_range<=0.5 ---
+    N=26 signals passed filter
+    All directions:
+      5m     26 tr  WR= 11.5%  avg= -0.1589%  PF= 0.036  Sh=-112.707
+      15m    26 tr  WR= 15.4%  avg= -0.1439%  PF= 0.035  Sh=-97.276
+      1h     26 tr  WR= 23.1%  avg= -0.2067%  PF= 0.110  Sh=-47.017
+      4h     26 tr  WR= 42.3%  avg= -0.3460%  PF= 0.093  Sh=-53.447
+
+    Bullish only:
+      5m     13 tr  WR= 23.1%  avg= -0.1045%  PF= 0.102  Sh=-75.704
+      15m    13 tr  WR= 30.8%  avg= -0.1065%  PF= 0.089  Sh=-75.220
+      1h     13 tr  WR= 23.1%  avg= -0.0785%  PF= 0.185  Sh=-55.042
+      4h     13 tr  WR= 61.5%  avg= +0.0167%  PF= 1.380  Sh= 13.987
+
+    Bearish only:
+      5m     13 tr  WR=  0.0%  avg= -0.2132%  PF= 0.000  Sh=-180.638
+      15m    13 tr  WR=  0.0%  avg= -0.1812%  PF= 0.000  Sh=-126.538
+      1h     13 tr  WR= 23.1%  avg= -0.3349%  PF= 0.090  Sh=-58.415
+      4h     13 tr  WR= 23.1%  avg= -0.7088%  PF= 0.014  Sh=-97.924
+
+    Position in cluster:
+      middle_of_cluster:
+        5m     23 tr  WR= 13.0%  avg= -0.1518%  PF= 0.042  Sh=-112.751
+        15m    23 tr  WR= 17.4%  avg= -0.1433%  PF= 0.040  Sh=-105.230
+        1h     23 tr  WR= 17.4%  avg= -0.2137%  PF= 0.093  Sh=-47.542
+        4h     23 tr  WR= 39.1%  avg= -0.3567%  PF= 0.093  Sh=-53.430
+
+
+  [WALK-FORWARD VALIDATION (70/30)]
+    SKIPPED: no valid IS filter
+
+
+============================================================
+  Scalp17
+============================================================
+
+  Total directional signals: 4528
+
+  [BASELINE - no filter]
+    5m   4528 tr  WR=  6.2%  avg= -0.2017%  PF= 0.039  Sh=-121.001
+    15m  4528 tr  WR= 14.4%  avg= -0.1999%  PF= 0.117  Sh=-74.067
+    1h   4528 tr  WR= 26.5%  avg= -0.1930%  PF= 0.324  Sh=-36.017
+    4h   4527 tr  WR= 35.4%  avg= -0.2238%  PF= 0.522  Sh=-20.507
+
+  [BASELINE - bullish only]
+    5m   3112 tr  WR=  4.7%  avg= -0.2012%  PF= 0.028  Sh=-134.162
+    15m  3112 tr  WR= 12.7%  avg= -0.2001%  PF= 0.100  Sh=-80.478
+    1h   3112 tr  WR= 26.4%  avg= -0.1897%  PF= 0.301  Sh=-39.039
+    4h   3112 tr  WR= 36.0%  avg= -0.2134%  PF= 0.515  Sh=-21.360
+
+  [BASELINE - bearish only]
+    5m   1416 tr  WR=  9.5%  avg= -0.2028%  PF= 0.062  Sh=-102.147
+    15m  1416 tr  WR= 18.1%  avg= -0.1994%  PF= 0.152  Sh=-64.015
+    1h   1416 tr  WR= 26.7%  avg= -0.2003%  PF= 0.368  Sh=-31.694
+    4h   1415 tr  WR= 34.2%  avg= -0.2467%  PF= 0.534  Sh=-19.414
+
+  [FILTERED RESULTS]
+  --- count>=2_range<=0.3 ---
+    N=35 signals passed filter
+    All directions:
+      5m     35 tr  WR=  0.0%  avg= -0.2199%  PF= 0.000  Sh=-420.575
+      15m    35 tr  WR=  0.0%  avg= -0.2207%  PF= 0.000  Sh=-292.013
+      1h     35 tr  WR=  2.9%  avg= -0.2254%  PF= 0.005  Sh=-182.933
+      4h     35 tr  WR= 25.7%  avg= -0.2687%  PF= 0.253  Sh=-46.416
+
+    Bullish only:
+      5m     32 tr  WR=  0.0%  avg= -0.2139%  PF= 0.000  Sh=-530.488
+      15m    32 tr  WR=  0.0%  avg= -0.2121%  PF= 0.000  Sh=-332.284
+      1h     32 tr  WR=  3.1%  avg= -0.2234%  PF= 0.005  Sh=-176.192
+      4h     32 tr  WR= 28.1%  avg= -0.1665%  PF= 0.374  Sh=-35.823
+
+    Position in cluster:
+      last_in_cluster:
+        5m      7 tr  WR=  0.0%  avg= -0.2520%  PF= 0.000  Sh=-455.682
+        15m     7 tr  WR=  0.0%  avg= -0.2615%  PF= 0.000  Sh=-965.262
+        1h      7 tr  WR=  0.0%  avg= -0.2272%  PF= 0.000  Sh=-233.129
+        4h      7 tr  WR= 14.3%  avg= -0.3414%  PF= 0.086  Sh=-79.159
+
+      middle_of_cluster:
+        5m     28 tr  WR=  0.0%  avg= -0.2119%  PF= 0.000  Sh=-443.261
+        15m    28 tr  WR=  0.0%  avg= -0.2105%  PF= 0.000  Sh=-263.886
+        1h     28 tr  WR=  3.6%  avg= -0.2249%  PF= 0.006  Sh=-174.580
+        4h     28 tr  WR= 28.6%  avg= -0.2505%  PF= 0.297  Sh=-41.158
+
+  --- count>=2_range<=0.5 ---
+    N=257 signals passed filter
+    All directions:
+      5m    257 tr  WR=  0.8%  avg= -0.2067%  PF= 0.005  Sh=-282.231
+      15m   257 tr  WR=  3.9%  avg= -0.2043%  PF= 0.029  Sh=-156.462
+      1h    257 tr  WR= 14.8%  avg= -0.1808%  PF= 0.150  Sh=-68.257
+      4h    257 tr  WR= 30.0%  avg= -0.1553%  PF= 0.508  Sh=-22.672
+
+    Bullish only:
+      5m    212 tr  WR=  0.9%  avg= -0.2052%  PF= 0.006  Sh=-275.372
+      15m   212 tr  WR=  3.8%  avg= -0.2052%  PF= 0.020  Sh=-168.029
+      1h    212 tr  WR= 14.6%  avg= -0.1965%  PF= 0.095  Sh=-87.558
+      4h    212 tr  WR= 27.8%  avg= -0.1494%  PF= 0.508  Sh=-23.443
+
+    Bearish only:
+      5m     45 tr  WR=  0.0%  avg= -0.2140%  PF= 0.000  Sh=-322.172
+      15m    45 tr  WR=  4.4%  avg= -0.1998%  PF= 0.068  Sh=-121.496
+      1h     45 tr  WR= 15.6%  avg= -0.1073%  PF= 0.442  Sh=-27.136
+      4h     45 tr  WR= 40.0%  avg= -0.1828%  PF= 0.509  Sh=-20.921
+
+    Position in cluster:
+      last_in_cluster:
+        5m     62 tr  WR=  0.0%  avg= -0.2170%  PF= 0.000  Sh=-317.350
+        15m    62 tr  WR=  1.6%  avg= -0.2249%  PF= 0.021  Sh=-191.792
+        1h     62 tr  WR=  6.5%  avg= -0.2112%  PF= 0.021  Sh=-133.928
+        4h     62 tr  WR= 27.4%  avg= -0.2093%  PF= 0.309  Sh=-42.543
+
+      middle_of_cluster:
+        5m    195 tr  WR=  1.0%  avg= -0.2034%  PF= 0.006  Sh=-273.511
+        15m   195 tr  WR=  4.6%  avg= -0.1977%  PF= 0.031  Sh=-147.822
+        1h    195 tr  WR= 17.4%  avg= -0.1712%  PF= 0.192  Sh=-59.012
+        4h    195 tr  WR= 30.8%  avg= -0.1381%  PF= 0.569  Sh=-18.798
+
+  --- count>=3_range<=0.3 ---
+    N=29 signals passed filter
+    All directions:
+      5m     29 tr  WR=  0.0%  avg= -0.2191%  PF= 0.000  Sh=-413.299
+      15m    29 tr  WR=  0.0%  avg= -0.2242%  PF= 0.000  Sh=-284.122
+      1h     29 tr  WR=  3.4%  avg= -0.2313%  PF= 0.006  Sh=-187.212
+      4h     29 tr  WR= 24.1%  avg= -0.2593%  PF= 0.279  Sh=-43.092
+
+    Bullish only:
+      5m     27 tr  WR=  0.0%  avg= -0.2114%  PF= 0.000  Sh=-569.610
+      15m    27 tr  WR=  0.0%  avg= -0.2138%  PF= 0.000  Sh=-330.748
+      1h     27 tr  WR=  3.7%  avg= -0.2291%  PF= 0.006  Sh=-182.162
+      4h     27 tr  WR= 25.9%  avg= -0.1678%  PF= 0.391  Sh=-34.147
+
+    Position in cluster:
+      last_in_cluster:
+        5m      5 tr  WR=  0.0%  avg= -0.2497%  PF= 0.000  Sh=-494.456
+        15m     5 tr  WR=  0.0%  avg= -0.2621%  PF= 0.000  Sh=-819.184
+        1h      5 tr  WR=  0.0%  avg= -0.2140%  PF= 0.000  Sh=-311.694
+        4h      5 tr  WR= 20.0%  avg= -0.3047%  PF= 0.129  Sh=-60.499
+
+      middle_of_cluster:
+        5m     24 tr  WR=  0.0%  avg= -0.2127%  PF= 0.000  Sh=-417.598
+        15m    24 tr  WR=  0.0%  avg= -0.2163%  PF= 0.000  Sh=-260.443
+        1h     24 tr  WR=  4.2%  avg= -0.2349%  PF= 0.007  Sh=-178.192
+        4h     24 tr  WR= 25.0%  avg= -0.2499%  PF= 0.309  Sh=-40.314
+
+  --- count>=3_range<=0.5 ---
+    N=212 signals passed filter
+    All directions:
+      5m    212 tr  WR=  0.9%  avg= -0.2065%  PF= 0.006  Sh=-278.088
+      15m   212 tr  WR=  4.7%  avg= -0.2036%  PF= 0.034  Sh=-147.496
+      1h    212 tr  WR= 16.5%  avg= -0.1694%  PF= 0.184  Sh=-60.521
+      4h    212 tr  WR= 31.6%  avg= -0.1242%  PF= 0.598  Sh=-17.170
+
+    Bullish only:
+      5m    175 tr  WR=  1.1%  avg= -0.2051%  PF= 0.007  Sh=-270.028
+      15m   175 tr  WR=  4.6%  avg= -0.2045%  PF= 0.024  Sh=-160.357
+      1h    175 tr  WR= 16.6%  avg= -0.1881%  PF= 0.115  Sh=-80.417
+      4h    175 tr  WR= 29.1%  avg= -0.1210%  PF= 0.594  Sh=-17.898
+
+    Bearish only:
+      5m     37 tr  WR=  0.0%  avg= -0.2133%  PF= 0.000  Sh=-327.036
+      15m    37 tr  WR=  5.4%  avg= -0.1993%  PF= 0.082  Sh=-111.024
+      1h     37 tr  WR= 16.2%  avg= -0.0810%  PF= 0.560  Sh=-19.134
+      4h     37 tr  WR= 43.2%  avg= -0.1397%  PF= 0.616  Sh=-15.254
+
+    Position in cluster:
+      last_in_cluster:
+        5m     44 tr  WR=  0.0%  avg= -0.2147%  PF= 0.000  Sh=-333.698
+        15m    44 tr  WR=  2.3%  avg= -0.2222%  PF= 0.030  Sh=-174.749
+        1h     44 tr  WR=  6.8%  avg= -0.2011%  PF= 0.029  Sh=-128.245
+        4h     44 tr  WR= 29.5%  avg= -0.1559%  PF= 0.438  Sh=-29.470
+
+      middle_of_cluster:
+        5m    168 tr  WR=  1.2%  avg= -0.2044%  PF= 0.008  Sh=-267.207
+        15m   168 tr  WR=  5.4%  avg= -0.1987%  PF= 0.036  Sh=-141.661
+        1h    168 tr  WR= 19.0%  avg= -0.1611%  PF= 0.225  Sh=-53.098
+        4h    168 tr  WR= 32.1%  avg= -0.1159%  PF= 0.635  Sh=-15.133
+
+  --- count>=4_range<=0.3 ---
+    N=23 signals passed filter
+    All directions:
+      5m     23 tr  WR=  0.0%  avg= -0.2208%  PF= 0.000  Sh=-399.517
+      15m    23 tr  WR=  0.0%  avg= -0.2309%  PF= 0.000  Sh=-311.456
+      1h     23 tr  WR=  4.3%  avg= -0.2471%  PF= 0.007  Sh=-207.518
+      4h     23 tr  WR= 21.7%  avg= -0.2643%  PF= 0.287  Sh=-42.507
+
+    Bullish only:
+      5m     22 tr  WR=  0.0%  avg= -0.2121%  PF= 0.000  Sh=-606.498
+      15m    22 tr  WR=  0.0%  avg= -0.2206%  PF= 0.000  Sh=-404.183
+      1h     22 tr  WR=  4.5%  avg= -0.2430%  PF= 0.007  Sh=-202.650
+      4h     22 tr  WR= 22.7%  avg= -0.1936%  PF= 0.365  Sh=-37.053
+
+    Position in cluster:
+      middle_of_cluster:
+        5m     20 tr  WR=  0.0%  avg= -0.2176%  PF= 0.000  Sh=-404.831
+        15m    20 tr  WR=  0.0%  avg= -0.2289%  PF= 0.000  Sh=-290.766
+        1h     20 tr  WR=  5.0%  avg= -0.2553%  PF= 0.008  Sh=-207.230
+        4h     20 tr  WR= 20.0%  avg= -0.2884%  PF= 0.278  Sh=-43.999
+
+  --- count>=4_range<=0.5 ---
+    N=171 signals passed filter
+    All directions:
+      5m    171 tr  WR=  0.6%  avg= -0.2062%  PF= 0.003  Sh=-277.707
+      15m   171 tr  WR=  5.3%  avg= -0.2015%  PF= 0.040  Sh=-138.102
+      1h    171 tr  WR= 18.7%  avg= -0.1534%  PF= 0.229  Sh=-52.153
+      4h    171 tr  WR= 33.9%  avg= -0.0965%  PF= 0.679  Sh=-13.223
+
+    Bullish only:
+      5m    138 tr  WR=  0.7%  avg= -0.2044%  PF= 0.004  Sh=-270.992
+      15m   138 tr  WR=  5.1%  avg= -0.2025%  PF= 0.027  Sh=-150.509
+      1h    138 tr  WR= 18.8%  avg= -0.1746%  PF= 0.142  Sh=-72.705
+      4h    138 tr  WR= 31.9%  avg= -0.1061%  PF= 0.646  Sh=-15.262
+
+    Bearish only:
+      5m     33 tr  WR=  0.0%  avg= -0.2141%  PF= 0.000  Sh=-311.946
+      15m    33 tr  WR=  6.1%  avg= -0.1973%  PF= 0.091  Sh=-106.098
+      1h     33 tr  WR= 18.2%  avg= -0.0650%  PF= 0.640  Sh=-14.679
+      4h     33 tr  WR= 42.4%  avg= -0.0562%  PF= 0.815  Sh= -6.558
+
+    Position in cluster:
+      last_in_cluster:
+        5m     34 tr  WR=  0.0%  avg= -0.2148%  PF= 0.000  Sh=-305.135
+        15m    34 tr  WR=  2.9%  avg= -0.2188%  PF= 0.039  Sh=-155.495
+        1h     34 tr  WR=  8.8%  avg= -0.1823%  PF= 0.040  Sh=-107.663
+        4h     34 tr  WR= 35.3%  avg= -0.1358%  PF= 0.524  Sh=-24.051
+
+      middle_of_cluster:
+        5m    137 tr  WR=  0.7%  avg= -0.2041%  PF= 0.004  Sh=-272.069
+        15m   137 tr  WR=  5.8%  avg= -0.1972%  PF= 0.040  Sh=-134.330
+        1h    137 tr  WR= 21.2%  avg= -0.1463%  PF= 0.273  Sh=-46.113
+        4h    137 tr  WR= 33.6%  avg= -0.0867%  PF= 0.715  Sh=-11.340
+
+
+  [WALK-FORWARD VALIDATION (70/30)]
+    Best IS filter: count>=4_range<=0.5
+    IS:  160 tr, WR=20.0%, avg=-0.1451%, Sh=-48.164
+    OOS 1h: 11 tr, WR=0.0%, avg=-0.2753%, Sh=-307.247
+    Overfitted: NO
+
+
+============================================================
+  SUMMARY
+============================================================
+
+  DMI_SMF:
+    Baseline 1h: 1761 tr, WR=25.1%, avg=-0.1710%, Sh=-31.532
+    Best filter (count>=2_range<=0.5): 88 tr, WR=5.7%, avg=-0.2334%, Sh=-120.784
+    Sharpe delta: -89.252 (WORSE)
+  DyorAlerts:
+    Baseline 1h: 1380 tr, WR=41.4%, avg=-0.1989%, Sh=-15.103
+    Best filter (count>=3_range<=0.5): 44 tr, WR=25.0%, avg=-0.1694%, Sh=-45.819
+    Sharpe delta: -30.716 (WORSE)
+  Scalp17:
+    Baseline 1h: 4528 tr, WR=26.5%, avg=-0.1930%, Sh=-36.017
+    Best filter (count>=4_range<=0.5): 171 tr, WR=18.7%, avg=-0.1534%, Sh=-52.153
+    Sharpe delta: -16.137 (WORSE)
+
+======================================================================
+END OF DMI RANGE COMPRESSION TEST
+======================================================================

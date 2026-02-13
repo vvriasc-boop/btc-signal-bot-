@@ -1,0 +1,494 @@
+======================================================================
+ORDERBOOK CHANNEL ANALYSIS REPORT
+Generated: 2026-02-13 22:59 UTC
+Fee: 0.1% per side (0.2% round-trip)
+Walk-forward: 70% IS / 30% OOS
+======================================================================
+
+  [DATA SUMMARY]
+    Dyor signal                     1961/ 1966 ( 99.7%) parsed
+    Fresh A UL S                   25529/25532 (100.0%) parsed
+    Fresh ASK                       3406/ 3678 ( 92.6%) parsed
+    Fresh ASK MEGA                     0/  337 (  0.0%) parsed
+    Fresh ASK MEGA spot                0/   17 (  0.0%) parsed
+    Fresh ASK futures               3586/ 4222 ( 84.9%) parsed
+    Fresh ASK light F              29564/29568 (100.0%) parsed
+    Fresh ASK light spot           22874/22881 (100.0%) parsed
+    Fresh B UL S                   27585/27588 (100.0%) parsed
+    Fresh BID                       2508/ 2698 ( 93.0%) parsed
+    Fresh BID MEGA                     0/  331 (  0.0%) parsed
+    Fresh BID MEGA spot                0/   29 (  0.0%) parsed
+    Fresh BID futures               3322/ 3979 ( 83.5%) parsed
+    Fresh BID light F              29801/29804 (100.0%) parsed
+    Fresh BID light spot           27324/27330 (100.0%) parsed
+    Long Bid F                         0/  277 (  0.0%) parsed
+    SHORT ONLY                         0/  477 (  0.0%) parsed
+    Short Ask F                        0/  445 (  0.0%) parsed
+    TOTAL                          177460 parsed, 3699 failed
+
+
+======================================================================
+  HYPOTHESIS 1: BID/ASK IMBALANCE IN 5-MINUTE WINDOWS
+======================================================================
+
+  Total signals: 177460
+  Split: 2026-01-01 11:40:45+00:00
+
+------------------------------------------------------------
+  UltraLight_Spot
+------------------------------------------------------------
+
+  Bid signals: 27585, Ask signals: 25529
+  Total 5-min windows: 6929, Active (imbalance!=0): 3441
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    3441    3.8%   -0.1962   0.020  -159.707
+  thr1_direct_    3441    8.8%   -0.1944   0.071   -92.080
+  thr1_direct_    3441   21.7%   -0.1863   0.248   -42.725
+  thr1_direct_    3441   34.6%   -0.1717   0.511   -21.370
+  thr1_inverse    3441    3.1%   -0.2038   0.017  -165.930
+  thr1_inverse    3441    8.0%   -0.2056   0.060   -97.409
+  thr1_inverse    3441   19.7%   -0.2137   0.202   -48.994
+  thr1_inverse    3441   31.8%   -0.2283   0.411   -28.411
+  thr2_direct_     536    4.1%   -0.1920   0.016  -186.327
+  thr2_direct_     536    9.1%   -0.1864   0.079   -90.852
+  thr2_direct_     536   20.0%   -0.1674   0.270   -43.214
+  thr2_direct_     536   32.8%   -0.1377   0.554   -19.248
+  thr2_inverse     536    2.6%   -0.2080   0.006  -201.841
+  thr2_inverse     536    5.6%   -0.2136   0.043  -104.083
+  thr2_inverse     536   18.8%   -0.2326   0.138   -60.033
+  thr2_inverse     536   27.8%   -0.2623   0.321   -36.663
+  thr3_direct_      57    0.0%   -0.2077   0.000  -209.692
+  thr3_direct_      57    5.3%   -0.2178   0.047  -117.334
+  thr3_direct_      57   19.3%   -0.1771   0.176   -64.241
+  thr3_direct_      57   26.3%   -0.1269   0.590   -18.424
+  thr3_inverse      57    3.5%   -0.1923   0.020  -194.060
+  thr3_inverse      57    7.0%   -0.1822   0.093   -98.118
+  thr3_inverse      57   15.8%   -0.2229   0.096   -80.830
+  thr3_inverse      57   29.8%   -0.2731   0.259   -39.646
+
+  [WALK-FORWARD]
+  Best IS: threshold=1, mode=direct
+    IS  1h: 2385 tr  WR= 20.7%  avg= -0.1931%  PF= 0.243  Sh= -41.487
+    OOS 1h: 1056 tr  WR= 24.1%  avg= -0.1711%  PF= 0.261  Sh= -47.414
+    Overfitted: NO
+
+------------------------------------------------------------
+  Light_Spot
+------------------------------------------------------------
+
+  Bid signals: 27324, Ask signals: 22874
+  Total 5-min windows: 7793, Active (imbalance!=0): 4523
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    4523    3.2%   -0.1979   0.020  -163.124
+  thr1_direct_    4523    8.6%   -0.1956   0.070   -90.457
+  thr1_direct_    4523   20.4%   -0.1864   0.247   -43.412
+  thr1_direct_    4523   33.8%   -0.1743   0.505   -20.773
+  thr1_inverse    4523    3.2%   -0.2021   0.016  -166.621
+  thr1_inverse    4523    8.0%   -0.2044   0.064   -94.553
+  thr1_inverse    4523   19.2%   -0.2136   0.191   -49.754
+  thr1_inverse    4523   29.9%   -0.2257   0.416   -26.890
+  thr2_direct_    1639    2.5%   -0.1967   0.014  -170.462
+  thr2_direct_    1639    7.2%   -0.1904   0.058   -95.135
+  thr2_direct_    1639   17.6%   -0.1824   0.226   -45.014
+  thr2_direct_    1639   32.6%   -0.1766   0.484   -21.000
+  thr2_inverse    1639    2.5%   -0.2033   0.013  -176.210
+  thr2_inverse    1639    6.2%   -0.2096   0.044  -104.677
+  thr2_inverse    1639   17.1%   -0.2176   0.159   -53.718
+  thr2_inverse    1639   28.2%   -0.2234   0.409   -26.578
+  thr3_direct_     615    1.0%   -0.1988   0.002  -251.053
+  thr3_direct_     615    4.6%   -0.1971   0.021  -149.393
+  thr3_direct_     615   12.5%   -0.1974   0.133   -65.709
+  thr3_direct_     615   29.1%   -0.2212   0.362   -27.818
+  thr3_inverse     615    2.0%   -0.2012   0.005  -254.083
+  thr3_inverse     615    4.2%   -0.2029   0.023  -153.734
+  thr3_inverse     615   13.7%   -0.2026   0.109   -67.437
+  thr3_inverse     615   28.0%   -0.1788   0.464   -22.481
+  thr5_direct_      13    0.0%   -0.2337   0.000  -728.585
+  thr5_direct_      13    0.0%   -0.2357   0.000  -391.639
+  thr5_direct_      13    7.7%   -0.2046   0.008  -163.114
+  thr5_direct_      13   30.8%   -0.2988   0.092   -77.887
+  thr5_inverse      13    0.0%   -0.1663   0.000  -518.650
+  thr5_inverse      13    0.0%   -0.1643   0.000  -272.939
+  thr5_inverse      13    7.7%   -0.1954   0.024  -155.757
+  thr5_inverse      13   46.2%   -0.1012   0.548   -26.367
+
+  [WALK-FORWARD]
+  Best IS: threshold=1, mode=direct
+    IS  1h: 3265 tr  WR= 19.3%  avg= -0.1927%  PF= 0.243  Sh= -42.381
+    OOS 1h: 1258 tr  WR= 23.2%  avg= -0.1701%  PF= 0.257  Sh= -47.920
+    Overfitted: NO
+
+------------------------------------------------------------
+  Light_Futures
+------------------------------------------------------------
+
+  Bid signals: 29801, Ask signals: 29564
+  Total 5-min windows: 7005, Active (imbalance!=0): 3488
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    3488    4.1%   -0.1962   0.025  -158.819
+  thr1_direct_    3488   10.2%   -0.1910   0.089   -85.285
+  thr1_direct_    3488   21.0%   -0.1936   0.241   -43.152
+  thr1_direct_    3488   33.1%   -0.1982   0.478   -22.942
+  thr1_inverse    3488    3.2%   -0.2038   0.017  -164.915
+  thr1_inverse    3488    8.1%   -0.2090   0.061   -93.306
+  thr1_inverse    3488   20.3%   -0.2064   0.222   -46.005
+  thr1_inverse    3488   33.1%   -0.2018   0.472   -23.353
+  thr2_direct_     347    2.3%   -0.2058   0.006  -189.214
+  thr2_direct_     347    8.4%   -0.2054   0.050  -120.422
+  thr2_direct_     347   20.5%   -0.1882   0.231   -49.851
+  thr2_direct_     347   34.6%   -0.1024   0.710   -10.902
+  thr2_inverse     347    2.6%   -0.1942   0.022  -178.479
+  thr2_inverse     347    8.6%   -0.1946   0.047  -114.119
+  thr2_inverse     347   19.0%   -0.2118   0.170   -56.079
+  thr2_inverse     347   34.3%   -0.2976   0.343   -31.691
+  thr3_direct_      46    2.2%   -0.2019   0.005  -225.651
+  thr3_direct_      46    4.3%   -0.2260   0.032  -128.673
+  thr3_direct_      46   23.9%   -0.2191   0.130   -65.339
+  thr3_direct_      46   43.5%   +0.0820   1.235     7.128
+  thr3_inverse      46    2.2%   -0.1981   0.002  -221.344
+  thr3_inverse      46   13.0%   -0.1740   0.090   -99.063
+  thr3_inverse      46   17.4%   -0.1809   0.251   -53.970
+  thr3_inverse      46   39.1%   -0.4820   0.241   -41.912
+
+  [WALK-FORWARD]
+  Best IS: threshold=1, mode=direct
+    IS  1h: 2441 tr  WR= 21.3%  avg= -0.1897%  PF= 0.261  Sh= -39.179
+    OOS 1h: 1047 tr  WR= 20.4%  avg= -0.2028%  PF= 0.192  Sh= -57.567
+    Overfitted: NO
+
+------------------------------------------------------------
+  Medium_Spot
+------------------------------------------------------------
+
+  Bid signals: 2508, Ask signals: 3406
+  Total 5-min windows: 7783, Active (imbalance!=0): 3259
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    3259    4.2%   -0.1995   0.028  -144.478
+  thr1_direct_    3259   10.1%   -0.1980   0.094   -82.420
+  thr1_direct_    3259   22.0%   -0.1799   0.289   -39.887
+  thr1_direct_    3259   34.8%   -0.1452   0.587   -17.003
+  thr1_inverse    3259    3.9%   -0.2005   0.025  -145.225
+  thr1_inverse    3259    9.9%   -0.2020   0.074   -84.118
+  thr1_inverse    3259   21.8%   -0.2201   0.189   -48.799
+  thr1_inverse    3259   32.7%   -0.2548   0.380   -29.831
+  thr2_direct_     546    6.4%   -0.1983   0.031  -135.849
+  thr2_direct_     546   12.1%   -0.2010   0.114   -73.450
+  thr2_direct_     546   24.5%   -0.1750   0.318   -36.330
+  thr2_direct_     546   32.2%   -0.1802   0.512   -21.101
+  thr2_inverse     546    5.3%   -0.2017   0.035  -138.159
+  thr2_inverse     546   13.2%   -0.1990   0.113   -72.735
+  thr2_inverse     546   23.3%   -0.2250   0.212   -46.694
+  thr2_inverse     546   33.7%   -0.2198   0.432   -25.734
+  thr3_direct_      47    8.5%   -0.1925   0.008  -143.576
+  thr3_direct_      47   14.9%   -0.1735   0.063   -91.383
+  thr3_direct_      47   34.0%   -0.1604   0.360   -34.985
+  thr3_direct_      47   40.4%   -0.0068   0.969    -0.996
+  thr3_inverse      47    4.3%   -0.2075   0.029  -154.809
+  thr3_inverse      47   10.6%   -0.2265   0.055  -119.239
+  thr3_inverse      47   23.4%   -0.2396   0.224   -52.238
+  thr3_inverse      47   19.1%   -0.3932   0.172   -57.642
+
+  [WALK-FORWARD]
+  Best IS: threshold=3, mode=direct
+    IS  1h:   31 tr  WR= 32.3%  avg= -0.1005%  PF= 0.535  Sh= -22.417
+    OOS 1h:   16 tr  WR= 37.5%  avg= -0.2766%  PF= 0.129  Sh= -61.068
+    Overfitted: NO
+
+------------------------------------------------------------
+  Medium_Futures
+------------------------------------------------------------
+
+  Bid signals: 3322, Ask signals: 3586
+  Total 5-min windows: 7780, Active (imbalance!=0): 3484
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    3484    3.8%   -0.2023   0.023  -149.346
+  thr1_direct_    3484    9.5%   -0.2050   0.076   -86.020
+  thr1_direct_    3484   21.6%   -0.2069   0.227   -45.066
+  thr1_direct_    3484   33.7%   -0.1971   0.476   -23.188
+  thr1_inverse    3484    4.3%   -0.1977   0.028  -145.985
+  thr1_inverse    3484   10.3%   -0.1950   0.092   -81.860
+  thr1_inverse    3484   21.8%   -0.1931   0.258   -42.043
+  thr1_inverse    3484   32.5%   -0.2029   0.470   -23.872
+  thr2_direct_     620    5.8%   -0.1967   0.030  -137.345
+  thr2_direct_     620   11.9%   -0.2045   0.081   -85.454
+  thr2_direct_     620   25.5%   -0.1808   0.298   -38.221
+  thr2_direct_     620   38.9%   -0.1402   0.603   -16.219
+  thr2_inverse     620    5.3%   -0.2033   0.033  -141.960
+  thr2_inverse     620   11.9%   -0.1955   0.105   -81.724
+  thr2_inverse     620   23.1%   -0.2192   0.231   -46.329
+  thr2_inverse     620   33.1%   -0.2598   0.394   -30.042
+  thr3_direct_      78    1.3%   -0.2026   0.001  -182.413
+  thr3_direct_      78   11.5%   -0.2147   0.085   -86.246
+  thr3_direct_      78   20.5%   -0.2707   0.147   -66.068
+  thr3_direct_      78   33.3%   -0.3302   0.267   -44.173
+  thr3_inverse      78    5.1%   -0.1974   0.021  -177.730
+  thr3_inverse      78   12.8%   -0.1853   0.130   -74.471
+  thr3_inverse      78   30.8%   -0.1293   0.416   -31.542
+  thr3_inverse      78   39.7%   -0.0698   0.768    -9.335
+
+  [WALK-FORWARD]
+  Best IS: threshold=3, mode=inverse
+    IS  1h:   46 tr  WR= 28.3%  avg= -0.1111%  PF= 0.453  Sh= -27.921
+    OOS 1h:   32 tr  WR= 34.4%  avg= -0.1553%  PF= 0.372  Sh= -36.577
+    Overfitted: NO
+
+------------------------------------------------------------
+  Mega_Futures
+------------------------------------------------------------
+
+  SKIPPED: no signals
+
+------------------------------------------------------------
+  Mega_Spot
+------------------------------------------------------------
+
+  SKIPPED: no signals
+
+------------------------------------------------------------
+  Aggregate
+------------------------------------------------------------
+
+  Bid signals: 90540, Ask signals: 84959
+  Total 5-min windows: 7793, Active (imbalance!=0): 6274
+
+  [ALL DATA — threshold × mode × horizon]
+         Combo       N     WR%   AvgRet%      PF    Sharpe
+  --------------------------------------------------------
+  thr1_direct_    6274    3.7%   -0.1968   0.023  -156.762
+  thr1_direct_    6274    9.3%   -0.1940   0.079   -89.322
+  thr1_direct_    6274   20.9%   -0.1819   0.258   -42.553
+  thr1_direct_    6274   34.0%   -0.1614   0.533   -19.561
+  thr1_inverse    6274    3.4%   -0.2032   0.018  -161.835
+  thr1_inverse    6274    8.2%   -0.2060   0.062   -94.843
+  thr1_inverse    6274   19.5%   -0.2181   0.185   -51.002
+  thr1_inverse    6274   30.7%   -0.2386   0.392   -28.906
+  thr2_direct_    3706    3.7%   -0.1961   0.020  -163.721
+  thr2_direct_    3706    9.2%   -0.1928   0.078   -89.178
+  thr2_direct_    3706   20.8%   -0.1847   0.247   -43.427
+  thr2_direct_    3706   33.6%   -0.1643   0.521   -20.248
+  thr2_inverse    3706    3.2%   -0.2039   0.017  -170.179
+  thr2_inverse    3706    7.9%   -0.2072   0.059   -95.831
+  thr2_inverse    3706   19.4%   -0.2153   0.189   -50.647
+  thr2_inverse    3706   30.4%   -0.2357   0.393   -29.053
+  thr3_direct_    1979    3.0%   -0.1984   0.013  -174.962
+  thr3_direct_    1979    8.2%   -0.1961   0.057   -99.166
+  thr3_direct_    1979   19.9%   -0.1846   0.237   -45.588
+  thr3_direct_    1979   33.8%   -0.1553   0.523   -20.243
+  thr3_inverse    1979    3.1%   -0.2016   0.017  -177.799
+  thr3_inverse    1979    7.5%   -0.2039   0.057  -103.132
+  thr3_inverse    1979   19.2%   -0.2154   0.172   -53.194
+  thr3_inverse    1979   29.5%   -0.2447   0.360   -31.912
+  thr5_direct_     395    3.0%   -0.1950   0.007  -215.117
+  thr5_direct_     395    7.6%   -0.1919   0.055  -115.725
+  thr5_direct_     395   20.3%   -0.1680   0.244   -48.455
+  thr5_direct_     395   35.9%   -0.1270   0.582   -16.889
+  thr5_inverse     395    1.3%   -0.2050   0.007  -226.120
+  thr5_inverse     395    6.3%   -0.2081   0.029  -125.535
+  thr5_inverse     395   17.2%   -0.2320   0.111   -66.907
+  thr5_inverse     395   26.3%   -0.2730   0.317   -36.323
+
+  [WALK-FORWARD]
+  Best IS: threshold=1, mode=direct
+    IS  1h: 4552 tr  WR= 19.9%  avg= -0.1840%  PF= 0.261  Sh= -40.802
+    OOS 1h: 1722 tr  WR= 23.5%  avg= -0.1766%  PF= 0.249  Sh= -49.232
+    Overfitted: NO
+
+
+======================================================================
+  HYPOTHESIS 2: LIMIT ORDERS AS SUPPORT/RESISTANCE LEVELS
+======================================================================
+
+  Total signals: 177460
+  Split: 2026-01-01 11:40:45+00:00
+
+------------------------------------------------------------
+  Medium
+------------------------------------------------------------
+
+  Signals with price: 12822
+  Levels built: 57
+
+  [TOP PARAMETER COMBOS by 1h Sharpe]
+  Width Str    Pattern   N_lv N_ent   WR_1h   Avg_1h  PF_1h    Sh_1h
+  ----------------------------------------------------------------------
+   0.20   1      touch     57   163   31.3%  -0.2539  0.333  -38.594
+   0.20   2      touch     57   163   31.3%  -0.2539  0.333  -38.594
+   0.20   3      touch     56   162   30.9%  -0.2589  0.325  -39.441
+   0.30   1      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.30   2      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.30   3      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.20   1   combined     57   218   26.6%  -0.2953  0.267  -46.056
+   0.20   2   combined     57   218   26.6%  -0.2953  0.267  -46.056
+   0.20   3   combined     56   217   26.3%  -0.2992  0.261  -46.775
+   0.10   1      touch    111   245   27.3%  -0.3098  0.253  -48.149
+
+  [WALK-FORWARD TOP-3 (70/30)]
+  #1: width=+-0.1%, min_str=1, pattern=touch
+    IS  1h:   40 tr  WR= 10.0%  avg= -0.6983%  PF= 0.082  Sh= -88.822
+    OOS 1h:  205 tr  WR= 30.7%  avg= -0.2340%  PF= 0.327  Sh= -40.490
+    Overfitted: NO
+  #2: width=+-0.1%, min_str=2, pattern=touch
+    IS  1h:   40 tr  WR= 10.0%  avg= -0.6983%  PF= 0.082  Sh= -88.822
+    OOS 1h:  205 tr  WR= 30.7%  avg= -0.2340%  PF= 0.327  Sh= -40.490
+    Overfitted: NO
+  #3: width=+-0.1%, min_str=1, pattern=combined
+    IS  1h:   51 tr  WR=  9.8%  avg= -0.7532%  PF= 0.073  Sh= -96.585
+    OOS 1h:  271 tr  WR= 26.9%  avg= -0.2469%  PF= 0.311  Sh= -42.437
+    Overfitted: NO
+
+  [DETAILED BREAKDOWN — best combo: +-0.2%, str>=1, touch]
+    [SUPPORT -> LONG]
+      15m   19 tr  WR= 21.1%  avg= -0.1947%  PF= 0.277  Sh= -49.622
+      1h    19 tr  WR= 47.4%  avg= -0.0153%  PF= 0.949  Sh=  -1.951
+      4h    19 tr  WR= 68.4%  avg= +0.1113%  PF= 1.598  Sh=  16.828
+
+    [RESISTANCE -> SHORT]
+      15m  144 tr  WR= 16.0%  avg= -0.2549%  PF= 0.107  Sh= -71.694
+      1h   144 tr  WR= 29.2%  avg= -0.2854%  PF= 0.272  Sh= -45.170
+      4h   144 tr  WR= 36.8%  avg= -0.2617%  PF= 0.456  Sh= -27.974
+
+    [Strength == 1]
+
+    [Strength >= 2]
+      15m  163 tr  WR= 16.6%  avg= -0.2479%  PF= 0.126  Sh= -68.739
+      1h   163 tr  WR= 31.3%  avg= -0.2539%  PF= 0.333  Sh= -38.594
+      4h   163 tr  WR= 40.5%  avg= -0.2182%  PF= 0.512  Sh= -23.803
+
+    [Strength >= 3]
+      15m  162 tr  WR= 16.0%  avg= -0.2507%  PF= 0.121  Sh= -69.734
+      1h   162 tr  WR= 30.9%  avg= -0.2589%  PF= 0.325  Sh= -39.441
+      4h   162 tr  WR= 40.1%  avg= -0.2241%  PF= 0.502  Sh= -24.457
+
+    [High quantity (above median)]
+      15m   83 tr  WR=  8.4%  avg= -0.2914%  PF= 0.065  Sh= -91.649
+      1h    83 tr  WR= 20.5%  avg= -0.3281%  PF= 0.192  Sh= -57.875
+      4h    83 tr  WR= 27.7%  avg= -0.3446%  PF= 0.280  Sh= -48.980
+
+    [Low quantity (below median)]
+      15m   80 tr  WR= 25.0%  avg= -0.2027%  PF= 0.203  Sh= -51.407
+      1h    80 tr  WR= 42.5%  avg= -0.1768%  PF= 0.502  Sh= -24.181
+      4h    80 tr  WR= 53.8%  avg= -0.0871%  PF= 0.790  Sh=  -8.085
+
+------------------------------------------------------------
+  Mega
+------------------------------------------------------------
+
+  SKIPPED: signals < 20
+
+------------------------------------------------------------
+  Medium+Mega
+------------------------------------------------------------
+
+  Signals with price: 12822
+  Levels built: 57
+
+  [TOP PARAMETER COMBOS by 1h Sharpe]
+  Width Str    Pattern   N_lv N_ent   WR_1h   Avg_1h  PF_1h    Sh_1h
+  ----------------------------------------------------------------------
+   0.20   1      touch     57   163   31.3%  -0.2539  0.333  -38.594
+   0.20   2      touch     57   163   31.3%  -0.2539  0.333  -38.594
+   0.20   3      touch     56   162   30.9%  -0.2589  0.325  -39.441
+   0.30   1      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.30   2      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.30   3      touch     38   127   32.3%  -0.2643  0.286  -43.289
+   0.20   1   combined     57   218   26.6%  -0.2953  0.267  -46.056
+   0.20   2   combined     57   218   26.6%  -0.2953  0.267  -46.056
+   0.20   3   combined     56   217   26.3%  -0.2992  0.261  -46.775
+   0.10   1      touch    111   245   27.3%  -0.3098  0.253  -48.149
+
+  [WALK-FORWARD TOP-3 (70/30)]
+  #1: width=+-0.1%, min_str=1, pattern=touch
+    IS  1h:   40 tr  WR= 10.0%  avg= -0.6983%  PF= 0.082  Sh= -88.822
+    OOS 1h:  205 tr  WR= 30.7%  avg= -0.2340%  PF= 0.327  Sh= -40.490
+    Overfitted: NO
+  #2: width=+-0.1%, min_str=2, pattern=touch
+    IS  1h:   40 tr  WR= 10.0%  avg= -0.6983%  PF= 0.082  Sh= -88.822
+    OOS 1h:  205 tr  WR= 30.7%  avg= -0.2340%  PF= 0.327  Sh= -40.490
+    Overfitted: NO
+  #3: width=+-0.1%, min_str=1, pattern=combined
+    IS  1h:   51 tr  WR=  9.8%  avg= -0.7532%  PF= 0.073  Sh= -96.585
+    OOS 1h:  271 tr  WR= 26.9%  avg= -0.2469%  PF= 0.311  Sh= -42.437
+    Overfitted: NO
+
+  [DETAILED BREAKDOWN — best combo: +-0.2%, str>=1, touch]
+    [SUPPORT -> LONG]
+      15m   19 tr  WR= 21.1%  avg= -0.1947%  PF= 0.277  Sh= -49.622
+      1h    19 tr  WR= 47.4%  avg= -0.0153%  PF= 0.949  Sh=  -1.951
+      4h    19 tr  WR= 68.4%  avg= +0.1113%  PF= 1.598  Sh=  16.828
+
+    [RESISTANCE -> SHORT]
+      15m  144 tr  WR= 16.0%  avg= -0.2549%  PF= 0.107  Sh= -71.694
+      1h   144 tr  WR= 29.2%  avg= -0.2854%  PF= 0.272  Sh= -45.170
+      4h   144 tr  WR= 36.8%  avg= -0.2617%  PF= 0.456  Sh= -27.974
+
+    [Strength == 1]
+
+    [Strength >= 2]
+      15m  163 tr  WR= 16.6%  avg= -0.2479%  PF= 0.126  Sh= -68.739
+      1h   163 tr  WR= 31.3%  avg= -0.2539%  PF= 0.333  Sh= -38.594
+      4h   163 tr  WR= 40.5%  avg= -0.2182%  PF= 0.512  Sh= -23.803
+
+    [Strength >= 3]
+      15m  162 tr  WR= 16.0%  avg= -0.2507%  PF= 0.121  Sh= -69.734
+      1h   162 tr  WR= 30.9%  avg= -0.2589%  PF= 0.325  Sh= -39.441
+      4h   162 tr  WR= 40.1%  avg= -0.2241%  PF= 0.502  Sh= -24.457
+
+    [High quantity (above median)]
+      15m   83 tr  WR=  8.4%  avg= -0.2914%  PF= 0.065  Sh= -91.649
+      1h    83 tr  WR= 20.5%  avg= -0.3281%  PF= 0.192  Sh= -57.875
+      4h    83 tr  WR= 27.7%  avg= -0.3446%  PF= 0.280  Sh= -48.980
+
+    [Low quantity (below median)]
+      15m   80 tr  WR= 25.0%  avg= -0.2027%  PF= 0.203  Sh= -51.407
+      1h    80 tr  WR= 42.5%  avg= -0.1768%  PF= 0.502  Sh= -24.181
+      4h    80 tr  WR= 53.8%  avg= -0.0871%  PF= 0.790  Sh=  -8.085
+
+
+======================================================================
+  SUMMARY & VERDICT
+======================================================================
+
+  [H1: Bid/Ask Imbalance]
+    UltraLight_Spot: thr=1, mode=direct -> NO EDGE
+      OOS: N=1056, WR=24.1%, Sh=-47.414
+    Light_Spot: thr=1, mode=direct -> NO EDGE
+      OOS: N=1258, WR=23.2%, Sh=-47.920
+    Light_Futures: thr=1, mode=direct -> NO EDGE
+      OOS: N=1047, WR=20.4%, Sh=-57.567
+    Medium_Spot: thr=3, mode=direct -> NO EDGE
+      OOS: N=16, WR=37.5%, Sh=-61.068
+    Medium_Futures: thr=3, mode=inverse -> NO EDGE
+      OOS: N=32, WR=34.4%, Sh=-36.577
+    Aggregate: thr=1, mode=direct -> NO EDGE
+      OOS: N=1722, WR=23.5%, Sh=-49.232
+    VERDICT: NO ROBUST EDGE FOUND in imbalance signals
+
+  [H2: Limit Orders as S/R Levels]
+    Medium: zw=+-0.1%, ms=1, touch -> NO EDGE
+      OOS: N=205, WR=30.7%, Sh=-40.490
+    Mega: SKIPPED (signals < 20)
+    Medium+Mega: zw=+-0.1%, ms=1, touch -> NO EDGE
+      OOS: N=205, WR=30.7%, Sh=-40.490
+    VERDICT: NO ROBUST EDGE FOUND in level-based signals
+
+  OVERALL: Neither hypothesis shows robust out-of-sample edge
+  Orderbook signal channels do not provide reliable alpha after fees
+
+======================================================================
+END OF ORDERBOOK ANALYSIS
+======================================================================
