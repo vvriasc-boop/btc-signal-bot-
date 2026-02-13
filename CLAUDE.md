@@ -49,7 +49,9 @@ btc-signal-bot/
 │   ├── portfolio_sim.py     — точка входа portfolio simulation
 │   ├── sim_engine.py        — streak-фильтр + симуляция портфеля
 │   ├── sim_metrics.py       — метрики портфеля (Sharpe, Sortino, DD, Kelly)
-│   └── sim_report.py        — portfolio_report.txt + equity_curve.csv + JSON
+│   ├── sim_report.py        — portfolio_report.txt + equity_curve.csv + JSON
+│   ├── dmi_range_test.py    — тест гипотезы: кластеры сигналов + узкий диапазон цены
+│   └── zone_test.py         — тест гипотезы: провалившиеся сигналы как S/R зоны
 ├── btc-signal-bot.service   — systemd unit
 ├── fix_peers.py             — одноразовый: прогрев peer-кэша Pyrogram
 ├── reparse_fix.py           — одноразовый: тесты парсеров + перепарсинг 5 каналов
@@ -264,20 +266,26 @@ python3 -m backtesting.portfolio_sim
 **Параметры**: капитал $10K, комиссия 0.2%, OOS с 2025-11-05, размеры позиции 1%/2%/5%/10%, горизонты 5m/15m/1h/4h.
 Streak-счётчики предзагреваются на IS-данных (`_preseed_streak_state`), чтобы OOS-симуляция стартовала с корректным состоянием.
 
+### Hypothesis Tests (standalone, данные из `analyze.py`)
+
+**dmi_range_test.py** — кластеры сигналов + узкий диапазон цены:
+```bash
+python3 -m backtesting.dmi_range_test  # → dmi_range_report.txt + .json
+```
+Несколько сигналов за 4h + range ≤0.3–0.5%. DMI_SMF, DyorAlerts, Scalp17. Walk-forward. **Результат: отвергнута**, фильтры ухудшают Sharpe.
+
+**zone_test.py** — провалившиеся сигналы как S/R зоны:
+```bash
+python3 -m backtesting.zone_test  # → zone_report.txt + .json
+```
+Bearish провал → поддержка (лонг), bullish провал → сопротивление (шорт). Grid 192 комбо (порог × ширина × lifetime × min_str). Walk-forward top-3. **Результат: DyorAlerts слабый сигнал (N=31), WF не подтверждает. Scalp17: no edge.**
+
 ## Lessons Learned
 
-1. **Парсеры не должны полагаться на заголовки каналов.** 7 из 9 парсеров изначально проверяли наличие текста типа "AltSwing", "Scalp17", "Sells Power Index" в сообщениях — но реальные сообщения содержат только данные (эмодзи + числа), без заголовков. Каждый парсер вызывается только для своего канала, поэтому проверка заголовка избыточна.
-
-2. **Case-sensitive сравнение строк в Python.** `'Index' in 'INDEX 15min'` возвращает `False`. Канал Index отправлял `INDEX` (caps), парсер искал `Index` — 0% распознавания.
-
-3. **`filter_author` должен содержать точный username бота.** DyorAlerts фильтровал по `"dyor_alerts"`, но реальный бот — `"dyor_alerts_EtH_2_O_bot"`. Все 10743 сообщений молча пропускались.
-
-4. **Validation ranges должны соответствовать реальным данным.** AltSPI может выдавать >100% (Market Av. 111.7%), Scalp17 — >100% и отрицательные значения. Узкие диапазоны [0, 100] отсекали легитимные сигналы.
-
-5. **Pyrogram peer cache.** Свежая сессия не может резолвить числовые channel_id. Нужен прогрев через `get_dialogs()` — скрипт `fix_peers.py`.
-
-6. **`cursor.lastrowid` ненадёжен с INSERT OR IGNORE.** При дубликате `lastrowid` возвращает stale значение от предыдущего INSERT. Использовать `cursor.rowcount > 0` для проверки вставки.
-
-7. **Pyrogram `stop()` бросает RuntimeError при `asyncio.run()`.** Косметический баг — dispatcher в другом event loop. Не влияет на работу.
-
-8. **Каналы могут возвращать 0 сообщений при первой попытке.** AltSwing и DiamondMarks вернули 0 при первом скачивании, но тысячи при повторном. Причина неизвестна (rate limiting / кэш).
+1. **Парсеры: не проверяй заголовки.** Каждый парсер вызывается только для своего канала, сообщения содержат только данные.
+2. **Case-sensitive строки.** `'Index' in 'INDEX 15min'` = `False`. Всегда `.lower()`.
+3. **`filter_author` = точный username.** `"dyor_alerts"` vs `"dyor_alerts_EtH_2_O_bot"` — все сообщения молча пропускались.
+4. **Validation ranges = реальные данные.** AltSPI >100%, Scalp17 отрицательные. Не ставить [0, 100].
+5. **Pyrogram peer cache.** Свежая сессия не резолвит channel_id. Прогрев: `fix_peers.py`.
+6. **`cursor.lastrowid` + INSERT OR IGNORE.** При дубликате = stale. Проверять `cursor.rowcount > 0`.
+7. **Каналы: 0 сообщений при первой попытке.** AltSwing/DiamondMarks: 0, потом тысячи. Повторять скачивание.
